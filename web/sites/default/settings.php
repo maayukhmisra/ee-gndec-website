@@ -903,16 +903,44 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+// Load environment variables from .env file if available.
+$env_file = dirname($app_root) . '/.env';
+if (file_exists($env_file)) {
+  $env_lines = file($env_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+  foreach ($env_lines as $line) {
+    $line = trim($line);
+    if ($line === '' || str_starts_with($line, '#')) {
+      continue;
+    }
+    if (strpos($line, '=') !== false) {
+      list($name, $value) = explode('=', $line, 2);
+      $name = trim($name);
+      $value = trim(trim($value), '"\'');
+      if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
+        putenv("{$name}={$value}");
+        $_ENV[$name] = $value;
+        $_SERVER[$name] = $value;
+      }
+    }
+  }
+}
+
 $databases['default']['default'] = array (
-  'database' => 'ee_gndec_db',
-  'username' => 'ee_user',
-  'password' => 'DrupalPass123',
+  'database' => getenv('DB_NAME') ?: 'ee_gndec_db',
+  'username' => getenv('DB_USER') ?: 'parminder',
+  'password' => getenv('DB_PASSWORD') ?: 'YourPassword',
+  'host' => getenv('DB_HOST') ?: 'localhost',
+  'port' => getenv('DB_PORT') ?: '3306',
   'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
   'isolation_level' => 'READ COMMITTED',
-  'driver' => 'mysql',
-  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'autoload' => 'core/modules/mysql\\src\\Driver\\Database\\mysql\\',
+  'driver' => getenv('DB_DRIVER') ?: 'mysql',
+  'namespace' => 'Drupal\\' . (getenv('DB_DRIVER') ?: 'mysql') . '\\Driver\\Database\\' . (getenv('DB_DRIVER') ?: 'mysql'),
+  'autoload' => 'core/modules/' . (getenv('DB_DRIVER') ?: 'mysql') . '/src/Driver/Database/' . (getenv('DB_DRIVER') ?: 'mysql') . '/',
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_6to3ydKQaqD_NpNyTZqk6oJsnWulhNLr-NKtMWtM2o3eCiNb6SCYslktzoN_6tdc8FLMuExaKQ/sync';
+
+// Automatically generated include for settings managed by ddev.
+$ddev_settings = __DIR__ . '/settings.ddev.php';
+if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
+  require $ddev_settings;
+}

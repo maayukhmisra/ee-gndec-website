@@ -1,3 +1,30 @@
+# Composer managed directories
+/vendor/
+/web/core/
+/web/profiles/contrib/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/libraries/
+/drush/Commands/contrib/
+
+# User files and site-specific configuration
+/web/sites/*/files/
+/web/sites/default/settings.php
+/web/sites/default/settings.local.php
+/web/sites/default/services.yml
+/web/sites/default/services.local.yml
+
+# Environment files
+.env
+.env.local
+
+# Logs and temporary files
+*.log
+*.swp
+*.swo
+*~
+
+# OS and IDE files
 .DS_Store
 Thumbs.db
 .vscode/

@@ -27,5 +27,23 @@
 # OS and IDE files
 .DS_Store
 Thumbs.db
+.idea/
 .vscode/
 .idea/
+# DDEV local development environment
+/.ddev/
+
+
+/web/sites/*/private/
+/web/sites/*/tmp/
+
+/web/sites/default/files/config_*/
+
+/node_modules/
+/web/themes/custom/*/node_modules/
+
+*.sql
+*.sqlite
+.htpasswd
+
+composer.phar

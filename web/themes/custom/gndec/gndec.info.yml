@@ -1,0 +1,26 @@
+name: 'GNDEC Theme'
+type: theme
+description: 'Bootstrap Subtheme for GNDEC.'
+core_version_requirement: ^10.3 || ^11
+base theme: bootstrap
+
+libraries:
+  - gndec/global-styling
+  - gndec/bootstrap-icons
+
+regions:
+  header: 'Header / Branding'
+  department_title: 'Department Title'
+  primary_menu: 'Primary Menu'
+  hero: 'Hero / Banner'
+  content: 'Main Content'
+  footer: 'Footer'
+  footer_col_1: 'Footer Column 1'
+  footer_col_2: 'Footer Column 2'
+  footer_col_3: 'Footer Column 3'
+  footer_bottom: 'Footer Bottom'
+
+# Information added by Drupal.org packaging script on 2025-06-10
+version: '5.0.2'
+project: 'bootstrap'
+datestamp: 1749514451

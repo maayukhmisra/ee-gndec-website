@@ -1,0 +1,54 @@
+{{ attach_library('gndec/global-styling') }}
+{# 1. Top Global Navigation Bar #}
+<header class="bg-navy py-2 text-white">
+  <div class="container-fluid px-4 d-flex justify-content-around align-items-center">
+    <div class="d-flex align-items-center gap-3 site-branding-wrapper">
+      {{ page.header }}
+      <div class="department-title-region">
+        {{ page.department_title }}
+      </div>
+    </div>
+    {{ page.primary_menu }}
+  </div>
+</header>
+
+{# 2. Full-Width Hero Region #}
+{% if page.hero %}
+  <div class="hero-banner w-100 p-0">
+    {{ page.hero }}
+  </div>
+{% endif %}
+
+{# 3. Main Body Container with Flexbox Layout #}
+<main class="py-5 main-content-bg">
+  <div class="container">
+      <div class="main-content-blocks-wrapper">
+        {{ page.content }}
+      </div>
+  </div>
+</main>
+
+{# 4. Global Dark Footer #}
+<footer class="site-footer bg-navy text-white pt-5 pb-3">
+  <div class="container px-4 px-lg-5">
+    {% if page.footer %}
+      <div class="footer-blocks-wrapper pb-4 mb-2">
+        {{ page.footer }}
+      </div>
+    {% elseif page.footer_col_1 or page.footer_col_2 or page.footer_col_3 %}
+      <div class="footer-blocks-grid pb-4 mb-2">
+        <div class="footer-block">{{ page.footer_col_1 }}</div>
+        <div class="footer-block">{{ page.footer_block_2 or page.footer_col_2 }}</div>
+        <div class="footer-block">{{ page.footer_block_3 or page.footer_col_3 }}</div>
+      </div>
+    {% endif %}
+
+    <div class="footer-bottom-bar text-center pt-3">
+      {% if page.footer_bottom %}
+        {{ page.footer_bottom }}
+      {% else %}
+        <p class="mb-0 copyright-text">© 2026 Department of Computer Science & Engineering, GNE Ludhiana. All rights reserved.</p>
+      {% endif %}
+    </div>
+  </div>
+</footer>

@@ -1,37 +1,46 @@
-# Composer
+# Composer managed directories
 /vendor/
+/web/core/
+/web/profiles/contrib/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/libraries/
+/drush/Commands/contrib/
 composer.phar
 
 # DDEV local development environment
 /.ddev/
 
-# Drupal public/private/temporary files
+# User files and site-specific configuration
 /web/sites/*/files/
 /web/sites/*/private/
 /web/sites/*/tmp/
-
-# Drupal settings that are environment-specific
+/web/sites/default/settings.php
+/web/sites/default/settings.local.php
 /web/sites/*/settings.local.php
-
-# Configuration sync directory (contains sensitive info)
+/web/sites/default/services.yml
+/web/sites/default/services.local.yml
 /web/sites/default/files/config_*/
+
+# Environment files
+.env
+.env.local
 
 # Node / frontend build assets
 /node_modules/
 /web/themes/custom/*/node_modules/
 
-# Databases, logs, and other runtime artifacts
+# Databases, logs, and temporary runtime artifacts
 *.sql
 *.sqlite
 *.log
+*.swp
+*.swo
+*~
 .htpasswd
 
-# OS / editor files
+# OS and IDE files
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
-web/sites/default/settings.php
-*.swp
-*.swo
-

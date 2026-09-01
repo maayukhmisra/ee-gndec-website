@@ -4,8 +4,22 @@ global-styling:
     js/global.js: {}
   css:
     component:
+      css/header.css: { weight: 98 }
+      css/footer.css: { weight: 98 }
       css/style.css: { weight: 100 }
       css/colors.css: { weight: 99 }
+
+header-styling:
+  version: 1.x
+  css:
+    component:
+      css/header.css: {}
+
+footer-styling:
+  version: 1.x
+  css:
+    component:
+      css/footer.css: {}
 bootstrap:
   js:
     /libraries/popper.js/dist/umd/popper.min.js: { weight: -19 }

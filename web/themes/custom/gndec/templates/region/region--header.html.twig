@@ -1,15 +1,14 @@
 {#
 /**
  * @file
- * Theme implementation to display the footer region.
+ * Theme implementation to display the header region.
  */
 #}
-{{ attach_library('gndec/footer-styling') }}
+{{ attach_library('gndec/header-styling') }}
 {%
   set classes = [
     'region',
     'region-' ~ region|clean_class,
-    'footer-blocks-grid',
   ]
 %}
 {% if content %}

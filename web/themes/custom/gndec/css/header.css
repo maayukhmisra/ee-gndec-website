@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Header Bar, Branding & Primary Navigation Styles
+   ========================================================================== */
+
+/* Navy blue top header bar container */
+header.bg-navy,
+.bg-navy {
+  background-color: var(--gndec-navy) !important;
+  color: #ffffff;
+  padding: 8px 0;
+  margin: 0;
+}
+
+/* Header layout alignment wrapper */
+header.bg-navy .container-fluid,
+header.bg-navy .container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide default search forms in top navy bar */
+header.bg-navy .block-search,
+header.bg-navy form.search-block-form,
+header.bg-navy form.search-form,
+header.bg-navy .form-type-search,
+header.bg-navy [id*="search"] {
+  display: none !important;
+}
+
+/* Accessibility helper to visually hide headings */
+header.bg-navy .visually-hidden,
+header.bg-navy h2 {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ==========================================================================
+   Site Branding & Department Titles
+   ========================================================================== */
+
+/* College Logo Image */
+header.bg-navy img,
+.site-branding-wrapper img,
+.navbar-brand img,
+.block-system-branding-block img {
+  height: 48px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  border-radius: 2rem;
+}
+
+/* Flex wrapper for logo and department title */
+.site-branding,
+.block-system-branding-block,
+.site-branding-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.site-branding a,
+.block-system-branding-block a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Text block for department name and college title */
+.site-branding-text,
+.department-title-region,
+.region-department-title,
+.dept-branding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Line 1: Department Title Heading */
+.dept-title,
+.department-title-region .dept-title,
+.site-name,
+.site-name a {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 0 2px 0;
+  padding: 0;
+}
+
+/* Line 2: College Subtitle Slogan */
+.college-title,
+.department-title-region .college-title,
+.site-slogan {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Primary Navigation Menu
+   ========================================================================== */
+header.bg-navy .region-primary-menu,
+header.bg-navy .block-menu,
+header.bg-navy .menu--main {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+header.bg-navy ul,
+.menu--main ul.menu,
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+}
+
+.menu--main li,
+.region-primary-menu li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.menu--main a,
+.region-primary-menu a,
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.85rem;
+  line-height: 1.4;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.menu--main a:hover,
+.region-primary-menu a:hover,
+.navbar-nav .nav-link:hover,
+.menu--main a.is-active {
+  opacity: 0.85;
+  color: #ffffff;
+}
+
+/* Dropdown Caret Arrow Indicators */
+.menu--main li.expanded>a::after,
+.menu--main li.dropdown>a::after {
+  content: "";
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-top: 4px solid #ffffff;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: 0;
+  opacity: 0.8;
+}
+
+/* Submenu Dropdown Panels */
+.menu--main li ul,
+.region-primary-menu li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--gndec-navy-dark, #021229);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 8px 0;
+  min-width: 190px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.menu--main li:hover>ul,
+.region-primary-menu li:hover>ul {
+  display: flex;
+}
+
+.menu--main li ul a,
+.region-primary-menu li ul a {
+  padding: 8px 16px;
+}

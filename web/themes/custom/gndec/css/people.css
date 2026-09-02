@@ -1,0 +1,390 @@
+/* ==========================================================================
+   People / Faculty Page Styles
+   100% Pure CSS Horizontal Split Card & Symmetric 2-Column Grid
+   ========================================================================== */
+
+:root {
+  --gndec-card-radius: 16px;
+  --gndec-card-bg: #ffffff;
+  --gndec-card-border: #eef2f6;
+  --gndec-card-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+  --gndec-card-shadow-hover: 0 14px 36px rgba(4, 30, 66, 0.12);
+  --gndec-tag-bg: #f3f4f8;
+  --gndec-tag-text: #1e293b;
+  --gndec-card-title-color: #0f172a;
+  --gndec-card-meta-color: #94a3b8;
+  --gndec-card-body-color: #475569;
+}
+
+/* Main Background Section Wrapper */
+.main-content-bg,
+.people-page-wrapper {
+  background-color: var(--gndec-bg-light, #f4f8fc);
+  padding: 3rem 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Perfectly Symmetric Centered Container */
+.main-content-bg .container,
+.people-page-wrapper .container {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  box-sizing: border-box !important;
+}
+
+/* Reset Parent Flexbox Conflicts & Asymmetric Spacing from Theme */
+.main-content-blocks-wrapper,
+.main-content-blocks-wrapper > .region-content,
+.main-content-blocks-wrapper .region-content,
+.node--type-page,
+.node__content {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Page Section Title */
+.main-content-bg .page-title,
+.main-content-bg h1,
+.people-page-wrapper .page-title,
+.people-page-wrapper h1 {
+  color: var(--gndec-navy, #041e42);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Views Grid Layout Container (Symmetric 2 Columns)
+   ========================================================================== */
+
+.people-grid,
+.main-content-bg .view-content,
+.people-page-wrapper .view-content,
+.block-views-blockfaculty-block-1 .view-content,
+.views-element-container .view-content,
+.view-faculty .view-content {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* 2 cards per row */
+  gap: 2rem !important; /* Symmetric gap between cards */
+  margin: 2rem 0 0 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   Hide Raw Field Labels ("img", "info") ONLY Inside Faculty Cards
+   ========================================================================== */
+
+.views-row > .field--name-field-img > .field__label,
+.views-row > .field--name-field-info > .field__label,
+.block-content-faculty_card > .field > .field__label,
+.block-content--type-faculty-card > .field > .field__label {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Faculty Card Container (Horizontal Split Card)
+   ========================================================================== */
+
+.person-card,
+.block-views-blockfaculty-block-1 .views-row,
+.views-element-container .views-row,
+.view-faculty .views-row,
+.block-content-faculty_card,
+.block-content-faculty-card,
+.block-content--type-faculty-card,
+.block-content--type-faculty_card,
+.block_content--type-faculty-card,
+.block_content--type-faculty_card,
+.block--faculty-card,
+.faculty-card {
+  background: #ffffff !important;
+  border-radius: var(--gndec-card-radius, 16px) !important;
+  border: 1px solid var(--gndec-card-border, #eef2f6) !important;
+  box-shadow: var(--gndec-card-shadow, 0 6px 24px rgba(0, 0, 0, 0.04)) !important;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+              box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+              border-color 0.3s ease !important;
+  display: flex !important;
+  flex-direction: row !important;
+  overflow: hidden !important;
+  position: relative !important;
+  align-items: stretch !important;
+  text-align: left !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.person-card:hover,
+.block-views-blockfaculty-block-1 .views-row:hover,
+.views-element-container .views-row:hover,
+.view-faculty .views-row:hover,
+.block-content-faculty_card:hover,
+.block-content-faculty-card:hover,
+.block-content--type-faculty-card:hover,
+.block-content--type-faculty_card:hover,
+.block--faculty-card:hover,
+.faculty-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--gndec-card-shadow-hover, 0 14px 36px rgba(4, 30, 66, 0.12)) !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* ==========================================================================
+   Left Media Column (.field--name-field-img / Photo)
+   ========================================================================== */
+
+.views-row .field--name-field-img,
+.block-views-blockfaculty-block-1 .field--name-field-img,
+.view-faculty .field--name-field-img,
+.block-content-faculty_card .field--name-field-img,
+.block-content--type-faculty-card .field--name-field-img,
+.person-card .person-media {
+  flex: 0 0 220px !important;
+  max-width: 220px !important;
+  width: 220px !important;
+  min-width: 220px !important;
+  background-color: #fdfbf7 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+.views-row .field--name-field-img .field__item,
+.views-row .field--name-field-img img,
+.block-content-faculty_card .field--name-field-img img,
+.block-content--type-faculty-card .field--name-field-img img,
+.person-card .person-media img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 0 !important;
+  border: none !important;
+  transition: transform 0.4s ease !important;
+}
+
+.views-row:hover .field--name-field-img img,
+.block-content-faculty_card:hover .field--name-field-img img,
+.person-card:hover img {
+  transform: scale(1.04) !important;
+}
+
+/* ==========================================================================
+   Right Info Column (.field--name-field-info & .faculty-card__content)
+   ========================================================================== */
+
+.views-row .field--name-field-info,
+.block-content-faculty_card .field--name-field-info,
+.block-content--type-faculty-card .field--name-field-info,
+.person-card .person-content {
+  flex: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  background: #ffffff !important;
+}
+
+.field--name-field-info .field__item {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.faculty-card__content,
+.person-info {
+  padding: 1.75rem 2rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Faculty Name Header (.faculty-card__name) */
+.faculty-card__name,
+.person-name {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: var(--gndec-card-title-color, #0f172a) !important;
+  line-height: 1.35 !important;
+  margin: 0 0 1rem 0 !important;
+  font-family: inherit !important;
+}
+
+.faculty-card__name a,
+.person-name a {
+  color: var(--gndec-card-title-color, #0f172a) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.faculty-card__name a:hover,
+.person-name a:hover {
+  color: var(--gndec-accent-blue, #0d6efd) !important;
+}
+
+/* Faculty Section Blocks (.faculty-card__section) */
+.faculty-card__section {
+  margin-bottom: 0.85rem !important;
+  width: 100% !important;
+}
+
+.faculty-card__section:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Labels ("Designation", "Email") */
+.faculty-card__label {
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--gndec-card-meta-color, #94a3b8) !important;
+  margin: 0 0 0.15rem 0 !important;
+}
+
+/* Values ("Professor & Head", email link) */
+.faculty-card__value {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: var(--gndec-card-body-color, #475569) !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.faculty-card__value a {
+  color: var(--gndec-accent-blue, #0d6efd) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  background-color: #f0f6ff !important;
+  padding: 0.35rem 0.85rem !important;
+  border-radius: 6px !important;
+  font-size: 0.9rem !important;
+  margin-top: 0.2rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.faculty-card__value a:hover {
+  background-color: var(--gndec-accent-blue, #0d6efd) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   Responsive Adjustments (Mobile: 1 Card Per Line)
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+  .people-grid,
+  .main-content-bg .view-content,
+  .people-page-wrapper .view-content,
+  .block-views-blockfaculty-block-1 .view-content,
+  .views-element-container .view-content,
+  .view-faculty .view-content {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .people-grid,
+  .main-content-bg .view-content,
+  .people-page-wrapper .view-content,
+  .block-views-blockfaculty-block-1 .view-content,
+  .views-element-container .view-content,
+  .view-faculty .view-content {
+    grid-template-columns: 1fr !important; /* 1 card per line on mobile */
+    gap: 1.5rem !important;
+  }
+
+  .person-card,
+  .views-row,
+  .block-content-faculty_card,
+  .block-content-faculty-card,
+  .block-content--type-faculty-card,
+  .block-content--type-faculty_card,
+  .block--faculty-card,
+  .faculty-card {
+    flex-direction: row !important;
+  }
+
+  .views-row .field--name-field-img,
+  .block-content-faculty_card .field--name-field-img,
+  .person-card .person-media {
+    flex: 0 0 150px !important;
+    max-width: 150px !important;
+    width: 150px !important;
+    min-width: 150px !important;
+  }
+
+  .faculty-card__content,
+  .person-info {
+    padding: 1rem 1.25rem !important;
+  }
+
+  .faculty-card__name,
+  .person-name {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .person-card,
+  .views-row,
+  .block-content-faculty_card,
+  .block-content-faculty-card,
+  .block-content--type-faculty-card,
+  .block-content--type-faculty_card,
+  .block--faculty-card,
+  .faculty-card {
+    flex-direction: column !important;
+  }
+
+  .views-row .field--name-field-img,
+  .block-content-faculty_card .field--name-field-img,
+  .person-card .person-media {
+    flex: 0 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 220px !important;
+  }
+}

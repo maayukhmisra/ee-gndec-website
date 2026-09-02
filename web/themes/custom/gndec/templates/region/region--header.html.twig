@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme implementation to display the header region.
+ */
+#}
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+    'site-header-region',
+  ]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {{ content }}
+  </div>
+{% endif %}

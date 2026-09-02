@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Header template component for GNDEC theme.
+ * Displays top global navigation bar, site branding, department title, and primary menu.
+ */
+#}
+<header class="bg-navy py-2 text-white">
+  <div class="container-fluid px-2 px-md-4 d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">
+    <div class="d-flex align-items-center gap-3 site-branding-wrapper">
+      {{ page.header }}
+      <div class="department-title-region">
+        {{ page.department_title }}
+      </div>
+    </div>
+    <div class="primary-menu-wrapper">
+      {{ page.primary_menu }}
+    </div>
+  </div>
+</header>

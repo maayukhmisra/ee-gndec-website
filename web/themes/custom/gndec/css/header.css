@@ -1,11 +1,17 @@
+/**
+ * @file
+ * Header Stylesheet for GNDEC Subtheme.
+ * Separate CSS file for global header, navigation bar, site branding, and primary menu styles.
+ */
+
 /* ==========================================================================
-   Header Bar, Branding & Primary Navigation Styles
+   1. Header Bar & Alignment
    ========================================================================== */
 
 /* Navy blue top header bar container */
 header.bg-navy,
 .bg-navy {
-  background-color: var(--gndec-navy) !important;
+  background-color: var(--gndec-navy, #041e42) !important;
   color: #ffffff;
   padding: 8px 0;
   margin: 0;
@@ -15,8 +21,8 @@ header.bg-navy,
 header.bg-navy .container-fluid,
 header.bg-navy .container {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 0;
@@ -46,7 +52,7 @@ header.bg-navy h2 {
 }
 
 /* ==========================================================================
-   Site Branding & Department Titles
+   2. Site Branding & Department Titles
    ========================================================================== */
 
 /* College Logo Image */
@@ -128,8 +134,9 @@ header.bg-navy img,
 }
 
 /* ==========================================================================
-   Primary Navigation Menu
+   3. Primary Navigation Menu
    ========================================================================== */
+
 header.bg-navy .region-primary-menu,
 header.bg-navy .block-menu,
 header.bg-navy .menu--main {
@@ -144,7 +151,7 @@ header.bg-navy ul,
 .navbar-nav {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
   list-style: none;
@@ -226,4 +233,113 @@ header.bg-navy ul,
 .menu--main li ul a,
 .region-primary-menu li ul a {
   padding: 8px 16px;
+  font-size: 0.85rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menu--main li ul a:hover,
+.region-primary-menu li ul a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   4. Mobile Responsive Header Adjustments
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+  header.bg-navy .container-fluid,
+  header.bg-navy .container {
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 10px 16px !important;
+  }
+
+  .site-branding-wrapper,
+  header.bg-navy .site-branding-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .site-branding-text,
+  .department-title-region,
+  .region-department-title,
+  .dept-branding {
+    align-items: center;
+    text-align: center;
+  }
+
+  .dept-title,
+  .department-title-region .dept-title,
+  .site-name,
+  .site-name a {
+    text-align: center;
+  }
+
+  header.bg-navy .region-primary-menu,
+  header.bg-navy .block-menu,
+  header.bg-navy .menu--main {
+    width: 100%;
+    justify-content: center;
+  }
+
+  header.bg-navy ul,
+  .menu--main ul.menu,
+  .navbar-nav {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px 12px !important;
+    width: 100%;
+  }
+
+  .menu--main a,
+  .region-primary-menu a,
+  .navbar-nav .nav-link {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.875rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  header.bg-navy img,
+  .site-branding-wrapper img,
+  .navbar-brand img,
+  .block-system-branding-block img {
+    height: 40px;
+  }
+
+  .dept-title,
+  .department-title-region .dept-title,
+  .site-name,
+  .site-name a {
+    font-size: 0.875rem;
+  }
+
+  .college-title,
+  .department-title-region .college-title,
+  .site-slogan {
+    font-size: 0.65rem;
+  }
+
+  header.bg-navy ul,
+  .menu--main ul.menu,
+  .navbar-nav {
+    gap: 6px 8px !important;
+  }
+
+  .menu--main a,
+  .region-primary-menu a,
+  .navbar-nav .nav-link {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+  }
 }

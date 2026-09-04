@@ -5,21 +5,17 @@ global-styling:
   css:
     component:
       css/header.css: { weight: 98 }
-      css/footer.css: { weight: 98 }
       css/style.css: { weight: 100 }
       css/colors.css: { weight: 99 }
+      css/people.css: { weight: 101 }
 
-header-styling:
+
+header-styles:
   version: 1.x
   css:
-    component:
+    theme:
       css/header.css: {}
 
-footer-styling:
-  version: 1.x
-  css:
-    component:
-      css/footer.css: {}
 bootstrap:
   js:
     /libraries/popper.js/dist/umd/popper.min.js: { weight: -19 }
@@ -44,6 +40,12 @@ front-page-styles:
   css:
     theme:
       css/style.css: {}
+
+people-page-styles:
+  version: 1.x
+  css:
+    theme:
+      css/people.css: {}
 
 bootstrap-icons:
   version: 1.11.3

@@ -1,5 +1,16 @@
+{#
+/**
+ * @file
+ * Theme implementation to display the 'People' page.
+ *
+ * Available variables:
+ * - page: An array of elements to render.
+ */
+#}
 {{ attach_library('gndec/global-styling') }}
 {{ attach_library('gndec/header-styles') }}
+{{ attach_library('gndec/people-page-styles') }}
+
 {# 1. Top Global Navigation Bar #}
 {% include directory ~ '/templates/header.html.twig' %}
 
@@ -11,12 +22,12 @@
   </div>
 {% endif %}
 
-{# 3. Main Body Container with Flexbox Layout #}
-<main class="py-0 py-md-5 main-content-bg">
+{# 3. Main Body Container for People Page #}
+<main class="py-0 py-md-5 main-content-bg people-page-wrapper">
   <div class="container">
-      <div class="main-content-blocks-wrapper">
-        {{ page.content }}
-      </div>
+    <div class="main-content-blocks-wrapper">
+      {{ page.content }}
+    </div>
   </div>
 </main>
 

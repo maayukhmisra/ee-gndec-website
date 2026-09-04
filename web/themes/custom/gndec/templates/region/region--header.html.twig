@@ -4,11 +4,11 @@
  * Theme implementation to display the header region.
  */
 #}
-{{ attach_library('gndec/header-styling') }}
 {%
   set classes = [
     'region',
     'region-' ~ region|clean_class,
+    'site-header-region',
   ]
 %}
 {% if content %}

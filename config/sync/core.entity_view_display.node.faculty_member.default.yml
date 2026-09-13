@@ -1,0 +1,80 @@
+uuid: 31fe972d-6102-4b4b-a334-2e2e2866fc4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.faculty_member.field_email
+    - field.field.node.faculty_member.field_field_department
+    - field.field.node.faculty_member.field_field_designation
+    - field.field.node.faculty_member.field_field_full_name
+    - field.field.node.faculty_member.field_field_photo
+    - field.field.node.faculty_member.field_phone_number
+    - node.type.faculty_member
+  module:
+    - image
+    - user
+id: node.faculty_member.default
+targetEntityType: node
+bundle: faculty_member
+mode: default
+content:
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_field_department:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_field_designation:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_field_full_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_field_photo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_phone_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

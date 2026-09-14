@@ -1,0 +1,67 @@
+uuid: e340923e-9791-4f7d-825a-5b26f9af6502
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.student_resource.field_esource_description
+    - field.field.node.student_resource.field_resource_department
+    - field.field.node.student_resource.field_resource_file
+    - field.field.node.student_resource.field_resource_semester
+    - field.field.node.student_resource.field_resource_type
+    - node.type.student_resource
+  module:
+    - file
+    - options
+    - text
+    - user
+id: node.student_resource.default
+targetEntityType: node
+bundle: student_resource
+mode: default
+content:
+  field_esource_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_resource_department:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_resource_file:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_resource_semester:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_resource_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

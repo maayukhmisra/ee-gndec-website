@@ -1,0 +1,27 @@
+uuid: 56b90b89-2d3d-4f75-9bf8-8992d2fb8eec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_syllabus
+    - node.type.academic_programme
+  module:
+    - file
+id: node.academic_programme.field_syllabus
+field_name: field_syllabus
+entity_type: node
+bundle: academic_programme
+label: Syllabus
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: 10MB
+  description_field: false
+field_type: file

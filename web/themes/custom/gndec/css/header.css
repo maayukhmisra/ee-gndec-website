@@ -1,14 +1,6 @@
-/**
- * @file
- * Header Stylesheet for GNDEC Subtheme.
- * Separate CSS file for global header, navigation bar, site branding, and primary menu styles.
- */
+/* Header Stylesheet for GNDEC Subtheme */
 
-/* ==========================================================================
-   1. Header Bar & Alignment
-   ========================================================================== */
-
-/* Navy blue top header bar container */
+/* Top Navigation Bar */
 header.bg-navy,
 .bg-navy {
   background-color: var(--gndec-navy, #041e42) !important;
@@ -17,7 +9,6 @@ header.bg-navy,
   margin: 0;
 }
 
-/* Header layout alignment wrapper */
 header.bg-navy .container-fluid,
 header.bg-navy .container {
   display: flex;
@@ -29,7 +20,6 @@ header.bg-navy .container {
   padding: 0;
 }
 
-/* Hide default search forms in top navy bar */
 header.bg-navy .block-search,
 header.bg-navy form.search-block-form,
 header.bg-navy form.search-form,
@@ -38,7 +28,6 @@ header.bg-navy [id*="search"] {
   display: none !important;
 }
 
-/* Accessibility helper to visually hide headings */
 header.bg-navy .visually-hidden,
 header.bg-navy h2 {
   position: absolute !important;
@@ -51,11 +40,7 @@ header.bg-navy h2 {
   border: 0;
 }
 
-/* ==========================================================================
-   2. Site Branding & Department Titles
-   ========================================================================== */
-
-/* College Logo Image */
+/* Site Branding */
 header.bg-navy img,
 .site-branding-wrapper img,
 .navbar-brand img,
@@ -70,7 +55,6 @@ header.bg-navy img,
   border-radius: 2rem;
 }
 
-/* Flex wrapper for logo and department title */
 .site-branding,
 .block-system-branding-block,
 .site-branding-wrapper {
@@ -92,7 +76,6 @@ header.bg-navy img,
   gap: 12px;
 }
 
-/* Text block for department name and college title */
 .site-branding-text,
 .department-title-region,
 .region-department-title,
@@ -106,7 +89,6 @@ header.bg-navy img,
   padding: 0;
 }
 
-/* Line 1: Department Title Heading */
 .dept-title,
 .department-title-region .dept-title,
 .site-name,
@@ -120,7 +102,6 @@ header.bg-navy img,
   padding: 0;
 }
 
-/* Line 2: College Subtitle Slogan */
 .college-title,
 .department-title-region .college-title,
 .site-slogan {
@@ -133,13 +114,11 @@ header.bg-navy img,
   padding: 0;
 }
 
-/* ==========================================================================
-   3. Primary Navigation Menu
-   ========================================================================== */
-
+/* Primary Navigation Menu */
 header.bg-navy .region-primary-menu,
 header.bg-navy .block-menu,
-header.bg-navy .menu--main {
+header.bg-navy .menu--main,
+header.bg-navy .primary-menu-wrapper {
   display: flex;
   align-items: center;
   margin: 0;
@@ -161,7 +140,9 @@ header.bg-navy ul,
 }
 
 .menu--main li,
-.region-primary-menu li {
+.region-primary-menu li,
+.primary-menu-wrapper li,
+header.bg-navy li {
   position: relative;
   list-style: none;
   margin: 0;
@@ -172,81 +153,187 @@ header.bg-navy ul,
 
 .menu--main a,
 .region-primary-menu a,
+.primary-menu-wrapper a,
 .navbar-nav .nav-link {
   color: #ffffff;
   font-weight: 500;
   font-size: 0.9rem;
-  padding: 0.4rem 0.85rem;
+  padding: 0.45rem 0.85rem;
   line-height: 1.4;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   white-space: nowrap;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
 
 .menu--main a:hover,
 .region-primary-menu a:hover,
+.primary-menu-wrapper a:hover,
 .navbar-nav .nav-link:hover,
-.menu--main a.is-active {
-  opacity: 0.85;
-  color: #ffffff;
+.menu--main a.is-active,
+.region-primary-menu a.is-active,
+.primary-menu-wrapper a.is-active {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+  opacity: 1;
 }
 
-/* Dropdown Caret Arrow Indicators */
-.menu--main li.expanded>a::after,
-.menu--main li.dropdown>a::after {
+.menu--main li:hover > a,
+.region-primary-menu li:hover > a,
+.primary-menu-wrapper li:hover > a,
+header.bg-navy li:hover > a {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+}
+
+/* Dropdown Indicators */
+.menu--main li.expanded > a::after,
+.menu--main li.dropdown > a::after,
+.menu--main li.menu-item--expanded > a::after,
+.region-primary-menu li.expanded > a::after,
+.region-primary-menu li.dropdown > a::after,
+.region-primary-menu li.menu-item--expanded > a::after,
+.primary-menu-wrapper li.expanded > a::after,
+.primary-menu-wrapper li.dropdown > a::after,
+.primary-menu-wrapper li.menu-item--expanded > a::after,
+header.bg-navy li.expanded > a::after,
+header.bg-navy li.dropdown > a::after,
+header.bg-navy li.menu-item--expanded > a::after,
+header.bg-navy li:has(> ul) > a::after {
   content: "";
   display: inline-block;
-  margin-left: 4px;
+  margin-left: 6px;
   vertical-align: middle;
-  border-top: 4px solid #ffffff;
+  border-top: 5px solid #ffffff;
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
   border-bottom: 0;
-  opacity: 0.8;
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu--main li:hover > a::after,
+.region-primary-menu li:hover > a::after,
+.primary-menu-wrapper li:hover > a::after,
+header.bg-navy li:hover > a::after {
+  opacity: 1;
+  transform: translateY(1px);
 }
 
 /* Submenu Dropdown Panels */
 .menu--main li ul,
-.region-primary-menu li ul {
+.region-primary-menu li ul,
+.primary-menu-wrapper li ul,
+header.bg-navy ul.menu li ul,
+header.bg-navy .dropdown-menu,
+header.bg-navy .menu-item--expanded > ul {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   background-color: var(--gndec-navy-dark, #021229);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  padding: 8px 0;
-  min-width: 190px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 6px;
+  min-width: 200px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1050;
   flex-direction: column;
+  gap: 2px;
+  margin-top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 
-.menu--main li:hover>ul,
-.region-primary-menu li:hover>ul {
-  display: flex;
+.menu--main li ul::before,
+.region-primary-menu li ul::before,
+.primary-menu-wrapper li ul::before,
+header.bg-navy li ul::before,
+header.bg-navy .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: transparent;
+}
+
+.menu--main li:hover > ul,
+.menu--main li:focus-within > ul,
+.region-primary-menu li:hover > ul,
+.region-primary-menu li:focus-within > ul,
+.primary-menu-wrapper li:hover > ul,
+.primary-menu-wrapper li:focus-within > ul,
+header.bg-navy li:hover > ul,
+header.bg-navy li:focus-within > ul,
+header.bg-navy .dropdown:hover > .dropdown-menu,
+header.bg-navy .menu-item--expanded:hover > ul {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.menu--main li ul li,
+.region-primary-menu li ul li,
+.primary-menu-wrapper li ul li,
+header.bg-navy ul.menu li ul li,
+header.bg-navy .dropdown-menu li {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .menu--main li ul a,
-.region-primary-menu li ul a {
+.region-primary-menu li ul a,
+.primary-menu-wrapper li ul a,
+header.bg-navy ul.menu li ul a,
+header.bg-navy .dropdown-menu a,
+header.bg-navy .dropdown-item {
+  display: flex;
+  align-items: center;
   padding: 8px 16px;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9) !important;
   width: 100%;
   box-sizing: border-box;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  transition: all 0.2s ease;
 }
 
 .menu--main li ul a:hover,
-.region-primary-menu li ul a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.menu--main li ul a:focus,
+.region-primary-menu li ul a:hover,
+.region-primary-menu li ul a:focus,
+.primary-menu-wrapper li ul a:hover,
+.primary-menu-wrapper li ul a:focus,
+header.bg-navy ul.menu li ul a:hover,
+header.bg-navy ul.menu li ul a:focus,
+header.bg-navy .dropdown-menu a:hover,
+header.bg-navy .dropdown-menu a:focus,
+header.bg-navy .dropdown-item:hover,
+header.bg-navy .dropdown-item:focus,
+.menu--main li ul a.is-active,
+.region-primary-menu li ul a.is-active,
+.primary-menu-wrapper li ul a.is-active {
+  background-color: var(--gndec-accent-blue, #0d6efd) !important;
+  color: #ffffff !important;
+  padding-left: 20px;
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.35);
 }
 
-/* ==========================================================================
-   4. Mobile Responsive Header Adjustments
-   ========================================================================== */
-
+/* Mobile Responsive */
 @media (max-width: 991.98px) {
   header.bg-navy .container-fluid,
   header.bg-navy .container {
@@ -306,6 +393,23 @@ header.bg-navy ul,
     font-size: 0.875rem;
     background-color: rgba(255, 255, 255, 0.08);
     border-radius: 6px;
+  }
+
+  .menu--main li ul,
+  .region-primary-menu li ul,
+  .primary-menu-wrapper li ul,
+  header.bg-navy ul.menu li ul,
+  header.bg-navy .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(0, 0, 0, 0.25) !important;
+    width: 100% !important;
+    margin-top: 4px !important;
+    padding: 4px !important;
   }
 }
 

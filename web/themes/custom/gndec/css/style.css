@@ -168,8 +168,8 @@ body {
   flex: 0 0 350px !important;
   max-width: 100% !important;
   min-width: 300px !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
 }
 
 @media (max-width: 991.98px) {

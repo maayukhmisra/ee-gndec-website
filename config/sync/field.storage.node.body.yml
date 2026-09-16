@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - text
+    - node
 id: node.body
 field_name: body
 entity_type: node

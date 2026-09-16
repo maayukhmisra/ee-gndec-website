@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_esource_description
+    - field.storage.node.field_resource_description
     - node.type.student_resource
   module:
     - text
-id: node.student_resource.field_esource_description
-field_name: field_esource_description
+id: node.field_resource_description
+field_name: field_resource_description
 entity_type: node
 bundle: student_resource
 label: Description

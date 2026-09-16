@@ -1,18 +1,14 @@
-uuid: 89b8126f-13a2-4ab4-81b9-cce5afc79dbf
+uuid: 39996eb8-f08c-482e-906a-ddcd4bce3274
 langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.restricted_html
   module:
-    - filter
     - system
 _core:
-  default_config_hash: Tus1ZTNXKIOnrennR1hnTbc7wUPBXHTUm5UdCpEhJSk
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
 label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'use text format restricted_html'

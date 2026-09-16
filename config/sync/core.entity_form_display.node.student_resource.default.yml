@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.student_resource.field_esource_description
+    - field.field.node.student_resource.field_resource_description
     - field.field.node.student_resource.field_resource_department
     - field.field.node.student_resource.field_resource_file
     - field.field.node.student_resource.field_resource_semester
@@ -24,7 +24,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_esource_description:
+  field_resource_description:
     type: text_textarea_with_summary
     weight: 123
     region: content

@@ -5,8 +5,8 @@ dependencies:
   module:
     - node
     - text
-id: node.field_esource_description
-field_name: field_esource_description
+id: node.field_resource_description
+field_name: field_resource_description
 entity_type: node
 type: text_with_summary
 settings: {  }

@@ -7,7 +7,7 @@ dependencies:
     - node.type.student_resource
   module:
     - text
-id: node.field_resource_description
+id: node.student_resource.field_resource_description
 field_name: field_resource_description
 entity_type: node
 bundle: student_resource

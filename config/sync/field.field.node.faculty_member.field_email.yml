@@ -1,0 +1,19 @@
+uuid: b1f20bca-45e5-4723-ac4b-14d6b77f7ecb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.faculty_member
+id: node.faculty_member.field_email
+field_name: field_email
+entity_type: node
+bundle: faculty_member
+label: Email
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Page
+type: page
+description: 'A general-purpose page for standalone content such as About, Contact, or informational pages.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

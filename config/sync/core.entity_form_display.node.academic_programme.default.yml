@@ -1,0 +1,99 @@
+uuid: fbf92d09-0fec-439c-a446-abe47bb6bcf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.academic_programme.field_department
+    - field.field.node.academic_programme.field_description
+    - field.field.node.academic_programme.field_duration
+    - field.field.node.academic_programme.field_eligibility_criteria
+    - field.field.node.academic_programme.field_syllabus
+    - node.type.academic_programme
+  module:
+    - file
+    - path
+    - text
+id: node.academic_programme.default
+targetEntityType: node
+bundle: academic_programme
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_department:
+    type: string_textfield
+    weight: 124
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 123
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_duration:
+    type: string_textfield
+    weight: 121
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_eligibility_criteria:
+    type: text_textarea
+    weight: 122
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_syllabus:
+    type: file_generic
+    weight: 125
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true

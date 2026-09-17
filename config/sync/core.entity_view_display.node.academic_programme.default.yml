@@ -1,0 +1,66 @@
+uuid: 9ffe1e6e-8beb-47bf-94a2-3ee3e1df9f33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.academic_programme.field_department
+    - field.field.node.academic_programme.field_description
+    - field.field.node.academic_programme.field_duration
+    - field.field.node.academic_programme.field_eligibility_criteria
+    - field.field.node.academic_programme.field_syllabus
+    - node.type.academic_programme
+  module:
+    - file
+    - text
+    - user
+id: node.academic_programme.default
+targetEntityType: node
+bundle: academic_programme
+mode: default
+content:
+  field_department:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_duration:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_eligibility_criteria:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_syllabus:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

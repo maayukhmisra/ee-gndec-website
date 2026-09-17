@@ -1,0 +1,19 @@
+uuid: 6646af10-be66-4df8-bc18-fd4d1ec2dcb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_number
+    - node.type.faculty_member
+id: node.faculty_member.field_phone_number
+field_name: field_phone_number
+entity_type: node
+bundle: faculty_member
+label: 'Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

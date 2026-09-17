@@ -1,0 +1,22 @@
+uuid: 36a9b28a-18b1-420e-8e8f-69d227bfa35d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_eligibility_criteria
+    - node.type.academic_programme
+  module:
+    - text
+id: node.academic_programme.field_eligibility_criteria
+field_name: field_eligibility_criteria
+entity_type: node
+bundle: academic_programme
+label: 'Eligibility Criteria'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

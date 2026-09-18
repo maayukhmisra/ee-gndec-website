@@ -1,0 +1,73 @@
+﻿# -- Media Asset API Routes -----------------------------------------------
+
+ee_media.api.list:
+  path: '/api/media'
+  defaults:
+    _controller: '\Drupal\ee_media\Controller\EeMediaController::list'
+    _title: 'Media API'
+  requirements:
+    _permission: 'access content'
+  methods: [GET]
+  options:
+    no_cache: TRUE
+
+ee_media.api.single:
+  path: '/api/media/{id}'
+  defaults:
+    _controller: '\Drupal\ee_media\Controller\EeMediaController::single'
+    _title: 'Media Detail API'
+  requirements:
+    _permission: 'access content'
+    id: '\d+'
+  methods: [GET]
+  options:
+    no_cache: TRUE
+
+ee_media.api.by_module:
+  path: '/api/media/module/{module_ref}'
+  defaults:
+    _controller: '\Drupal\ee_media\Controller\EeMediaController::byModule'
+    _title: 'Media by Module API'
+  requirements:
+    _permission: 'access content'
+    module_ref: '[a-z_]+'
+  methods: [GET]
+  options:
+    no_cache: TRUE
+
+# -- Admin Media Management Routes -----------------------------------------
+
+ee_media.admin.list:
+  path: '/admin/ee-gndec/media'
+  defaults:
+    _controller: '\Drupal\ee_media\Controller\EeMediaController::adminList'
+    _title: 'Manage Media & Documents'
+  requirements:
+    _permission: 'administer site configuration'
+
+ee_media.admin.add:
+  path: '/admin/ee-gndec/media/add'
+  defaults:
+    _form: '\Drupal\ee_media\Form\MediaAssetForm'
+    _title: 'Add Media Asset'
+  requirements:
+    _permission: 'administer site configuration'
+
+ee_media.admin.edit:
+  path: '/admin/ee-gndec/media/{id}/edit'
+  defaults:
+    _form: '\Drupal\ee_media\Form\MediaAssetForm'
+    _title: 'Edit Media Asset'
+  requirements:
+    _permission: 'administer site configuration'
+    id: '\d+'
+
+ee_media.admin.delete:
+  path: '/admin/ee-gndec/media/{id}/delete'
+  defaults:
+    _controller: '\Drupal\ee_media\Controller\EeMediaController::delete'
+    _title: 'Delete Media Asset'
+  requirements:
+    _permission: 'administer site configuration'
+    id: '\d+'
+  methods: [GET, POST]

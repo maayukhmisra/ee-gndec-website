@@ -1,0 +1,278 @@
+﻿<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the EE Media module.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Creates the ee_media_assets table when the module is installed.
+ * This table is the single source of truth for all department media files
+ * (PDFs, images, documents) referenced across Notices, Events, Research,
+ * and Labs modules.
+ */
+function ee_media_schema() {
+  $schema['ee_media_assets'] = [
+    'description' => 'Stores all media assets (PDFs, images, documents) for the EE GNDEC department.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary key -- auto-increment asset ID.',
+        'type'        => 'serial',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+      ],
+      'title' => [
+        'description' => 'Human-readable title / label for this asset.',
+        'type'        => 'varchar',
+        'length'      => 512,
+        'not null'    => TRUE,
+        'default'     => '',
+      ],
+      'description' => [
+        'description' => 'Optional description of the asset.',
+        'type'        => 'text',
+        'size'        => 'big',
+        'not null'    => FALSE,
+      ],
+      'file_url' => [
+        'description' => 'Publicly accessible URL or relative path to the file.',
+        'type'        => 'varchar',
+        'length'      => 2048,
+        'not null'    => TRUE,
+        'default'     => '',
+      ],
+      'file_type' => [
+        'description' => 'MIME-style category: pdf, image, document, spreadsheet, other.',
+        'type'        => 'varchar',
+        'length'      => 64,
+        'not null'    => TRUE,
+        'default'     => 'pdf',
+      ],
+      'file_size_kb' => [
+        'description' => 'File size in kilobytes (informational).',
+        'type'        => 'int',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+        'default'     => 0,
+      ],
+      'module_ref' => [
+        'description' => 'Which module owns this asset: ee_notices, ee_events, ee_research, ee_labs, or general.',
+        'type'        => 'varchar',
+        'length'      => 64,
+        'not null'    => TRUE,
+        'default'     => 'general',
+      ],
+      'ref_id' => [
+        'description' => 'Optional foreign-key ID of the parent record in the owning module table (0 = standalone).',
+        'type'        => 'int',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+        'default'     => 0,
+      ],
+      'tags' => [
+        'description' => 'Comma-separated tags for search/filtering (e.g. syllabus,2024,btech).',
+        'type'        => 'varchar',
+        'length'      => 1024,
+        'not null'    => FALSE,
+        'default'     => NULL,
+      ],
+      'is_public' => [
+        'description' => '1 = publicly visible via API, 0 = admin-only.',
+        'type'        => 'int',
+        'size'        => 'tiny',
+        'not null'    => TRUE,
+        'default'     => 1,
+      ],
+      'status' => [
+        'description' => '1 = active, 0 = archived/hidden.',
+        'type'        => 'int',
+        'size'        => 'tiny',
+        'not null'    => TRUE,
+        'default'     => 1,
+      ],
+      'created' => [
+        'description' => 'Unix timestamp when the asset record was created.',
+        'type'        => 'int',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+        'default'     => 0,
+      ],
+      'uid' => [
+        'description' => 'Drupal user ID of the uploader.',
+        'type'        => 'int',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+        'default'     => 1,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'module_ref'    => ['module_ref'],
+      'file_type'     => ['file_type'],
+      'status_public' => ['status', 'is_public'],
+      'ref_id'        => ['ref_id'],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ *
+ * Seeds sample media records representing the kinds of attachments that
+ * the other four EE GNDEC modules would reference.
+ */
+function ee_media_install() {
+  $db  = \Drupal::database();
+  $now = \Drupal::time()->getRequestTime();
+
+  $sample = [
+    // Notices attachments
+    [
+      'title'        => 'Mid-Semester Exam Schedule Nov 2024 (PDF)',
+      'description'  => 'Detailed timetable for all B.Tech EE semesters.',
+      'file_url'     => '/sites/default/files/media/exam_schedule_nov2024.pdf',
+      'file_type'    => 'pdf',
+      'file_size_kb' => 210,
+      'module_ref'   => 'ee_notices',
+      'ref_id'       => 2,
+      'tags'         => 'exam,schedule,2024,btech',
+      'is_public'    => 1,
+      'status'       => 1,
+      'created'      => $now - 86400,
+      'uid'          => 1,
+    ],
+    [
+      'title'        => 'Admission Brochure EE 2024-25',
+      'description'  => 'Official admissions brochure for B.Tech Electrical Engineering.',
+      'file_url'     => '/sites/default/files/media/admission_brochure_2024.pdf',
+      'file_type'    => 'pdf',
+      'file_size_kb' => 540,
+      'module_ref'   => 'ee_notices',
+      'ref_id'       => 1,
+      'tags'         => 'admission,brochure,2024',
+      'is_public'    => 1,
+      'status'       => 1,
+      'created'      => $now - 172800,
+      'uid'          => 1,
+    ],
+    // Events attachments
+    [
+      'title'        => 'IEEE Technical Fest 2024 — Program Schedule',
+      'description'  => 'Full event program including speaker sessions and workshops.',
+      'file_url'     => '/sites/default/files/media/ieee_fest_2024_schedule.pdf',
+      'file_type'    => 'pdf',
+      'file_size_kb' => 320,
+      'module_ref'   => 'ee_events',
+      'ref_id'       => 1,
+      'tags'         => 'ieee,event,2024,schedule',
+      'is_public'    => 1,
+      'status'       => 1,
+      'created'      => $now - 259200,
+      'uid'          => 1,
+    ],
+    [
+      'title'        => 'National Power Symposium — Call for Papers Flyer',
+      'description'  => 'Poster/flyer for the National Power Systems Symposium.',
+      'file_url'     => '/sites/default/files/media/nps_2024_flyer.jpg',
+      'file_type'    => 'image',
+      'file_size_kb' => 480,
+      'module_ref'   => 'ee_events',
+      'ref_id'       => 2,
+      'tags'         => 'symposium,power,poster,2024',
+      'is_public'    => 1,
+      'status'       => 1,
+      'created'      => $now - 345600,
+      'uid'          => 1,
+    ],
+    // Research / Publications attachments
+    [
+      'title'        => 'Smart Grid Optimization Paper (Preprint PDF)',
+      'description'  => 'Author preprint of the smart grid load-flow research paper.',
+      'file_url'     => '/sites/default/files/media/smart_grid_paper_2024.pdf',
+      'file_type'    => 'pdf',
+      'file_size_kb' => 780,
+      'module_ref'   => 'ee_research',
+      'ref_id'       => 1,
+      'tags'         => 'research,smart-grid,ieee,2024',
+      'is_public'    => 1,
+      'status'       => 1,
+      'created'      => $now - 432000,
+      'uid'          => 1,
+    ],
+    [
+      'title'        => 'Renewable Energy Integration — Conference Slides',
+      'description'  => 'Presentation slides from the International Conference on Renewable Energy.',
+      'file_url'     => '/sites/default/files/media/renewable_energy_slides.pdf',
+      'file_type'    => 'pdf',
+      'file_size_kb' => 2100,
+      'module_ref'   => 'ee_research',
+      'ref_id'       => 2,
+      'tags'         => 'renewable,conference,slides,2023',
+      'is_public'    => 1,
+      'status'       => 1,
+      'created'      => $now - 518400,
+      'uid'          => 1,
+    ],
+    // Labs attachments
+    [
+      'title'        => 'Power Systems Lab — Equipment List',
+      'description'  => 'Complete inventory of equipment available in the Power Systems Laboratory.',
+      'file_url'     => '/sites/default/files/media/power_lab_equipment.pdf',
+      'file_type'    => 'pdf',
+      'file_size_kb' => 115,
+      'module_ref'   => 'ee_labs',
+      'ref_id'       => 1,
+      'tags'         => 'lab,equipment,power-systems',
+      'is_public'    => 1,
+      'status'       => 1,
+      'created'      => $now - 604800,
+      'uid'          => 1,
+    ],
+    [
+      'title'        => 'Electrical Machines Lab — Photo Gallery',
+      'description'  => 'Photo documentation of the Electrical Machines Laboratory.',
+      'file_url'     => '/sites/default/files/media/machines_lab_gallery.jpg',
+      'file_type'    => 'image',
+      'file_size_kb' => 920,
+      'module_ref'   => 'ee_labs',
+      'ref_id'       => 2,
+      'tags'         => 'lab,image,machines,gallery',
+      'is_public'    => 1,
+      'status'       => 1,
+      'created'      => $now - 691200,
+      'uid'          => 1,
+    ],
+    // General / standalone
+    [
+      'title'        => 'EE Department Syllabus — B.Tech 2024-25',
+      'description'  => 'Official syllabus for all 8 semesters of B.Tech Electrical Engineering (2024-25 batch).',
+      'file_url'     => '/sites/default/files/media/ee_syllabus_2024.pdf',
+      'file_type'    => 'pdf',
+      'file_size_kb' => 1650,
+      'module_ref'   => 'general',
+      'ref_id'       => 0,
+      'tags'         => 'syllabus,btech,2024,curriculum',
+      'is_public'    => 1,
+      'status'       => 1,
+      'created'      => $now - 777600,
+      'uid'          => 1,
+    ],
+  ];
+
+  foreach ($sample as $asset) {
+    $db->insert('ee_media_assets')->fields($asset)->execute();
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Drops the ee_media_assets table when the module is uninstalled.
+ */
+function ee_media_uninstall() {
+  \Drupal::database()->schema()->dropTable('ee_media_assets');
+}

@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.faculty_member.body
     - field.field.node.faculty_member.field_designation
     - field.field.node.faculty_member.field_email
+    - field.field.node.faculty_member.field_phone
     - field.field.node.faculty_member.field_photo
     - image.style.medium
     - node.type.faculty_member
@@ -40,6 +41,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_phone:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_photo:
     type: image

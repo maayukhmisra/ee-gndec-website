@@ -97,16 +97,10 @@ body.path-people .view-content,
   box-sizing: border-box !important;
 }
 
-/* Hide Raw Field Labels and extra standalone field_photo inside Faculty Cards */
+/* Hide Raw Field Labels inside Faculty Cards */
 .people-page-wrapper .views-row > .field--name-field-img > .field__label,
 .people-page-wrapper .views-row > .field--name-field-info > .field__label,
-.view-faculty .views-row > .field--name-field-img > .field__label,
-.view-faculty .views-field-field-photo,
-.view-faculty .field--name-field-photo,
-.view-id-faculty .views-field-field-photo,
-.view-id-faculty .field--name-field-photo,
-.people-page-wrapper .views-field-field-photo,
-.people-page-wrapper .field--name-field-photo {
+.view-faculty .views-row > .field--name-field-img > .field__label {
   display: none !important;
 }
 

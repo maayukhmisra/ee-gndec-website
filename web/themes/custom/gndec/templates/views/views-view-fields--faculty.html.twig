@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * View fields template for Faculty view.
+ */
+#}
+{% set node = row._entity %}
+<div class="person-card">
+  <div class="person-media">
+    {% if fields.field_photo.content %}
+      {{ fields.field_photo.content }}
+    {% elseif node.field_photo.entity %}
+      <img src="{{ file_url(node.field_photo.entity.fileuri) }}" alt="{{ node.label }}" loading="lazy" />
+    {% endif %}
+  </div>
+  <div class="person-content">
+    <div class="person-info">
+      <h3 class="person-name">{{ node.label }}</h3>
+
+      {% if node.field_designation.value %}
+        <div class="faculty-card__section">
+          <div class="faculty-card__label">Designation</div>
+          <div class="faculty-card__value">{{ node.field_designation.value }}</div>
+        </div>
+      {% endif %}
+
+      {% if node.field_email.value %}
+        <div class="faculty-card__section">
+          <div class="faculty-card__label">Email</div>
+          <div class="faculty-card__value">
+            <a href="mailto:{{ node.field_email.value }}">{{ node.field_email.value }}</a>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if node.field_phone.value %}
+        <div class="faculty-card__section">
+          <div class="faculty-card__label">Phone</div>
+          <div class="faculty-card__value">{{ node.field_phone.value }}</div>
+        </div>
+      {% endif %}
+
+      {% if node.body.value and node.body.value|striptags|trim is not empty %}
+        <div class="faculty-card__section">
+          <div class="faculty-card__label">Bio / Info</div>
+          <div class="faculty-card__value">{{ node.body.processed|raw }}</div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

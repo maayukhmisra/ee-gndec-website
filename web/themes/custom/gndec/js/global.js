@@ -236,7 +236,7 @@
         docLeft.appendChild(textWrapper);
         row.appendChild(docLeft);
 
-        // Build right-aligned View PDF button if valid href exists
+        // Build right-aligned View button if valid href exists
         if (href && href !== '#' && href.trim() !== '' && href.indexOf('javascript:') !== 0) {
           var docRight = document.createElement('div');
           docRight.className = 'doc-right';
@@ -247,7 +247,7 @@
           btn.target = '_blank';
           btn.rel = 'noopener noreferrer';
           btn.removeAttribute('download');
-          btn.innerHTML = 'View PDF &rarr;';
+          btn.innerHTML = 'View &rarr;';
 
           docRight.appendChild(btn);
           row.appendChild(docRight);

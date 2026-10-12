@@ -1,0 +1,11 @@
+uuid: bae22ea5-e62f-4ddd-be00-9b46d326400a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Mapping Document'
+type: mapping_doc
+description: 'Content type for Mapping document items.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

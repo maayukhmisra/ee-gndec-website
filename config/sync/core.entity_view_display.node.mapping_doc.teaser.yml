@@ -1,0 +1,40 @@
+uuid: 1920819b-6970-434b-ab97-38e8cc388afb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.mapping_doc.body
+    - field.field.node.mapping_doc.field_document
+    - node.type.mapping_doc
+  module:
+    - file
+    - text
+    - user
+id: node.mapping_doc.teaser
+targetEntityType: node
+bundle: mapping_doc
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

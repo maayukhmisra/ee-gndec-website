@@ -1,0 +1,27 @@
+uuid: 2ba1cde3-b745-4f40-b690-f70dbfd59c1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.video
+  module:
+    - file
+id: node.video.field_document
+field_name: field_document
+entity_type: node
+bundle: video
+label: Document
+description: 'Upload document file (PDF, DOC, DOCX) for expert talks'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documents/videos
+  file_extensions: 'pdf doc docx'
+  max_filesize: ''
+  description_field: false
+field_type: file

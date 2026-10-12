@@ -39,6 +39,10 @@ function gndec_preprocess_html(&$variables) {
   if ($alias_clean) {
     $variables['attributes']['class'][] = 'path-' . Html::cleanCssIdentifier(str_replace('/', '-', $alias_clean));
   }
+
+  if (str_contains(strtolower($alias_clean), 'vision') || str_contains(strtolower($path), 'vision')) {
+    $variables['head_title']['title'] = 'Vision';
+  }
 }
 
 /**
@@ -210,6 +214,8 @@ function gndec_preprocess_views_view_unformatted(&$variables) {
     'attendance_criteria',
     'bos_documents',
     'mtech_power_engg_docs',
+    'attainment_tools_docs',
+    'mapping_docs',
     'undergraduate_students',
     'postgraduate_students',
     'time_tables'

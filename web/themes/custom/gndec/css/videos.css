@@ -196,7 +196,7 @@ body.path-academics-videos .views-row {
 }
 
 body .videos-page-wrapper .video-card > div,
-body .videos-page-wrapper .views-row > div {
+body .videos-page-wrapper .views-row:not(.doc-card):not(:has(.doc-left)) > div {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
@@ -208,6 +208,37 @@ body .videos-page-wrapper .views-row > div {
   padding: 0 !important;
 }
 
+/* Document cards (Expert Talks) row layout */
+body .videos-page-wrapper .views-row.doc-card,
+body .videos-page-wrapper .views-row:has(.doc-left) {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+body .videos-page-wrapper .views-row.doc-card > .doc-left,
+body .videos-page-wrapper .views-row > .doc-left {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+  min-width: 0 !important;
+  width: auto !important;
+  flex: 1 1 auto !important;
+}
+
+body .videos-page-wrapper .views-row.doc-card > .doc-right,
+body .videos-page-wrapper .views-row > .doc-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  margin-left: auto !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+}
+
 body .videos-page-wrapper .video-card:hover,
 body .videos-page-wrapper .doc-card:hover,
 body .videos-page-wrapper div.doc-card:hover,
@@ -216,11 +247,9 @@ body .videos-page-wrapper .views-row:hover {
   box-shadow: 0 4px 12px rgba(4, 30, 66, 0.06) !important;
 }
 
-/* Warm Play Icon Badge on Left */
-body .videos-page-wrapper .video-card::before,
-body .videos-page-wrapper .doc-card::before,
-body .videos-page-wrapper div.doc-card::before,
-body .videos-page-wrapper .views-row::before {
+/* Warm Play Icon Badge on Left (Videos Only) */
+body .videos-page-wrapper .video-card:not(.doc-card)::before,
+body .videos-page-wrapper .views-row:not(.doc-card):not(:has(.doc-left)):not(:has(.icon-pdf))::before {
   content: "" !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -239,6 +268,15 @@ body .videos-page-wrapper .views-row::before {
   flex-shrink: 0 !important;
   margin-right: 14px !important;
   order: 0 !important;
+}
+
+/* Suppress play icon on document cards (which already have their own SVG PDF badge) */
+body .videos-page-wrapper .doc-card::before,
+body .videos-page-wrapper .views-row.doc-card::before,
+body .videos-page-wrapper .views-row:has(.doc-left)::before,
+body .videos-page-wrapper .views-row:has(.icon-pdf)::before {
+  content: none !important;
+  display: none !important;
 }
 
 /* Video Title (Middle) */

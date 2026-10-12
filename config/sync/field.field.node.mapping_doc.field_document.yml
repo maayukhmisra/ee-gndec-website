@@ -1,0 +1,27 @@
+uuid: a82bf134-10ca-4284-97de-20c1ca5a4542
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.mapping_doc
+  module:
+    - file
+id: node.mapping_doc.field_document
+field_name: field_document
+entity_type: node
+bundle: mapping_doc
+label: Document
+description: 'Upload document file (PDF, DOC, DOCX)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documents/mapping_doc
+  file_extensions: 'pdf doc docx'
+  max_filesize: ''
+  description_field: false
+field_type: file

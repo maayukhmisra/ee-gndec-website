@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.video.body
+    - field.field.node.video.field_display_weight
+    - field.field.node.video.field_document
     - field.field.node.video.field_video_link
     - node.type.video
   module:
@@ -41,4 +43,6 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_display_weight: true
+  field_document: true

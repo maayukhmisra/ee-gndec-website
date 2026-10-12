@@ -21,7 +21,7 @@ settings:
   handler: 'default:file'
   handler_settings: {  }
   file_directory: documents/blooms_taxonomy
-  file_extensions: 'pdf doc docx'
+  file_extensions: 'pdf doc docx png jpg jpeg'
   max_filesize: ''
   description_field: false
 field_type: file

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.bos_document.body
+    - field.field.node.bos_document.field_display_weight
     - field.field.node.bos_document.field_document
     - node.type.bos_document
   module:
@@ -35,4 +36,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_display_weight: true

@@ -826,11 +826,10 @@ div.doc-card::before,
 
 .doc-link::after,
 .doc-card a::after,
+.vision-page-wrapper .doc-card a::after,
 .vision-page-wrapper .views-row a::after {
-  content: " \2192" !important;
-  font-weight: 700 !important;
-  display: inline-block !important;
-  margin-left: 4px !important;
+  content: none !important;
+  display: none !important;
 }
 
 .doc-link:hover,

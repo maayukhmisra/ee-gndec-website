@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.video.body
+    - field.field.node.video.field_display_weight
+    - field.field.node.video.field_document
     - field.field.node.video.field_video_link
     - node.type.video
   module:
+    - file
     - link
     - path
     - text
@@ -30,6 +33,20 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_display_weight:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_document:
+    type: file_generic
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
     third_party_settings: {  }
   field_video_link:
     type: link_default

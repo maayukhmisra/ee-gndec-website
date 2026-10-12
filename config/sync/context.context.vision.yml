@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - system.menu.main
+    - views.view.attainment_tools_docs
+    - views.view.mapping_docs
     - views.view.mtech_power_engg_docs
   content:
     - 'block_content:text_block:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+    - 'block_content:text_block:42056a90-62b4-46f9-b029-693df94c8dd0'
     - 'block_content:text_block:430a8dd6-9148-4e9f-b7b0-3a1360317db5'
     - 'block_content:text_block:511b3238-a334-451b-a17c-295facb441e0'
     - 'block_content:text_block:5bad0c95-b418-4e53-8bd7-69ee9aaf7052'
@@ -17,6 +20,7 @@ dependencies:
     - 'block_content:text_block:c6ccb271-643c-48f2-a972-0d2a55b4c593'
     - 'block_content:text_block:cd31defb-6283-41ae-9faa-dd53f0a32e03'
     - 'block_content:text_block:cf5282b1-7e02-4b9c-b13d-80ee95652b3a'
+    - 'block_content:text_block:d18555c7-3fd2-4fae-81a6-8e2ef77b93a2'
     - 'block_content:two_column_text:696ac4a3-68f4-45e3-bf77-1574d7178375'
   module:
     - block_content
@@ -164,6 +168,72 @@ reactions:
         region: content
         weight: '0'
         custom_id: views_block_mtech_power_engg_docs_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      4d991d7a-8845-421d-96db-70ea56652e9d:
+        uuid: 4d991d7a-8845-421d-96db-70ea56652e9d
+        id: 'block_content:d18555c7-3fd2-4fae-81a6-8e2ef77b93a2'
+        label: 'Attainment Tools heading in vision page'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '1'
+        custom_id: block_content_d18555c7_3fd2_4fae_81a6_8e2ef77b93a2
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      af74bef7-3a1f-4632-8bad-1a946fa49721:
+        uuid: af74bef7-3a1f-4632-8bad-1a946fa49721
+        id: 'views_block:attainment_tools_docs-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '2'
+        custom_id: views_block_attainment_tools_docs_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      f65fdb9d-31d4-4599-a752-ee508efd734f:
+        uuid: f65fdb9d-31d4-4599-a752-ee508efd734f
+        id: 'block_content:42056a90-62b4-46f9-b029-693df94c8dd0'
+        label: 'Mapping heading in vision page'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '3'
+        custom_id: block_content_42056a90_62b4_46f9_b029_693df94c8dd0
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      b0984741-3269-415e-bec9-2d24165c2114:
+        uuid: b0984741-3269-415e-bec9-2d24165c2114
+        id: 'views_block:mapping_docs-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '4'
+        custom_id: views_block_mapping_docs_block_1
         theme: gndec
         css_class: ''
         unique: 0

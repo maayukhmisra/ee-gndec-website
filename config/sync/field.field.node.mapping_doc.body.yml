@@ -1,0 +1,24 @@
+uuid: 06196bce-303a-4abe-8cb6-d307d8e3dede
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.mapping_doc
+  module:
+    - text
+id: node.mapping_doc.body
+field_name: body
+entity_type: node
+bundle: mapping_doc
+label: 'Description / Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

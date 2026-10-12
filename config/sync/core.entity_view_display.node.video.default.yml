@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.video.body
+    - field.field.node.video.field_display_weight
+    - field.field.node.video.field_document
     - field.field.node.video.field_video_link
     - node.type.video
   module:
+    - file
     - link
     - text
     - user
@@ -21,6 +24,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_video_link:
     type: link
@@ -39,4 +50,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_display_weight: true

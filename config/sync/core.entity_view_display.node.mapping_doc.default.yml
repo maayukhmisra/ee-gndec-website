@@ -1,0 +1,38 @@
+uuid: 52e1263c-072a-4751-b79c-6448020b8b70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mapping_doc.body
+    - field.field.node.mapping_doc.field_document
+    - node.type.mapping_doc
+  module:
+    - file
+    - text
+    - user
+id: node.mapping_doc.default
+targetEntityType: node
+bundle: mapping_doc
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

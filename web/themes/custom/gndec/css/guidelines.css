@@ -237,36 +237,22 @@ body.path-academics-guidelines .doc-card {
   align-items: center !important;
   justify-content: space-between !important;
   flex-wrap: nowrap !important;
-  gap: 16px !important;
+  gap: 1.25rem !important;
   background-color: #ffffff !important;
-  border: 1px solid #e5eaf2 !important;
-  border-radius: 8px !important;
-  padding: 14px 20px !important;
-  min-height: 62px !important;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02) !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 1.25rem 1.6rem !important;
+  min-height: 64px !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
   position: relative !important;
   width: 100% !important;
   max-width: 100% !important;
   flex: 1 1 100% !important;
   align-self: stretch !important;
   box-sizing: border-box !important;
-  margin-bottom: 12px !important;
+  margin-bottom: 1rem !important;
   cursor: pointer !important;
-}
-
-body .guidelines-page-wrapper .doc-card > div,
-body .guidelines-page-wrapper div.doc-card > div,
-body .guidelines-page-wrapper .views-row > div {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  width: 100% !important;
-  flex: 1 1 100% !important;
-  gap: 16px !important;
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
 body .guidelines-page-wrapper .doc-card:hover,
@@ -274,87 +260,98 @@ body .guidelines-page-wrapper div.doc-card:hover,
 body .guidelines-page-wrapper .guidelines-card:hover,
 body .guidelines-page-wrapper .views-row:not(:has(.doc-card)):hover {
   border-color: #cbd5e1 !important;
-  box-shadow: 0 4px 12px rgba(4, 30, 66, 0.06) !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
 }
 
-/* Red PDF Badge Icon on Left of Card (Disabled to prevent duplicate icons with JS SVG badge) */
-body .guidelines-page-wrapper .doc-card::before,
-body .guidelines-page-wrapper div.doc-card::before,
-body .guidelines-page-wrapper .guidelines-card::before,
-body .guidelines-page-wrapper .views-row:not(:has(.doc-card))::before {
-  display: none !important;
-  content: none !important;
-}
-
-  margin-right: 14px !important;
-  order: 0 !important;
-}
-
-/* Force Vertical Centering & Left-Alignment for Document Titles inside Cards */
-body .guidelines-page-wrapper .doc-card *,
-body .guidelines-page-wrapper .views-row * {
-  text-align: left !important;
-  align-self: center !important;
-}
-
-body .guidelines-page-wrapper .doc-card > *,
-body .guidelines-page-wrapper .views-row > *,
-body .guidelines-page-wrapper .doc-card div,
-body .guidelines-page-wrapper .doc-card span,
-body .guidelines-page-wrapper .doc-card p,
-body .guidelines-page-wrapper .views-row div,
-body .guidelines-page-wrapper .views-row span,
-body .guidelines-page-wrapper .views-row p {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  align-self: center !important;
-}
-
-body .guidelines-page-wrapper .doc-card .title,
-body .guidelines-page-wrapper .doc-card h3,
-body .guidelines-page-wrapper .doc-card p,
-body .guidelines-page-wrapper .doc-card span:not(.no-doc-text),
-body .guidelines-page-wrapper .doc-card .field,
-body .guidelines-page-wrapper .doc-card .field__item,
-body .guidelines-page-wrapper .views-field-title,
-body .guidelines-page-wrapper .views-field-title a,
-body .guidelines-page-wrapper .field--name-title,
-body .guidelines-page-wrapper .field--name-field-title,
-body .guidelines-page-wrapper .guidelines-card .title,
-body .guidelines-page-wrapper .views-row .views-field-title,
-body .guidelines-page-wrapper .views-row .field--name-title {
-  font-size: 0.95rem !important;
-  font-weight: 500 !important;
-  color: #2d3748 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  flex-grow: 1 !important;
-  flex: 1 1 auto !important;
-  line-height: 1.2 !important;
-  text-align: left !important;
+/* Left Section: Icon Badge + Title */
+body .guidelines-page-wrapper .doc-card .doc-left,
+body .guidelines-page-wrapper div.doc-card .doc-left,
+body .guidelines-page-wrapper .doc-left {
+  display: flex !important;
+  align-items: center !important;
   justify-content: flex-start !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  align-self: center !important;
-  text-decoration: none !important;
-  order: 1 !important;
+  text-align: left !important;
+  gap: 1.2rem !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
 }
 
-/* Right-Aligned View PDF Link Container */
-body .guidelines-page-wrapper .views-field-field-document,
-body .guidelines-page-wrapper .views-field-file,
-body .guidelines-page-wrapper .field--name-field-document,
-body .guidelines-page-wrapper .doc-card .link-wrapper {
-  margin-left: auto !important;
+/* Icon Badge */
+body .guidelines-page-wrapper .doc-card .icon-wrapper,
+body .guidelines-page-wrapper div.doc-card .icon-wrapper,
+body .guidelines-page-wrapper .icon-wrapper {
+  min-width: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  background-color: #ffe2e5 !important;
+  color: #e11d48 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+body .guidelines-page-wrapper .icon-wrapper svg {
+  stroke: currentColor !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Document Text & Title */
+body .guidelines-page-wrapper .doc-card .doc-text-wrapper,
+body .guidelines-page-wrapper div.doc-card .doc-text-wrapper,
+body .guidelines-page-wrapper .doc-text-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+  min-width: 0 !important;
+  text-align: left !important;
+  justify-content: center !important;
+}
+
+body .guidelines-page-wrapper .doc-card .doc-title,
+body .guidelines-page-wrapper div.doc-card .doc-title,
+body .guidelines-page-wrapper .doc-title,
+body .guidelines-page-wrapper h4.doc-title {
+  color: #0f172a !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+
+/* Right Action Section */
+body .guidelines-page-wrapper .doc-card .doc-right,
+body .guidelines-page-wrapper div.doc-card .doc-right,
+body .guidelines-page-wrapper .doc-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-shrink: 0 !important;
+  margin-left: 1rem !important;
+}
+
+body .guidelines-page-wrapper .doc-card .doc-link,
+body .guidelines-page-wrapper div.doc-card .doc-link,
+body .guidelines-page-wrapper .doc-link {
+  color: #041e42 !important;
+  font-size: 0.885rem !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
   display: inline-flex !important;
   align-items: center !important;
-  align-self: center !important;
-  justify-content: flex-end !important;
+  gap: 0.35rem !important;
+  transition: color 0.15s ease, transform 0.15s ease !important;
   white-space: nowrap !important;
-  flex-shrink: 0 !important;
-  order: 2 !important;
+}
+
+body .guidelines-page-wrapper .doc-card .doc-link:hover,
+body .guidelines-page-wrapper div.doc-card .doc-link:hover,
+body .guidelines-page-wrapper .doc-link:hover {
+  color: #0d6efd !important;
 }
 
 /* Clean View PDF Link with guaranteed right arrow */

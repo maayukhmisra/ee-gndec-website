@@ -1,0 +1,25 @@
+uuid: 99bb88cc-2233-4455-6677-8899aabbccdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_weight
+    - node.type.postgrad_guideline
+id: node.postgrad_guideline.field_display_weight
+field_name: field_display_weight
+entity_type: node
+bundle: postgrad_guideline
+label: 'Display Weight'
+description: 'Order of display in views (lower numbers appear first)'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

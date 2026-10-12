@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+   <!--<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>-->
+   
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>Academic Portal</title>
+    <link type="text/css" href="css/harbhag.css" rel="stylesheet" />
+
+  <link type="text/css" href="css/bootstrap.css" rel="stylesheet" /> 
+    <link type="text/css" href="css/bootstrap-responsive.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="js/sorttable.js"></script>
+    <script type="text/javascript" src="js/harbhag.js"></script>
+     <script src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/livevalidation_standalone.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/consolidated_common.css" />
+		<link href="css/datepicker.css" rel="stylesheet">
+		<link rel="shortcut icon" href="img/gne.ico" type="image/x-icon" />
+		<script src="js/mousetrap.js"></script>
+		<link rel="alternate" media="print" href="www.google.com" />
+
+
+<link type="text/css" href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+ <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+
+
+<!--
+<link type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>  --> 
+		<script>
+    // map multiple combinations to the same callback
+    Mousetrap.bind(['command+p', 'ctrl+p'], function() {
+        return false;
+    });
+</script>
+<script>
+		$(function(){
+			
+			$('.date').each(function(){
+    $(this).datepicker();
+});
+		});
+	</script>
+
+<script>
+	$(document).ready(function() {
+		
+    $('#example').DataTable({
+		"lengthMenu": [[10, 25, 50,100,200, -1], [10, 25, 50,100,200, "All"]],
+		"pageLength": 100,
+		"ordering": false
+		
+	});
+} );
+</script>
+
+</head>
+
+
+
+<body>
+<div class="container">
+<div class='header-logo'></div>
+<noscript><meta http-equiv='Refresh' content='0; url=js_disabled.php'></noscript><div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+           <!-- <h2 class="text-center text-white mb-4">Login Form</h2>-->
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">GNDEC: Login Portal</h3>
+                        </div>
+                        <div class="card-body">
+                         
+                            <form class="form" role="form"  action="" autocomplete="off"  accept-charset="UTF-8" id="formLogin" novalidate="" method="POST">
+                                <div class="form-group">
+									
+                                    <label for="uname1">Username</label>
+                                    <input type="text" class="form-control form-control-lg rounded-0" style="font-size:14pt;height:37px" name="username" id="username"  required="">
+                                
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control form-control-lg rounded-0" style="font-size:14pt;height:37px" name="password" id="password" required="" >
+                                   <!-- <div class="invalid-feedback">Enter your password too!</div>-->
+                                </div>
+                                <div>
+                                    
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-danger btn-lg float-right" id="btnLogin">Sign In</button>
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+
+                </div>
+
+
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="login_box">
+	<div class="row">
+		<div class="span4 offset4 well">
+			<center><span class='label label-important' style='font-size:15px'>Login Using College Username/Password</span></center>			<br/>
+			<form method="POST" action="" accept-charset="UTF-8">
+			<input type="text" id="username" class="span4" name="username" placeholder="Username">
+			
+			<input type="password" id="password" class="span4" name="password" placeholder="Password">
+          
+			<button type="submit" name="submit" class="btn btn-danger btn-block">Sign in</button>
+			</form>    
+		</div>
+	</div>
+</div>
+-->
+
+<!--<table class='table table-bordered table-condensed table-stripped container'>
+	<tr>
+		<th>  Fee Notice: Session Jan-June, 2022</th>
+     	<th>Download File</th>
+	</tr>
+<tr class='warning'>
+	<td>B.Tech./ M.Tech. / MBA / MCA / BBA / BCA <br> </td>
+	<td><a href= 'https://academics.gndec.ac.in/files/important_notices/fee_notice_jan_22_to_june_22.pdf' target='_blank'>Download File</a></td>	
+	</tr>
+-->
+<!--
+<tr class='warning'>
+	<td>Amendment in Fee Notice </td>
+	<td><a href= 'https://gndec.ac.in/?q=node/448' target='_blank'>Click Here</a></td>	
+	</tr>
+
+<tr>
+	<td>M.Tech. (All Branches) </td>
+	<td><a href='files/important_notices/M.Tech_Fee_Notice.pdf' target='_blank'>Download File</a></td>	
+		
+	</tr>
+</table>
+-->
+<table class='table table-bordered striped table-condensed container'>
+
+<tr><th> Forgot / Lost College login ID password  :  <a href="https://academics.gndec.ac.in/forgotpassword/"> Click here to recover your password.</a> </th></tr>
+	
+<!--<tr><th> If you forgot/lost college login ID's password  <a href="http://gndec.ac.in/sites/default/files/Internet_Password_Reset_0.pdf"> Download Request Letter </a> and submit in your department.</th></tr>-->
+<tr> <th>Discrepancy Correction Proforma for Student record updation :<a href='https://academics.gndec.ac.in/files/important_notices/Discrepancy_letter.pdf'> Click here to download</a> </th></tr>
+<tr><th>Incase you do not have Username / Password, Kindly Contact the following :</th></tr>
+<tr  class='warning'><td>1. For B.Tech./ MBA / MCA / BBA / BCA - Contact their Respective Departments.</td></tr>
+<tr class='warning'><td>2. For M.Tech.  - Contact to  Academic Branch (M.Tech. Clerk). </td></tr>
+</tr>
+
+<!--
+<tr  class='warning'><td>4. Exam Form fee has to be paid by Demand Draft in favor of Director, GNDEC payable at Ludhiana.<span style='color:red'> Students of PTU Regional Centre has to pay exam form fee by Demand Draft in favor of Co-ordinator, PTU Regional Centre, GNDEC. payable at Ludhiana.</span> </td></tr>
+<tr  class='warning'><td>5. Students are advised to refer to result notifications before form filling.</td></tr>-->
+</table>
+
+
+
+<!-- <center><b><font color='red'>For any Techinal Issue Related to Fee-Slip generation send email at feeslip(AT)gndec.ac.in (Replace (AT) with @) with complete details like Roll No., Name, Mobile etc.</center>-->
+
+<!--<center><b><font color='red'>For any Techinal Issue Related to Exam Form filling/ Online Fee Payment send email at conduct_exam(AT)gndec.ac.in (Replace (AT) with @) with complete details like Roll No., Name, Mobile etc.</center> -->
+</div>
+</body>
+</html>

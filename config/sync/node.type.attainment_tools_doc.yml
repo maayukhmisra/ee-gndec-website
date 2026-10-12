@@ -1,0 +1,11 @@
+uuid: 60ae2fc7-823b-4c87-a105-a01e2e4c188b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Attainment Tools Document'
+type: attainment_tools_doc
+description: 'Content type for Attainment Tools document items.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.postgrad_guideline.body
+    - field.field.node.postgrad_guideline.field_display_weight
     - field.field.node.postgrad_guideline.field_document
     - node.type.postgrad_guideline
   module:
@@ -30,6 +31,13 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_display_weight:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_document:
     type: file_generic

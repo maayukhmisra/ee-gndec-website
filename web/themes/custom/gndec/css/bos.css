@@ -213,149 +213,118 @@ div.doc-card,
   align-items: center !important;
   justify-content: space-between !important;
   flex-wrap: nowrap !important;
-  gap: 16px !important;
+  gap: 1.25rem !important;
   background-color: #ffffff !important;
-  border: 1px solid #e5eaf2 !important;
-  border-radius: 8px !important;
-  padding: 14px 20px !important;
-  min-height: 62px !important;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02) !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 1.25rem 1.6rem !important;
+  min-height: 64px !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
   position: relative !important;
   width: 100% !important;
   max-width: 100% !important;
   flex: 1 1 100% !important;
   box-sizing: border-box !important;
-  margin-bottom: 14px !important;
-}
-
-.doc-card > div,
-div.doc-card > div {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  width: 100% !important;
-  flex: 1 1 100% !important;
-  gap: 16px !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-bottom: 1rem !important;
 }
 
 .doc-card:hover,
 div.doc-card:hover,
 .views-row:not(:has(.doc-card)):hover {
   border-color: #cbd5e1 !important;
-  box-shadow: 0 4px 12px rgba(4, 30, 66, 0.06) !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
 }
 
-/* Red PDF Badge Icon (Disabled to prevent duplicate icons with JS SVG badge) */
-.doc-card::before,
-div.doc-card::before,
-.views-row:not(:has(.doc-card))::before {
-  display: none !important;
-  content: none !important;
-}
-
-
-/* Document Title */
-.doc-card .title,
-.doc-card h3,
-.doc-card p,
-.doc-card span,
-.views-field-title,
-.views-field-title a,
-.views-row .views-field-title {
-  font-size: 0.95rem !important;
-  font-weight: 500 !important;
-  color: #2d3748 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  flex-grow: 1 !important;
-  line-height: 1.2 !important;
-  text-align: left !important;
-  display: inline-flex !important;
+/* Left Section: Icon Badge + Title */
+.doc-card .doc-left,
+div.doc-card .doc-left,
+.doc-left {
+  display: flex !important;
   align-items: center !important;
-  text-decoration: none !important;
-  order: 1 !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  gap: 1.2rem !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
 }
 
-/* Right-Aligned Action Link Container */
-.views-field-field-document,
-.views-field-file,
-.field--name-field-document,
-.doc-card .link-wrapper {
-  margin-left: auto !important;
-  display: inline-flex !important;
+/* Icon Badge */
+.doc-card .icon-wrapper,
+div.doc-card .icon-wrapper,
+.icon-wrapper {
+  min-width: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  background-color: #ffe2e5 !important;
+  color: #e11d48 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.icon-wrapper svg {
+  stroke: currentColor !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Document Text & Title */
+.doc-card .doc-text-wrapper,
+div.doc-card .doc-text-wrapper,
+.doc-text-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+  min-width: 0 !important;
+  text-align: left !important;
+  justify-content: center !important;
+}
+
+.doc-card .doc-title,
+div.doc-card .doc-title,
+.doc-title,
+h4.doc-title {
+  color: #0f172a !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+
+/* Right Action Section */
+.doc-card .doc-right,
+div.doc-card .doc-right,
+.doc-right {
+  display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
-  white-space: nowrap !important;
   flex-shrink: 0 !important;
-  order: 2 !important;
+  margin-left: 1rem !important;
 }
 
-/* Clean View PDF Link */
-.doc-card a,
-.views-row a:not(.views-field-title a),
-.views-field-field-document a,
-.field--name-field-document a {
+.doc-card .doc-link,
+div.doc-card .doc-link,
+.doc-link {
   color: #041e42 !important;
+  font-size: 0.885rem !important;
   font-weight: 700 !important;
-  font-size: 0.875rem !important;
   text-decoration: none !important;
-  white-space: nowrap !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 4px !important;
-  margin-left: auto !important;
-  line-height: 1.2 !important;
-  transition: color 0.2s ease !important;
-  background: none !important;
-  padding: 0 !important;
+  gap: 0.35rem !important;
+  transition: color 0.15s ease, transform 0.15s ease !important;
+  white-space: nowrap !important;
 }
 
-/* Hide extra inline file icons on/next to the View PDF link */
-span.file,
-.file--mime-application-pdf,
-.file-link {
-  background: none !important;
-  padding-left: 0 !important;
-  margin-left: auto !important;
-}
-
-span.file::before,
-span.file::after,
-.file--mime-application-pdf::before,
-.file--mime-application-pdf::after,
-.file-link::before,
-.file-link::after,
-.views-field-field-document img,
-.views-field-file img,
-.field--name-field-document img,
-span.file img,
-span.file .file-icon,
-.file-icon {
-  display: none !important;
-  visibility: hidden !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: none !important;
-  content: none !important;
-}
-
-.doc-card a:hover,
-.views-row a:hover {
+.doc-card .doc-link:hover,
+div.doc-card .doc-link:hover,
+.doc-link:hover {
   color: #0d6efd !important;
-}
-
-/* Fallback for Unattached Documents */
-.no-doc-text,
-.no-document .views-field-field-document {
-  color: #94a3b8 !important;
-  font-size: 0.825rem !important;
-  font-weight: 500 !important;
-  font-style: italic !important;
-  margin-left: auto !important;
 }
 
 .no-document::before {

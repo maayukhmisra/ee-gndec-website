@@ -107,7 +107,7 @@
                   {% for session in sessions %}
                     {% set accordion_id = 'tt-accordion-' ~ session.nid %}
                     {% set collapse_id = 'tt-collapse-' ~ session.nid %}
-                    {% set is_open = (year == '2026' and loop.first and (current_year_filter is empty or current_year_filter == '2026')) %}
+                    {% set is_open = (current_year_filter is not empty and loop.first) or (current_year_filter is empty and year == '2026' and loop.first) %}
                     
                     <div class="timetable-accordion-card" id="{{ accordion_id }}">
                       
@@ -149,18 +149,45 @@
                               {% for doc in session.documents %}
                                 <div class="pdf-document-row">
                                   <div class="pdf-doc-left">
-                                    <div class="pdf-icon-badge">
-                                      <svg class="pdf-svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-                                        <polyline points="14 2 14 8 20 8"></polyline>
-                                        <text x="6" y="17" font-size="6" font-weight="bold" fill="#e11d48" stroke="none">PDF</text>
-                                      </svg>
+                                    <div class="pdf-icon-badge badge-{{ doc.format|default('pdf') }}">
+                                      {% if doc.format == 'html' %}
+                                        <svg class="pdf-svg-icon icon-html" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                          <circle cx="12" cy="12" r="10"></circle>
+                                          <line x1="2" y1="12" x2="22" y2="12"></line>
+                                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                        </svg>
+                                      {% elseif doc.format == 'doc' %}
+                                        <svg class="pdf-svg-icon icon-doc" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                          <polyline points="14 2 14 8 20 8"></polyline>
+                                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                                          <line x1="10" y1="9" x2="8" y2="9"></line>
+                                        </svg>
+                                      {% elseif doc.format == 'image' %}
+                                        <svg class="pdf-svg-icon icon-image" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                          <polyline points="21 15 16 10 5 21"></polyline>
+                                        </svg>
+                                      {% elseif doc.format == 'link' %}
+                                        <svg class="pdf-svg-icon icon-link" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                        </svg>
+                                      {% else %}
+                                        <svg class="pdf-svg-icon icon-pdf" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                                          <polyline points="14 2 14 8 20 8"></polyline>
+                                          <text x="6" y="17" font-size="6" font-weight="bold" fill="#e11d48" stroke="none">PDF</text>
+                                        </svg>
+                                      {% endif %}
                                     </div>
                                     <span class="doc-title-name">{{ doc.title }}</span>
                                   </div>
                                   
-                                  {% if doc.pdf_url %}
-                                    <a href="{{ doc.pdf_url }}" 
+                                  {% if doc.url or doc.pdf_url %}
+                                    <a href="{{ doc.url ?: doc.pdf_url }}" 
                                        target="_blank" 
                                        rel="noopener noreferrer" 
                                        class="pdf-download-link">

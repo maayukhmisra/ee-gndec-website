@@ -11,8 +11,8 @@ id: node.timetable_document.field_pdf_file
 field_name: field_pdf_file
 entity_type: node
 bundle: timetable_document
-label: 'PDF File'
-description: ''
+label: 'Document / File'
+description: 'Upload timetable document file (PDF, HTML, DOC, DOCX, JPG, PNG)'
 required: false
 translatable: true
 default_value: {  }
@@ -20,8 +20,8 @@ default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
-  file_directory: time_tables
-  file_extensions: pdf
+  file_directory: documents/timetables
+  file_extensions: 'pdf doc docx html htm jpg jpeg png'
   max_filesize: ''
   description_field: false
 field_type: file

@@ -20,7 +20,7 @@ default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
-  file_directory: documents/videos
+  file_directory: documents/expert_talks
   file_extensions: 'pdf doc docx'
   max_filesize: ''
   description_field: false

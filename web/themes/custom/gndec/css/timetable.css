@@ -422,6 +422,38 @@ body {
   flex-shrink: 0 !important;
 }
 
+.pdf-icon-badge.badge-html {
+  background-color: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+}
+.pdf-icon-badge.badge-html .pdf-svg-icon {
+  stroke: #16a34a !important;
+}
+
+.pdf-icon-badge.badge-doc {
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+}
+.pdf-icon-badge.badge-doc .pdf-svg-icon {
+  stroke: #2563eb !important;
+}
+
+.pdf-icon-badge.badge-image {
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+}
+.pdf-icon-badge.badge-image .pdf-svg-icon {
+  stroke: #d97706 !important;
+}
+
+.pdf-icon-badge.badge-link {
+  background-color: #faf5ff !important;
+  border-color: #e9d5ff !important;
+}
+.pdf-icon-badge.badge-link .pdf-svg-icon {
+  stroke: #9333ea !important;
+}
+
 .pdf-svg-icon {
   stroke: #e11d48 !important;
 }

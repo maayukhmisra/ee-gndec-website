@@ -133,17 +133,45 @@ function gndec_preprocess_page(&$variables) {
           if (!$doc_node->isPublished()) continue;
           $doc_title = $doc_node->label();
           $doc_type = $doc_node->hasField('field_document_type') && !$doc_node->get('field_document_type')->isEmpty() ? $doc_node->get('field_document_type')->value : 'Document';
-          $pdf_url = '';
+          $target_url = '';
+
           if ($doc_node->hasField('field_pdf_file') && !$doc_node->get('field_pdf_file')->isEmpty()) {
             $file_entity = $doc_node->get('field_pdf_file')->entity;
             if ($file_entity) {
-              $pdf_url = \Drupal::service('file_url_generator')->generateAbsoluteString($file_entity->getFileUri());
+              $target_url = \Drupal::service('file_url_generator')->generateAbsoluteString($file_entity->getFileUri());
             }
           }
+          elseif ($doc_node->hasField('field_link') && !$doc_node->get('field_link')->isEmpty()) {
+            $link_item = $doc_node->get('field_link')->first();
+            try {
+              $target_url = $link_item->getUrl()->toString();
+            } catch (\Exception $e) {
+              $target_url = $link_item->uri;
+            }
+          }
+
+          // Format detection for badge/icon
+          $format = 'link';
+          $path_clean = parse_url($target_url, PHP_URL_PATH) ?: '';
+          $ext = strtolower(pathinfo($path_clean, PATHINFO_EXTENSION));
+          if ($ext === 'pdf') {
+            $format = 'pdf';
+          } elseif (in_array($ext, ['doc', 'docx'])) {
+            $format = 'doc';
+          } elseif (in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
+            $format = 'image';
+          } elseif (in_array($ext, ['html', 'htm'])) {
+            $format = 'html';
+          } else {
+            $format = 'link';
+          }
+
           $documents[] = [
             'title' => $doc_title,
             'type' => $doc_type,
-            'pdf_url' => $pdf_url,
+            'url' => $target_url,
+            'pdf_url' => $target_url,
+            'format' => $format,
           ];
         }
       }

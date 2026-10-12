@@ -152,20 +152,6 @@
           link.setAttribute('target', '_blank');
           link.setAttribute('rel', 'noopener noreferrer');
         }
-
-        if (!link.dataset.globalDocTabAttached) {
-          link.dataset.globalDocTabAttached = 'true';
-          link.addEventListener('click', function (e) {
-            if (link.hasAttribute('download')) {
-              link.removeAttribute('download');
-            }
-            var linkHref = link.getAttribute('href');
-            if (linkHref && linkHref !== '#' && linkHref.indexOf('javascript:') !== 0) {
-              link.setAttribute('target', '_blank');
-              link.setAttribute('rel', 'noopener noreferrer');
-            }
-          });
-        }
       });
     }
   };

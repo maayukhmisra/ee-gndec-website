@@ -11,7 +11,9 @@ This directory (`web/themes/custom/gndec/documents/`) contains the version-contr
 | `attendance_criteria/` | Official attendance rules and departmental criteria | `attendance_criteria` |
 | `blooms_taxonomy/` | Bloom's Taxonomy question stem charts and rubrics | `blooms_taxonomy` |
 | `bos/` | Board of Studies (BOS) minutes of meetings & senate notifications (2014–2026) | `bos_document` / `bos_documents` |
+| `departmental_library/` | Departmental library records (Books record & Thesis record) | Footer Important Links |
 | `expert_talks/` | Departmental expert talk reports and event documentation | `expert_talk` |
+| `facilities/` | Laboratory listings and computational facilities documentation | Footer Important Links |
 | `general/` | General departmental documentation and advisory board records | General / Advisory |
 | `mou/` | Industry MOUs, collaboration agreements, and workshop reports | `mou_document`, `mou_file` / `mou_and_related_docs` |
 | `postgraduate_guidelines/` | M.Tech / PhD thesis submission format & CD guidelines | `postgrad_guideline` / `postgraduate_students` |

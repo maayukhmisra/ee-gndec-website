@@ -141,7 +141,7 @@ reactions:
         id: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
         label: 'footer column 1'
         provider: block_content
-        label_display: visible
+        label_display: '0'
         region: footer_col_1
         weight: '0'
         theme: gndec
@@ -151,7 +151,7 @@ reactions:
         id: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
         label: 'footer column 2'
         provider: block_content
-        label_display: visible
+        label_display: '0'
         region: footer_col_2
         weight: '0'
         theme: gndec
@@ -161,7 +161,7 @@ reactions:
         id: 'block_content:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
         label: 'footer column 3'
         provider: block_content
-        label_display: visible
+        label_display: '0'
         region: footer_col_3
         weight: '0'
         theme: gndec
@@ -171,7 +171,7 @@ reactions:
         id: 'block_content:c6ccb271-643c-48f2-a972-0d2a55b4c593'
         label: 'footer bottom'
         provider: block_content
-        label_display: visible
+        label_display: '0'
         region: footer_bottom
         weight: '0'
         theme: gndec

@@ -1,4 +1,4 @@
-﻿ee_media.admin.list:
+ee_media.admin.list:
   title: 'Media & Documents'
   description: 'Manage all department media assets — PDFs, images, and documents.'
   route_name: ee_media.admin.list

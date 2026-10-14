@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Drupal\ee_media\Form;
 

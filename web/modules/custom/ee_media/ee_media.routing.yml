@@ -1,4 +1,4 @@
-﻿# -- Media Asset API Routes -----------------------------------------------
+# -- Media Asset API Routes -----------------------------------------------
 
 ee_media.api.list:
   path: '/api/media'

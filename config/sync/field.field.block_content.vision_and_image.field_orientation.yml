@@ -1,0 +1,21 @@
+uuid: 5940793b-616a-44d5-aedc-af4cab3720e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.vision_and_image
+    - field.storage.block_content.field_orientation
+  module:
+    - options
+id: block_content.vision_and_image.field_orientation
+field_name: field_orientation
+entity_type: block_content
+bundle: vision_and_image
+label: orientation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

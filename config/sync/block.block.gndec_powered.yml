@@ -1,0 +1,22 @@
+uuid: d4161480-f210-4ba1-921c-f8d060878d02
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - gndec
+_core:
+  default_config_hash: 81H-Z1tcagxeIbaxC7_Xc2-c_NWPRJTvP0tofUeSMfM
+id: gndec_powered
+theme: gndec
+region: header
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

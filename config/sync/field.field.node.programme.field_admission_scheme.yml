@@ -1,0 +1,19 @@
+uuid: 696f1136-2fef-4174-9500-8bf08747544e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_admission_scheme
+    - node.type.programme
+id: node.programme.field_admission_scheme
+field_name: field_admission_scheme
+entity_type: node
+bundle: programme
+label: 'Admission Scheme'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

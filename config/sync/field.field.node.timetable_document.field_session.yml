@@ -1,0 +1,19 @@
+uuid: 298c9b72-2676-48d4-8b1b-dcf6856e423d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_session
+    - node.type.timetable_document
+id: node.timetable_document.field_session
+field_name: field_session
+entity_type: node
+bundle: timetable_document
+label: Session/Semester
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

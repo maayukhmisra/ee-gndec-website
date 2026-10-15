@@ -1,0 +1,27 @@
+uuid: 74f65251-b24f-41a3-a21d-4d3b7a856916
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - gndec
+_core:
+  default_config_hash: OyXLtWlsRpFAw-N1_54TcvPZG6_5lg3ul9d0gR-IJv8
+id: gndec_account_menu
+theme: gndec
+region: header
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

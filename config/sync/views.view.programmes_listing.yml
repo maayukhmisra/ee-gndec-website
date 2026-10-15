@@ -1,0 +1,147 @@
+uuid: 8067b2f2-69d5-4761-bd92-30aa60df7cde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_admission_scheme
+    - field.storage.node.field_degree
+    - field.storage.node.field_programme_category
+    - field.storage.node.field_specialization
+    - field.storage.node.field_study_mode
+    - node.type.programme
+  module:
+    - node
+id: programmes_listing
+label: 'Programmes Listing'
+module: views
+description: 'List of academic programmes grouped by category.'
+tag: programmes
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: 'Programmes Listing'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+          label: ''
+          exclude: false
+          element_label_colon: false
+          settings:
+            link_to_node: false
+        field_programme_category:
+          id: field_programme_category
+          table: node__field_programme_category
+          field: field_programme_category
+          plugin_id: field
+          label: ''
+          exclude: false
+        field_degree:
+          id: field_degree
+          table: node__field_degree
+          field: field_degree
+          plugin_id: field
+          label: ''
+          exclude: false
+        field_specialization:
+          id: field_specialization
+          table: node__field_specialization
+          field: field_specialization
+          plugin_id: field
+          label: ''
+          exclude: false
+        field_study_mode:
+          id: field_study_mode
+          table: node__field_study_mode
+          field: field_study_mode
+          plugin_id: field
+          label: ''
+          exclude: false
+        field_admission_scheme:
+          id: field_admission_scheme
+          table: node__field_admission_scheme
+          field: field_admission_scheme
+          plugin_id: field
+          label: ''
+          exclude: false
+      pager:
+        type: none
+        options:
+          offset: 0
+          items_per_page: 0
+      sorts:
+        field_display_weight_value:
+          id: field_display_weight_value
+          table: node__field_display_weight
+          field: field_display_weight_value
+          plugin_id: standard
+          order: ASC
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: standard
+          order: ASC
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            programme: programme
+          group: 1
+      style:
+        type: default
+      row:
+        type: fields
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_admission_scheme'
+        - 'config:field.storage.node.field_degree'
+        - 'config:field.storage.node.field_programme_category'
+        - 'config:field.storage.node.field_specialization'
+        - 'config:field.storage.node.field_study_mode'
+  block_1:
+    id: block_1
+    display_title: 'Programmes Grid Block'
+    display_plugin: block
+    position: 1
+    display_options:
+      display_description: 'Displays programmes cards block'
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_admission_scheme'
+        - 'config:field.storage.node.field_degree'
+        - 'config:field.storage.node.field_programme_category'
+        - 'config:field.storage.node.field_specialization'
+        - 'config:field.storage.node.field_study_mode'

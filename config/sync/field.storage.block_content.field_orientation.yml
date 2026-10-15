@@ -1,0 +1,27 @@
+uuid: 51c6ec80-203e-4e89-9f93-d5a0b667e671
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_orientation
+field_name: field_orientation
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: image_left
+      label: image_left
+    -
+      value: image_right
+      label: image_right
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

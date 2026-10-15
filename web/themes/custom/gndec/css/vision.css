@@ -1,0 +1,921 @@
+/* ==========================================================================
+   Vision & Mission Page Styling
+   GNDEC Theme - Department of Electrical Engineering
+   ========================================================================== */
+
+/* Main Container & Page Layout */
+main.main-content-bg.vision-page-wrapper,
+.vision-page-wrapper {
+  background-color: #ffffff !important;
+  padding: 1.5rem 0 4rem 0 !important;
+  width: 100% !important;
+  min-height: 70vh;
+}
+
+.vision-page-wrapper .container {
+  max-width: 1140px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.vision-page-wrapper .main-content-blocks-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 1080px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 !important;
+}
+
+/* Hide Raw Field Labels */
+.vision-page-wrapper .field__label {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Reset Block Margin/Padding Defaults */
+.vision-page-wrapper .block {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+/* ==========================================================================
+   1. Breadcrumbs Styling
+   ========================================================================== */
+.vision-page-wrapper .breadcrumb,
+.vision-page-wrapper nav.breadcrumb {
+  background: transparent !important;
+  padding: 0 0 1.5rem 0 !important;
+  margin-bottom: 1rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+}
+
+.vision-page-wrapper .breadcrumb ol,
+.vision-page-wrapper .breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.vision-page-wrapper .breadcrumb li {
+  display: inline-flex;
+  align-items: center;
+  color: #64748b;
+}
+
+.vision-page-wrapper .breadcrumb li a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vision-page-wrapper .breadcrumb li a:hover {
+  color: #0f172a;
+}
+
+.vision-page-wrapper .breadcrumb li + li::before {
+  content: ">";
+  margin-right: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.vision-page-wrapper .breadcrumb li:last-child {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   2. Main Page Banner Title (VISION, MISSION, PO'S, PSO'S AND PEO'S)
+   ========================================================================== */
+.heading-wrapper,
+.vision-page-wrapper .heading-wrapper {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.heading-text,
+.vision-page-wrapper .heading-text {
+  color: #c84c1c !important;
+  font-size: 1.85rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  margin: 0 0 0.5rem 0 !important;
+  line-height: 1.3 !important;
+  text-align: center !important;
+}
+
+@media (min-width: 768px) {
+  .heading-text,
+  .vision-page-wrapper .heading-text {
+    font-size: 2.15rem !important;
+  }
+}
+
+.heading-underline,
+.vision-page-wrapper .heading-underline {
+  width: 44px !important;
+  height: 4px !important;
+  background-color: #c84c1c !important;
+  margin: 0.4rem auto 0 auto !important;
+  border-radius: 2px !important;
+}
+
+/* ==========================================================================
+   3. Section Header (Vision and Mission / Department of Electrical Engg)
+   ========================================================================== */
+.field--name-field-header {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  order: -1 !important;
+}
+
+.header-section,
+.vision-page-wrapper .header-section {
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  order: -1 !important; /* Force to top before column 1 and column 2 */
+  margin-top: 0 !important;
+  margin-bottom: 1.75rem !important;
+  padding-bottom: 1rem !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.header-section .main-title,
+.vision-page-wrapper .main-title,
+.vision-page-wrapper .header-section h1 {
+  color: #0f172a !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 0.25rem 0 !important;
+  line-height: 1.25 !important;
+}
+
+.header-section .subtitle,
+.vision-page-wrapper .subtitle,
+.vision-page-wrapper .header-section p {
+  color: #64748b !important;
+  font-size: 0.925rem !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+   4. Two-Column Card Grid (Equal Height Vision & Mission Cards)
+   ========================================================================== */
+.block-content-two_column_text > .content,
+.block-content-two-column-text > .content,
+.two-column-text-wrapper,
+.vision-page-wrapper .two-column-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important; /* Force equal height on flex items */
+  width: 100% !important;
+  gap: 1.75rem 1.5rem !important;
+}
+
+.block-content-two_column_text .field--name-field-cloumn-1,
+.block-content-two_column_text .field--name-field-column-2,
+.block-content-two-column-text .field--name-field-cloumn-1,
+.block-content-two-column-text .field--name-field-column-2 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: stretch !important;
+  flex: 1 1 300px !important;
+  width: 100% !important;
+  order: 1 !important;
+  box-sizing: border-box !important;
+}
+
+.block-content-two_column_text .field--name-field-cloumn-1 > .field__item,
+.block-content-two_column_text .field--name-field-column-2 > .field__item,
+.block-content-two-column-text .field--name-field-cloumn-1 > .field__item,
+.block-content-two-column-text .field--name-field-column-2 > .field__item,
+.field--name-field-cloumn-1 .field__item,
+.field--name-field-column-2 .field__item {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+@media (min-width: 768px) {
+  .block-content-two_column_text .field--name-field-cloumn-1,
+  .block-content-two_column_text .field--name-field-column-2,
+  .block-content-two-column-text .field--name-field-cloumn-1,
+  .block-content-two-column-text .field--name-field-column-2 {
+    flex: 1 1 0px !important;
+    width: 48% !important;
+  }
+}
+
+/* Card Common Base Styling */
+.vision-page-wrapper .card,
+.card-vision,
+.card-mission {
+  background-color: #f8fafc !important;
+  border-radius: 14px !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 2.25rem 2rem !important;
+  flex: 1 1 auto !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+}
+
+/* Left Accent Borders */
+.card-vision {
+  border-left: 5px solid #0f2a4a !important;
+}
+
+.card-mission {
+  border-left: 5px solid #c84c1c !important;
+}
+
+/* Card Header (Icon Badge + Title) */
+.card-header,
+.vision-page-wrapper .card-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  margin-bottom: 1.25rem !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.card-title,
+.vision-page-wrapper .card-title {
+  color: #0f172a !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+}
+
+/* Icon Badges */
+.icon-badge {
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.icon-badge-vision {
+  background-color: #dce7f7 !important;
+  color: #0f2a4a !important;
+}
+
+.icon-badge-vision svg {
+  stroke: #0f2a4a !important;
+}
+
+.icon-badge-mission {
+  background-color: #ffe8d6 !important;
+  color: #c84c1c !important;
+}
+
+.icon-badge-mission svg {
+  stroke: #c84c1c !important;
+}
+
+/* Card Text Content (Vision) */
+.card-text,
+.card-vision .card-text,
+.card-vision p {
+  color: #475569 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+}
+
+/* Mission List Styling */
+.mission-list,
+.card-mission .mission-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+}
+
+.mission-item,
+.card-mission .mission-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.65rem !important;
+  color: #475569 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+}
+
+.mission-letter,
+.card-mission .mission-letter {
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  min-width: 1.25rem !important;
+  display: inline-block !important;
+}
+
+/* ==========================================================================
+   5. Graduate Attributes (PO's / Program Outcomes) Styling
+   ========================================================================== */
+.graduate-attributes-section,
+.ga-section,
+.po-section {
+  width: 100% !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.ga-header-wrapper,
+.graduate-attributes-header {
+  margin-bottom: 1.25rem !important;
+}
+
+.ga-main-title,
+.graduate-attributes-header h2,
+.graduate-attributes-header .main-title {
+  color: #0f172a !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 0.25rem 0 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.ga-subtitle,
+.graduate-attributes-header p,
+.graduate-attributes-header .subtitle {
+  color: #64748b !important;
+  font-size: 0.925rem !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+}
+
+/* Single Outer Container Box */
+.ga-card-container,
+.graduate-attributes-card,
+.graduate-attributes-container,
+.po-container,
+.attributes-list {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03) !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  margin-top: 1rem !important;
+}
+
+/* Individual Attribute Item Row */
+.ga-item-row,
+.ga-item,
+.graduate-attribute-item,
+.po-item,
+.attribute-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 1.25rem !important;
+  padding: 1.35rem 1.6rem !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  background-color: #ffffff !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.ga-item-row:last-child,
+.ga-item:last-child,
+.graduate-attribute-item:last-child,
+.po-item:last-child,
+.attribute-item:last-child {
+  border-bottom: none !important;
+}
+
+.ga-item-row:hover,
+.ga-item:hover,
+.graduate-attribute-item:hover,
+.po-item:hover,
+.attribute-item:hover {
+  background-color: #f8fafc !important;
+}
+
+/* Reset any <p> wrapping the badge number in CKEditor */
+.attribute-item > p,
+.ga-item > p,
+.po-item > p {
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Number Badge Box (01, 02, 03...) */
+.ga-number-badge,
+.ga-number,
+.ga-badge,
+.po-number,
+.badge-number {
+  min-width: 44px !important;
+  width: 44px !important;
+  height: 38px !important;
+  background-color: #f1f5f9 !important;
+  border-radius: 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 700 !important;
+  font-size: 0.925rem !important;
+  color: #334155 !important;
+  flex-shrink: 0 !important;
+  margin-top: 0.1rem !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Details Content Area */
+.ga-details-content,
+.ga-content,
+.po-content,
+.attribute-content {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Title of Graduate Attribute */
+.ga-title,
+.ga-item-title,
+.po-title,
+.attribute-title {
+  color: #0f172a !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 0.35rem 0 !important;
+  line-height: 1.35 !important;
+}
+
+/* Description Text */
+.ga-description,
+.ga-item-desc,
+.po-desc,
+.ga-content p,
+.po-content p,
+.attribute-desc {
+  color: #64748b !important;
+  font-size: 0.925rem !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .ga-item-row,
+  .ga-item,
+  .graduate-attribute-item,
+  .po-item,
+  .attribute-item {
+    gap: 1rem !important;
+    padding: 1.1rem 1.1rem !important;
+  }
+  
+  .ga-number-badge,
+  .ga-number,
+  .ga-badge,
+  .po-number,
+  .badge-number {
+    min-width: 38px !important;
+    width: 38px !important;
+    height: 34px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .ga-title,
+  .ga-item-title,
+  .po-title,
+  .attribute-title {
+    font-size: 1rem !important;
+  }
+
+  .ga-description,
+  .ga-item-desc,
+  .po-desc,
+  .attribute-desc {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* ==========================================================================
+   6. Section Headers (Program Outcomes, PSO, PEO Section Titles)
+   ========================================================================== */
+.section-header,
+.vision-page-wrapper .section-header {
+  width: 100% !important;
+  margin-top: 2.75rem !important;
+  margin-bottom: 1.25rem !important;
+  padding-bottom: 0.75rem !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.section-title,
+.vision-page-wrapper .section-title,
+.section-header h2 {
+  color: #0f172a !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* ==========================================================================
+   7. Program Outcomes Callout Info Card (.info-card)
+   ========================================================================== */
+.info-card,
+.vision-page-wrapper .info-card {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 1.25rem 1.6rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.1rem !important;
+  margin-top: 1rem !important;
+  margin-bottom: 2rem !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02) !important;
+}
+
+.info-card .icon-badge,
+.vision-page-wrapper .info-card .icon-badge {
+  min-width: 38px !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background-color: #dce7f7 !important;
+  color: #0f2a4a !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.info-card .icon-badge svg {
+  stroke: #0f2a4a !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.info-card .card-text,
+.info-card p,
+.vision-page-wrapper .info-card p {
+  color: #334155 !important;
+  font-size: 0.925rem !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* ==========================================================================
+   8. Program Specific Outcomes (PSO) & PEO Card List Styling
+   ========================================================================== */
+.pso-list,
+.peo-content,
+.vision-page-wrapper .pso-list,
+.vision-page-wrapper .peo-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  width: 100% !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Individual Card (PSO & PEO) */
+.pso-item,
+.peo-card,
+.vision-page-wrapper .pso-item,
+.vision-page-wrapper .peo-card {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 1.35rem 1.6rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+
+.pso-item:hover,
+.peo-card:hover {
+  background-color: #f8fafc !important;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Reset paragraph wrapper around badge inside CKEditor */
+.pso-item > p:first-child,
+.peo-card > p:first-child {
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Dark Navy Square Badge Number for PSO (1, 2, 3) */
+.pso-item .badge-number {
+  min-width: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  background-color: #0f2a4a !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 700 !important;
+  font-size: 0.925rem !important;
+  flex-shrink: 0 !important;
+  letter-spacing: normal !important;
+}
+
+/* Warm Reddish-Orange Badge Number for PEO (1, 2, 3) */
+.peo-card .badge-number {
+  min-width: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  background-color: #c84c1c !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 700 !important;
+  font-size: 0.925rem !important;
+  flex-shrink: 0 !important;
+  letter-spacing: normal !important;
+}
+
+/* Text Content for PSO & PEO */
+.pso-text,
+.peo-text,
+.pso-item p.pso-text,
+.peo-card p.peo-text {
+  color: #334155 !important;
+  font-size: 0.935rem !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+  flex: 1 1 auto !important;
+}
+
+/* PEO Intro Callout Banner */
+.intro-banner,
+.vision-page-wrapper .intro-banner {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 1.35rem 1.6rem !important;
+  color: #475569 !important;
+  font-size: 0.935rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1rem !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02) !important;
+}
+
+/* ==========================================================================
+   9. Document Download Card (.doc-card) Styling
+   ========================================================================== */
+.doc-card,
+.document-card,
+.pdf-card,
+.vision-page-wrapper .doc-card,
+.vision-page-wrapper .views-row:not(:has(.doc-card)) {
+  background-color: #ffffff !important;
+  border: 1px solid #e5eaf2 !important;
+  border-radius: 8px !important;
+  padding: 14px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  min-height: 62px !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.5rem !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.doc-card:hover,
+.document-card:hover,
+.pdf-card:hover,
+.vision-page-wrapper .views-row:not(:has(.doc-card)):hover {
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 12px rgba(4, 30, 66, 0.06) !important;
+}
+
+/* Red PDF Badge Icon on Left of Card */
+.doc-card::before,
+div.doc-card::before,
+.vision-page-wrapper .views-row:not(:has(.doc-card))::before {
+  content: "" !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  background-color: #fff1f0 !important;
+  border-radius: 6px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e74c3c'%3E%3Cpath d='M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 1.5 13 5H9.5V1.5zM4.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1zm0 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1zm0 2h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1 0-1z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;
+  flex-shrink: 0 !important;
+  margin-right: 14px !important;
+  order: 0 !important;
+}
+
+.doc-left,
+.vision-page-wrapper .doc-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  flex: 1 1 auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.doc-card .icon-wrapper,
+.doc-card .doc-icon,
+.vision-page-wrapper .doc-card .icon-wrapper {
+  display: none !important;
+}
+
+.doc-title,
+.doc-card .doc-title,
+.doc-left p,
+.doc-left .doc-title,
+.vision-page-wrapper .views-field-title,
+.vision-page-wrapper .views-field-title a,
+.vision-page-wrapper .field--name-title {
+  color: #2d3748 !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: 1 1 auto !important;
+  line-height: 1.3 !important;
+  text-align: left !important;
+  text-decoration: none !important;
+  order: 1 !important;
+}
+
+.doc-link,
+.doc-card a.doc-link,
+.doc-card a,
+.vision-page-wrapper .doc-link,
+.vision-page-wrapper .views-row a {
+  color: #041e42 !important;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  white-space: nowrap !important;
+  transition: color 0.2s ease !important;
+  cursor: pointer !important;
+  margin-left: auto !important;
+  order: 2 !important;
+}
+
+.doc-link::after,
+.doc-card a::after,
+.vision-page-wrapper .doc-card a::after,
+.vision-page-wrapper .views-row a::after {
+  content: none !important;
+  display: none !important;
+}
+
+.doc-link:hover,
+.doc-card a:hover,
+.vision-page-wrapper .views-row a:hover {
+  color: #0d6efd !important;
+  text-decoration: none !important;
+}
+
+/* Hide View Document link if no document is uploaded (href is empty, #, or missing) */
+.doc-link[href="#"],
+.doc-link[href=""],
+.doc-link:not([href]),
+.doc-card a[href="#"],
+.doc-card a[href=""],
+.doc-card a:not([href]),
+.doc-link.empty-link,
+.doc-card a.empty-link {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Mobile Responsiveness for PSO / PEO / Document Cards */
+@media (max-width: 576px) {
+  .info-card,
+  .pso-item,
+  .peo-card,
+  .doc-card {
+    padding: 1.1rem 1.1rem !important;
+    gap: 1rem !important;
+  }
+
+  .doc-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .doc-link,
+  .doc-card a {
+    align-self: flex-end !important;
+  }
+
+  .pso-item .badge-number,
+  .peo-card .badge-number {
+    min-width: 28px !important;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .pso-text,
+  .peo-text,
+  .info-card .card-text,
+  .doc-title {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* ==========================================================================
+   10. Hide Default Drupal 404 System Main Block Message
+   ========================================================================== */
+.vision-page-wrapper .block-system-main-block,
+.vision-page-wrapper #block-gndec-content,
+.vision-page-wrapper #block-gndec-system-main,
+.vision-page-wrapper .system-main-block,
+.vision-page-wrapper [data-drupal-messages] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Exception: allow blocks that contain actual content */
+.vision-page-wrapper #block-gndec-content:has(.block-content),
+.vision-page-wrapper #block-gndec-content:has(.card-vision),
+.vision-page-wrapper #block-gndec-content:has(.card-mission),
+.vision-page-wrapper #block-gndec-content:has(.attributes-list),
+.vision-page-wrapper #block-gndec-content:has(.pso-list),
+.vision-page-wrapper #block-gndec-content:has(.doc-card) {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+}
+
+
+

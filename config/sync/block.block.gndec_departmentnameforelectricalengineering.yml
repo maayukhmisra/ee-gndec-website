@@ -1,0 +1,23 @@
+uuid: 1c0caf19-856f-4ea0-8397-0a6e53ff4263
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:text_block:afcf5b19-38f2-4874-8f35-646c127d058d'
+  module:
+    - block_content
+  theme:
+    - gndec
+id: gndec_departmentnameforelectricalengineering
+theme: gndec
+region: department_title
+weight: 0
+provider: null
+plugin: 'block_content:afcf5b19-38f2-4874-8f35-646c127d058d'
+settings:
+  id: 'block_content:afcf5b19-38f2-4874-8f35-646c127d058d'
+  label: 'department name for electrical engineering'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

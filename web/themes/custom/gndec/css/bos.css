@@ -128,19 +128,38 @@ h1.page-title::after,
   border-radius: 2px !important;
 }
 
-/* Hide PDF Previews & Viewers */
+/* Hide PDF Previews, Viewers & Standalone Raw Drupal File Attachment Links */
 .bos-page-wrapper iframe,
 .bos-page-wrapper embed,
 .bos-page-wrapper object,
 .bos-page-wrapper canvas,
 .bos-page-wrapper .pdf-preview,
 .view-bos iframe,
-body.path-bos iframe {
+body.path-bos iframe,
+.bos-page-wrapper .field--type-file:not(.doc-card *):not(.views-row *),
+.bos-page-wrapper .field--name-field-document:not(.doc-card *):not(.views-row *),
+.bos-page-wrapper .field--name-field-file:not(.doc-card *):not(.views-row *),
+.bos-page-wrapper span.file:not(.doc-card *):not(.views-row *),
+.bos-page-wrapper .file--mime-application-pdf:not(.doc-card *):not(.views-row *),
+.bos-page-wrapper .file-link:not(.doc-card *):not(.views-row *) {
   display: none !important;
   visibility: hidden !important;
   height: 0 !important;
   width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
   opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Hide default Drupal generic file icons inside cards to prevent duplicate icons */
+.doc-card .file-icon,
+.doc-card .file--mime-application-pdf::before,
+.doc-card span.file > img,
+.doc-card span.file > .file-icon,
+.views-row .file-icon,
+.views-row span.file > img {
+  display: none !important;
 }
 
 /* Document List Stack Container */
@@ -194,125 +213,118 @@ div.doc-card,
   align-items: center !important;
   justify-content: space-between !important;
   flex-wrap: nowrap !important;
-  gap: 16px !important;
+  gap: 1.25rem !important;
   background-color: #ffffff !important;
-  border: 1px solid #e5eaf2 !important;
-  border-radius: 8px !important;
-  padding: 14px 20px !important;
-  min-height: 62px !important;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02) !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 1.25rem 1.6rem !important;
+  min-height: 64px !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
   position: relative !important;
   width: 100% !important;
   max-width: 100% !important;
   flex: 1 1 100% !important;
   box-sizing: border-box !important;
-  margin-bottom: 14px !important;
-}
-
-.doc-card > div,
-div.doc-card > div {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  width: 100% !important;
-  flex: 1 1 100% !important;
-  gap: 16px !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-bottom: 1rem !important;
 }
 
 .doc-card:hover,
 div.doc-card:hover,
 .views-row:not(:has(.doc-card)):hover {
   border-color: #cbd5e1 !important;
-  box-shadow: 0 4px 12px rgba(4, 30, 66, 0.06) !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
 }
 
-/* Red PDF Badge Icon */
-.doc-card::before,
-div.doc-card::before,
-.views-row:not(:has(.doc-card))::before {
-  content: "" !important;
-  display: inline-flex !important;
+/* Left Section: Icon Badge + Title */
+.doc-card .doc-left,
+div.doc-card .doc-left,
+.doc-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  gap: 1.2rem !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+/* Icon Badge */
+.doc-card .icon-wrapper,
+div.doc-card .icon-wrapper,
+.icon-wrapper {
+  min-width: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  background-color: #ffe2e5 !important;
+  color: #e11d48 !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  align-self: center !important;
-  width: 36px !important;
-  height: 36px !important;
-  min-width: 36px !important;
-  min-height: 36px !important;
-  background-color: #fff1f0 !important;
-  border-radius: 6px !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e74c3c'%3E%3Cpath d='M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 1.5 13 5H9.5V1.5zM4.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1zm0 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1zm0 2h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1 0-1z'/%3E%3C/svg%3E") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 18px 18px !important;
   flex-shrink: 0 !important;
-  margin-right: 14px !important;
 }
 
-/* Document Title */
-.doc-card .title,
-.doc-card h3,
-.doc-card p,
-.doc-card span,
-.views-field-title,
-.views-field-title a {
-  font-size: 0.95rem !important;
-  font-weight: 500 !important;
-  color: #2d3748 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  flex-grow: 1 !important;
-  line-height: 1.2 !important;
+.icon-wrapper svg {
+  stroke: currentColor !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Document Text & Title */
+.doc-card .doc-text-wrapper,
+div.doc-card .doc-text-wrapper,
+.doc-text-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+  min-width: 0 !important;
   text-align: left !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  text-decoration: none !important;
+  justify-content: center !important;
 }
 
-/* Right-Aligned Action Link */
-.views-field-field-document,
-.views-field-file,
-.doc-card .link-wrapper {
-  margin-left: auto !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  white-space: nowrap !important;
-  flex-shrink: 0 !important;
-}
-
-.doc-card a,
-.views-row a,
-.views-field-field-document a {
-  color: #041e42 !important;
+.doc-card .doc-title,
+div.doc-card .doc-title,
+.doc-title,
+h4.doc-title {
+  color: #0f172a !important;
+  font-size: 1rem !important;
   font-weight: 700 !important;
-  font-size: 0.875rem !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+
+/* Right Action Section */
+.doc-card .doc-right,
+div.doc-card .doc-right,
+.doc-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-shrink: 0 !important;
+  margin-left: 1rem !important;
+}
+
+.doc-card .doc-link,
+div.doc-card .doc-link,
+.doc-link {
+  color: #041e42 !important;
+  font-size: 0.885rem !important;
+  font-weight: 700 !important;
   text-decoration: none !important;
-  white-space: nowrap !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 4px !important;
-  margin-left: auto !important;
-  line-height: 1.2 !important;
-  transition: color 0.2s ease !important;
+  gap: 0.35rem !important;
+  transition: color 0.15s ease, transform 0.15s ease !important;
+  white-space: nowrap !important;
 }
 
-.doc-card a:hover,
-.views-row a:hover {
+.doc-card .doc-link:hover,
+div.doc-card .doc-link:hover,
+.doc-link:hover {
   color: #0d6efd !important;
-}
-
-/* Fallback for Unattached Documents */
-.no-doc-text,
-.no-document .views-field-field-document {
-  color: #94a3b8 !important;
-  font-size: 0.825rem !important;
-  font-weight: 500 !important;
-  font-style: italic !important;
-  margin-left: auto !important;
 }
 
 .no-document::before {

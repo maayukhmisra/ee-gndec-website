@@ -39,4 +39,303 @@ function gndec_preprocess_html(&$variables) {
   if ($alias_clean) {
     $variables['attributes']['class'][] = 'path-' . Html::cleanCssIdentifier(str_replace('/', '-', $alias_clean));
   }
+
+  if (str_contains(strtolower($alias_clean), 'vision') || str_contains(strtolower($path), 'vision')) {
+    $variables['head_title']['title'] = 'Vision';
+  }
 }
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function gndec_preprocess_page(&$variables) {
+  $path = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+  $alias_clean = trim(strtolower($alias), '/');
+
+  if (str_contains($alias_clean, 'vision') || str_contains($alias_clean, 'po')) {
+    $variables['#attached']['library'][] = 'gndec/vision-page-styles';
+  }
+
+  if (str_contains($alias_clean, 'mou')) {
+    $variables['#attached']['library'][] = 'gndec/mou-page-styles';
+  }
+
+  if (str_contains($alias_clean, 'guideline')) {
+    $variables['#attached']['library'][] = 'gndec/guidelines-page-styles';
+  }
+
+  if (str_contains($alias_clean, 'bos')) {
+    $variables['#attached']['library'][] = 'gndec/bos-page-styles';
+  }
+
+  if (str_contains($alias_clean, 'video')) {
+    $variables['#attached']['library'][] = 'gndec/videos-page-styles';
+  }
+
+  if (str_contains($alias_clean, 'people') || str_contains($alias_clean, 'faculty')) {
+    $variables['#attached']['library'][] = 'gndec/people-page-styles';
+  }
+
+  if (str_contains($alias_clean, 'time-table') || str_contains($alias_clean, 'time_table') || str_contains($alias_clean, 'timetable')) {
+    $variables['#attached']['library'][] = 'gndec/timetable-page-styles';
+  }
+
+  if (str_contains($alias_clean, 'programme')) {
+    $variables['#attached']['library'][] = 'gndec/programmes-page-styles';
+  }
+
+  // Remove system main content block output on custom static/theme pages to prevent 404 messages & duplicate block renders
+  $custom_pages = ['vision', 'academics/vision', 'mou', 'academics/mou', 'bos', 'academics/bos', 'guidelines', 'academics/guidelines', 'videos', 'academics/videos', 'time-tables', 'academics/time-tables', 'programmes', 'academics/programmes'];
+  foreach ($custom_pages as $custom_page) {
+    if (str_contains($alias_clean, $custom_page)) {
+      unset($variables['page']['content']['bootstrap_content']);
+      unset($variables['page']['content']['bootstrap_subtheme_content']);
+      unset($variables['page']['content']['system_main']);
+      unset($variables['page']['content']['gndec_content']);
+      if (str_contains($alias_clean, 'time-table') || str_contains($alias_clean, 'time_table') || str_contains($alias_clean, 'timetable')) {
+        foreach (array_keys($variables['page']['content']) as $key) {
+          if (!str_starts_with($key, '#')) {
+            unset($variables['page']['content'][$key]);
+          }
+        }
+      }
+      break;
+    }
+  }
+
+  if (str_contains($alias_clean, 'time-table') || str_contains($alias_clean, 'time_table') || str_contains($alias_clean, 'timetable')) {
+    $current_year_filter = \Drupal::request()->query->get('year');
+    $variables['current_year_filter'] = $current_year_filter ? Html::escape($current_year_filter) : null;
+
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'time_table')
+      ->condition('status', 1)
+      ->sort('field_academic_year', 'DESC')
+      ->sort('created', 'DESC')
+      ->accessCheck(TRUE);
+    $nids = $query->execute();
+
+    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+    $grouped_data = [];
+    $year_counts = [];
+
+    foreach ($nodes as $node) {
+      $year = $node->get('field_academic_year')->value ?: '2026';
+      $session = $node->get('field_session')->value ?: $node->label();
+      $status = $node->get('field_timetable_status')->value ?: 'Archive';
+      $desc = $node->hasField('body') && !$node->get('body')->isEmpty() ? $node->get('body')->value : '';
+
+      $documents = [];
+      if ($node->hasField('field_timetable_documents') && !$node->get('field_timetable_documents')->isEmpty()) {
+        $doc_nodes = $node->get('field_timetable_documents')->referencedEntities();
+        foreach ($doc_nodes as $doc_node) {
+          if (!$doc_node->isPublished()) continue;
+          $doc_title = $doc_node->label();
+          $doc_type = $doc_node->hasField('field_document_type') && !$doc_node->get('field_document_type')->isEmpty() ? $doc_node->get('field_document_type')->value : 'Document';
+          $target_url = '';
+
+          if ($doc_node->hasField('field_pdf_file') && !$doc_node->get('field_pdf_file')->isEmpty()) {
+            $file_entity = $doc_node->get('field_pdf_file')->entity;
+            if ($file_entity) {
+              $target_url = \Drupal::service('file_url_generator')->generateAbsoluteString($file_entity->getFileUri());
+            }
+          }
+          elseif ($doc_node->hasField('field_link') && !$doc_node->get('field_link')->isEmpty()) {
+            $link_item = $doc_node->get('field_link')->first();
+            try {
+              $target_url = $link_item->getUrl()->toString();
+            } catch (\Exception $e) {
+              $target_url = $link_item->uri;
+            }
+          }
+
+          // Format detection for badge/icon
+          $format = 'link';
+          $path_clean = parse_url($target_url, PHP_URL_PATH) ?: '';
+          $ext = strtolower(pathinfo($path_clean, PATHINFO_EXTENSION));
+          if ($ext === 'pdf') {
+            $format = 'pdf';
+          } elseif (in_array($ext, ['doc', 'docx'])) {
+            $format = 'doc';
+          } elseif (in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
+            $format = 'image';
+          } elseif (in_array($ext, ['html', 'htm'])) {
+            $format = 'html';
+          } else {
+            $format = 'link';
+          }
+
+          $documents[] = [
+            'title' => $doc_title,
+            'type' => $doc_type,
+            'url' => $target_url,
+            'pdf_url' => $target_url,
+            'format' => $format,
+          ];
+        }
+      }
+
+      if (!isset($grouped_data[$year])) {
+        $grouped_data[$year] = [];
+      }
+      $grouped_data[$year][] = [
+        'nid' => $node->id(),
+        'title' => $node->label(),
+        'session' => $session,
+        'status' => $status,
+        'description' => $desc,
+        'documents' => $documents,
+      ];
+
+      if (!isset($year_counts[$year])) {
+        $year_counts[$year] = 0;
+      }
+      $year_counts[$year]++;
+    }
+
+    $variables['timetable_data'] = $grouped_data;
+
+    $year_archive_list = [];
+    foreach ($year_counts as $year => $count) {
+      $badge_text = $count . ' Terms';
+      if ((string)$year === '2026') $badge_text = 'Latest';
+      elseif ((string)$year === '2020') $badge_text = 'UG / PG';
+      elseif (str_contains((string)$year, '2017')) $badge_text = 'Archive';
+
+      $year_archive_list[] = [
+        'year' => $year,
+        'count' => $count,
+        'badge' => $badge_text,
+        'is_active' => ($current_year_filter && (string)$current_year_filter === (string)$year) || (!$current_year_filter && (string)$year === '2026'),
+      ];
+    }
+    $variables['year_archive_list'] = $year_archive_list;
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function gndec_preprocess_block(&$variables) {
+  if (isset($variables['plugin_id']) && $variables['plugin_id'] === 'system_main_block') {
+    $path = \Drupal::service('path.current')->getPath();
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+    $alias_clean = trim(strtolower($alias), '/');
+
+    if (str_contains($alias_clean, 'vision') || str_contains($alias_clean, 'mou') || str_contains($alias_clean, 'po') || str_contains($alias_clean, 'bos') || str_contains($alias_clean, 'guidelines') || str_contains($alias_clean, 'videos') || str_contains($alias_clean, 'time-tables')) {
+      $variables['content'] = [];
+      $variables['#cache']['max-age'] = 0;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_unformatted().
+ */
+function gndec_preprocess_views_view_unformatted(&$variables) {
+  $view = $variables['view'];
+  $doc_views = [
+    'mou_and_related_docs',
+    'files_on_mou_page',
+    'blooms_taxonomy',
+    'attendance_criteria',
+    'bos_documents',
+    'mtech_power_engg_docs',
+    'attainment_tools_docs',
+    'mapping_docs',
+    'undergraduate_students',
+    'postgraduate_students',
+    'time_tables'
+  ];
+
+  if (in_array($view->id(), $doc_views)) {
+    foreach ($variables['rows'] as &$row) {
+      if (isset($row['attributes'])) {
+        $row['attributes']->addClass('doc-card');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function gndec_preprocess_views_view(&$variables) {
+  $view = $variables['view'];
+  if ($view->id() === 'academic_documents') {
+    $display_id = $view->current_display;
+    $variables['display_id'] = $display_id;
+
+    // Load term IDs by name for exact matching
+    $get_tid = function($name) {
+      $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
+        'vid' => 'document_category',
+        'name' => $name,
+      ]);
+      return $terms ? reset($terms)->id() : NULL;
+    };
+
+    $category_tid_map = [
+      'sanctioned_seats' => $get_tid('Sanctioned Seats'),
+      'btech_schemes' => $get_tid('B.Tech Syllabus & Study Schemes'),
+      'mtech_schemes' => $get_tid('M.Tech Syllabus & Schemes'),
+      'phd_schemes' => $get_tid('Ph.D. Syllabus & Study Scheme'),
+      'prerequisites' => $get_tid('Schematics of the Prerequisites'),
+    ];
+
+    $target_tid = $category_tid_map[$display_id] ?? NULL;
+
+    $rows = [];
+    foreach ($view->result as $row) {
+      $entity = $row->_entity ?? NULL;
+      if (!$entity && isset($row->nid)) {
+        $entity = \Drupal\node\Entity\Node::load($row->nid);
+      }
+      if ($entity && $entity->isPublished()) {
+        $doc_tid = NULL;
+        if ($entity->hasField('field_document_category') && !$entity->get('field_document_category')->isEmpty()) {
+          $doc_tid = $entity->get('field_document_category')->target_id;
+        }
+
+        if ($target_tid && (string)$doc_tid !== (string)$target_tid) {
+          continue;
+        }
+
+        $title = $entity->label();
+        $date = $entity->hasField('field_upload_date') && !$entity->get('field_upload_date')->isEmpty() ? $entity->get('field_upload_date')->value : '';
+        $pdf_url = '';
+        if ($entity->hasField('field_pdf_file') && !$entity->get('field_pdf_file')->isEmpty()) {
+          $file = $entity->get('field_pdf_file')->entity;
+          if ($file) {
+            $pdf_url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+          }
+        }
+        $rows[] = [
+          'title' => $title,
+          'upload_date' => $date,
+          'pdf_url' => $pdf_url,
+        ];
+      }
+    }
+    $variables['doc_rows'] = $rows;
+  }
+}
+
+/**
+ * Implements hook_preprocess_file_link().
+ */
+function gndec_preprocess_file_link(&$variables) {
+  if (isset($variables['link'])) {
+    $variables['link']['#options']['attributes']['target'] = '_blank';
+    $variables['link']['#options']['attributes']['rel'] = 'noopener noreferrer';
+    if (isset($variables['link']['#options']['attributes']['download'])) {
+      unset($variables['link']['#options']['attributes']['download']);
+    }
+  }
+}
+
+
+
+
+

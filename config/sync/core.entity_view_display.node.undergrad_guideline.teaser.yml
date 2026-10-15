@@ -1,0 +1,40 @@
+uuid: e8aa700d-82ba-4008-aaeb-95b83a1fbe01
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.undergrad_guideline.body
+    - field.field.node.undergrad_guideline.field_document
+    - node.type.undergrad_guideline
+  module:
+    - file
+    - text
+    - user
+id: node.undergrad_guideline.teaser
+targetEntityType: node
+bundle: undergrad_guideline
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

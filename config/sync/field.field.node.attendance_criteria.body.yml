@@ -1,0 +1,24 @@
+uuid: 1af76348-3aaa-40c4-9739-78c4ca01edc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.attendance_criteria
+  module:
+    - text
+id: node.attendance_criteria.body
+field_name: body
+entity_type: node
+bundle: attendance_criteria
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

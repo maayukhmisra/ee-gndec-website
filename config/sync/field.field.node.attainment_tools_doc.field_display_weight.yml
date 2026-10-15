@@ -1,0 +1,25 @@
+uuid: 2d4ea20f-6c23-4338-8a0e-9bb02a1446c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_weight
+    - node.type.attainment_tools_doc
+id: node.attainment_tools_doc.field_display_weight
+field_name: field_display_weight
+entity_type: node
+bundle: attainment_tools_doc
+label: 'Display Weight'
+description: 'Order of display in views (lower numbers appear first)'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

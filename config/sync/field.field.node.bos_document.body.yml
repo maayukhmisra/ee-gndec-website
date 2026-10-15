@@ -1,0 +1,24 @@
+uuid: 5d29d50c-aef6-4e1f-89ed-f482a6d11927
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.bos_document
+  module:
+    - text
+id: node.bos_document.body
+field_name: body
+entity_type: node
+bundle: bos_document
+label: 'Description / Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

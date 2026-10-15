@@ -1,0 +1,40 @@
+uuid: 434b894b-316c-4485-b698-de95d68a19b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.postgrad_guideline.body
+    - field.field.node.postgrad_guideline.field_document
+    - node.type.postgrad_guideline
+  module:
+    - file
+    - text
+    - user
+id: node.postgrad_guideline.teaser
+targetEntityType: node
+bundle: postgrad_guideline
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

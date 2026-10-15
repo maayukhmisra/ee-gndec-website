@@ -1,0 +1,23 @@
+uuid: 41f57e10-5125-4461-afad-67e21b2dd1c2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:hod_card:00fd6c98-8233-471a-9895-5af2794d75a0'
+  module:
+    - block_content
+  theme:
+    - gndec
+id: gndec_hodofeecard
+theme: gndec
+region: content
+weight: -5
+provider: null
+plugin: 'block_content:00fd6c98-8233-471a-9895-5af2794d75a0'
+settings:
+  id: 'block_content:00fd6c98-8233-471a-9895-5af2794d75a0'
+  label: 'hod of ee card'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

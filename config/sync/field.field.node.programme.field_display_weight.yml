@@ -1,0 +1,23 @@
+uuid: 23e9970f-dcd6-4050-9d8d-28d05a17ecc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_weight
+    - node.type.programme
+id: node.programme.field_display_weight
+field_name: field_display_weight
+entity_type: node
+bundle: programme
+label: 'Display Weight'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

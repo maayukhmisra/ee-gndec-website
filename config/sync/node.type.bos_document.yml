@@ -1,0 +1,11 @@
+uuid: 796124c3-6e5a-4f60-a741-f5e915b5d8a4
+langcode: en
+status: true
+dependencies: {  }
+name: 'BOS Document'
+type: bos_document
+description: 'Content type for BOS Document heading items.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

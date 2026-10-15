@@ -1,0 +1,40 @@
+uuid: b234cdfc-ff47-40bd-a683-fa92011f64ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.attendance_criteria.body
+    - field.field.node.attendance_criteria.field_document
+    - node.type.attendance_criteria
+  module:
+    - file
+    - text
+    - user
+id: node.attendance_criteria.teaser
+targetEntityType: node
+bundle: attendance_criteria
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

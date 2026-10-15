@@ -1,0 +1,24 @@
+uuid: f00542c3-23e2-4dc8-a9f4-2ac86f59c07e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_timetable_documents
+    - node.type.time_table
+    - node.type.timetable_document
+id: node.time_table.field_timetable_documents
+field_name: field_timetable_documents
+entity_type: node
+bundle: time_table
+label: 'Timetable Documents'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      timetable_document: timetable_document
+field_type: entity_reference

@@ -1,0 +1,31 @@
+uuid: 55c82b72-2221-4656-a117-9a0c653c6697
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hod_card
+    - field.field.block_content.hod_card.field_card_body
+  module:
+    - text
+id: block_content.hod_card.default
+targetEntityType: block_content
+bundle: hod_card
+mode: default
+content:
+  field_card_body:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

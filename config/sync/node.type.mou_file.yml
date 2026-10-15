@@ -1,0 +1,11 @@
+uuid: 38089a55-def2-47a4-a026-bde572bbe87e
+langcode: en
+status: true
+dependencies: {  }
+name: 'MOU File'
+type: mou_file
+description: 'Content type for MOU File heading items.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

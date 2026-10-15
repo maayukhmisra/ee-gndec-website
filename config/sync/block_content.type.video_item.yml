@@ -1,0 +1,8 @@
+uuid: fec5b23a-36a5-488b-93d7-eb03bd67e963
+langcode: en
+status: true
+dependencies: {  }
+id: video_item
+label: 'Video Item'
+revision: false
+description: 'A video item block containing video name and link.'

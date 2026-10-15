@@ -1,0 +1,24 @@
+uuid: 1e9b5b4d-bde5-46cf-a996-7311847dbec3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.text_block
+    - field.storage.block_content.field_text
+    - filter.format.full_html
+  module:
+    - text
+id: block_content.text_block.field_text
+field_name: field_text
+entity_type: block_content
+bundle: text_block
+label: text
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

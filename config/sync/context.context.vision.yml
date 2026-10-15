@@ -1,0 +1,364 @@
+uuid: b21759ea-af42-42f2-9673-6a4415dca1f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - views.view.attainment_tools_docs
+    - views.view.mapping_docs
+    - views.view.mtech_power_engg_docs
+  content:
+    - 'block_content:text_block:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+    - 'block_content:text_block:42056a90-62b4-46f9-b029-693df94c8dd0'
+    - 'block_content:text_block:430a8dd6-9148-4e9f-b7b0-3a1360317db5'
+    - 'block_content:text_block:511b3238-a334-451b-a17c-295facb441e0'
+    - 'block_content:text_block:5bad0c95-b418-4e53-8bd7-69ee9aaf7052'
+    - 'block_content:text_block:6228d081-e74a-41fa-9e86-c5eb205e20b1'
+    - 'block_content:text_block:a0542c88-49c1-4e72-898e-4b205b130469'
+    - 'block_content:text_block:afcf5b19-38f2-4874-8f35-646c127d058d'
+    - 'block_content:text_block:c2bc85a7-2088-48fc-835f-4916d14c9443'
+    - 'block_content:text_block:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+    - 'block_content:text_block:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+    - 'block_content:text_block:cf5282b1-7e02-4b9c-b13d-80ee95652b3a'
+    - 'block_content:text_block:d18555c7-3fd2-4fae-81a6-8e2ef77b93a2'
+    - 'block_content:two_column_text:696ac4a3-68f4-45e3-bf77-1574d7178375'
+  module:
+    - block_content
+    - system
+    - views
+label: 'Vision Page'
+name: vision
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 867faf14-d67d-4ef5-b47d-55aad3fb8e4f
+    context_mapping: {  }
+    pages: |-
+      /vision
+      /academics/vision
+      /academics/vision/*
+reactions:
+  blocks:
+    id: blocks
+    uuid: 3bbd623e-e19d-441f-bd18-d7495f4aee8b
+    blocks:
+      7d515035-35c5-4ab9-a569-d2496b77700f:
+        uuid: 7d515035-35c5-4ab9-a569-d2496b77700f
+        id: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
+        label: 'footer column 1'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_1
+        weight: '0'
+        custom_id: block_content_511b3238_a334_451b_a17c_295facb441e0
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      98ccd0f7-e5a2-4e9e-9727-9bec159d6323:
+        uuid: 98ccd0f7-e5a2-4e9e-9727-9bec159d6323
+        id: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+        label: 'footer column 2'
+        provider: block_content
+        label_display: visible
+        region: footer_col_2
+        weight: '0'
+        custom_id: block_content_cd31defb_6283_41ae_9faa_dd53f0a32e03
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      7742bded-ba51-40b9-9185-921871b9ae78:
+        uuid: 7742bded-ba51-40b9-9185-921871b9ae78
+        id: 'block_content:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+        label: 'footer column 3'
+        provider: block_content
+        label_display: visible
+        region: footer_col_3
+        weight: '0'
+        custom_id: block_content_05e7da25_4ccb_48f2_88f1_e5d9dad6099f
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      a56b681d-17ed-4d4c-8bb0-ae65561abbae:
+        uuid: a56b681d-17ed-4d4c-8bb0-ae65561abbae
+        id: 'block_content:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+        label: 'footer bottom'
+        provider: block_content
+        label_display: visible
+        region: footer_bottom
+        weight: '0'
+        custom_id: block_content_c6ccb271_643c_48f2_a972_0d2a55b4c593
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      dd401797-996c-4c7a-af0e-f18ae429080c:
+        uuid: dd401797-996c-4c7a-af0e-f18ae429080c
+        id: 'block_content:5bad0c95-b418-4e53-8bd7-69ee9aaf7052'
+        label: 'Mtech Power Engg heading in vision page'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-1'
+        custom_id: block_content_5bad0c95_b418_4e53_8bd7_69ee9aaf7052
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      ca9888a3-d623-4afa-9075-a9de1262fb40:
+        uuid: ca9888a3-d623-4afa-9075-a9de1262fb40
+        id: 'block_content:696ac4a3-68f4-45e3-bf77-1574d7178375'
+        label: 'vision and mission on vision page'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-6'
+        custom_id: block_content_696ac4a3_68f4_45e3_bf77_1574d7178375
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      dfa20515-d780-4517-8fcb-53736bc0c789:
+        uuid: dfa20515-d780-4517-8fcb-53736bc0c789
+        id: 'block_content:430a8dd6-9148-4e9f-b7b0-3a1360317db5'
+        label: 'vision page heading'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-7'
+        custom_id: block_content_430a8dd6_9148_4e9f_b7b0_3a1360317db5
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      78e03f5d-5ca3-421a-83bf-aec434c7e8f6:
+        uuid: 78e03f5d-5ca3-421a-83bf-aec434c7e8f6
+        id: 'views_block:mtech_power_engg_docs-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '0'
+        custom_id: views_block_mtech_power_engg_docs_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      4d991d7a-8845-421d-96db-70ea56652e9d:
+        uuid: 4d991d7a-8845-421d-96db-70ea56652e9d
+        id: 'block_content:d18555c7-3fd2-4fae-81a6-8e2ef77b93a2'
+        label: 'Attainment Tools heading in vision page'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '1'
+        custom_id: block_content_d18555c7_3fd2_4fae_81a6_8e2ef77b93a2
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      af74bef7-3a1f-4632-8bad-1a946fa49721:
+        uuid: af74bef7-3a1f-4632-8bad-1a946fa49721
+        id: 'views_block:attainment_tools_docs-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '2'
+        custom_id: views_block_attainment_tools_docs_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      f65fdb9d-31d4-4599-a752-ee508efd734f:
+        uuid: f65fdb9d-31d4-4599-a752-ee508efd734f
+        id: 'block_content:42056a90-62b4-46f9-b029-693df94c8dd0'
+        label: 'Mapping heading in vision page'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '3'
+        custom_id: block_content_42056a90_62b4_46f9_b029_693df94c8dd0
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      b0984741-3269-415e-bec9-2d24165c2114:
+        uuid: b0984741-3269-415e-bec9-2d24165c2114
+        id: 'views_block:mapping_docs-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '4'
+        custom_id: views_block_mapping_docs_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      97ab16b7-d5f1-4453-b78f-8c601df4fd32:
+        uuid: 97ab16b7-d5f1-4453-b78f-8c601df4fd32
+        id: 'block_content:6228d081-e74a-41fa-9e86-c5eb205e20b1'
+        label: 'graduate attributes'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-5'
+        custom_id: block_content_6228d081_e74a_41fa_9e86_c5eb205e20b1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      33aa6105-0345-45ff-b2f2-959f1d33327a:
+        uuid: 33aa6105-0345-45ff-b2f2-959f1d33327a
+        id: 'block_content:cf5282b1-7e02-4b9c-b13d-80ee95652b3a'
+        label: 'program specific outcomes'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-3'
+        custom_id: block_content_cf5282b1_7e02_4b9c_b13d_80ee95652b3a
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      f7a70f0a-223a-4e89-81f5-feb96a043e81:
+        uuid: f7a70f0a-223a-4e89-81f5-feb96a043e81
+        id: 'block_content:c2bc85a7-2088-48fc-835f-4916d14c9443'
+        label: 'program education objectives'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-2'
+        custom_id: block_content_c2bc85a7_2088_48fc_835f_4916d14c9443
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      01ac5959-c5b6-428e-9a99-6780e63e5417:
+        uuid: 01ac5959-c5b6-428e-9a99-6780e63e5417
+        id: 'system_menu_block:main'
+        label: 'Main navigation'
+        provider: system
+        label_display: '0'
+        region: primary_menu
+        weight: '0'
+        custom_id: system_menu_block_main
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        level: '1'
+        depth: null
+        expand_all_items: 0
+        third_party_settings: {  }
+        ignore_active_trail: true
+      536bfe86-2f28-4658-a4f6-ad80ed13d958:
+        uuid: 536bfe86-2f28-4658-a4f6-ad80ed13d958
+        id: 'block_content:afcf5b19-38f2-4874-8f35-646c127d058d'
+        label: 'department name for electrical engineering'
+        provider: block_content
+        label_display: '0'
+        region: department_title
+        weight: '0'
+        custom_id: block_content_afcf5b19_38f2_4874_8f35_646c127d058d
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      c36643cb-001c-4a2e-80fc-48cad435d1f8:
+        uuid: c36643cb-001c-4a2e-80fc-48cad435d1f8
+        id: system_branding_block
+        label: 'Site branding'
+        provider: system
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: system_branding_block
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        use_site_logo: 1
+        use_site_name: 0
+        use_site_slogan: 0
+        third_party_settings: {  }
+      91f8c053-7a78-4094-9ba3-e95326bf506a:
+        uuid: 91f8c053-7a78-4094-9ba3-e95326bf506a
+        id: 'block_content:a0542c88-49c1-4e72-898e-4b205b130469'
+        label: 'program outcomes'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-4'
+        custom_id: block_content_a0542c88_49c1_4e72_898e_4b205b130469
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: vision
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

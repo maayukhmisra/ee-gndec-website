@@ -1,0 +1,244 @@
+uuid: 32b23316-bcce-47e6-a011-5a02bf161a5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - views.view.files_on_mou_page
+    - views.view.mou_and_related_docs
+  content:
+    - 'block_content:text_block:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+    - 'block_content:text_block:1af9dd0d-df53-4527-bcb0-0556427a154b'
+    - 'block_content:text_block:511b3238-a334-451b-a17c-295facb441e0'
+    - 'block_content:text_block:6611379e-4fed-4f8c-9907-e8d5b542aacf'
+    - 'block_content:text_block:afcf5b19-38f2-4874-8f35-646c127d058d'
+    - 'block_content:text_block:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+    - 'block_content:text_block:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+    - 'block_content:text_block:d625ff5f-c8e3-4ae5-8d70-5727e4253df0'
+  module:
+    - block_content
+    - system
+    - views
+label: 'MOU page'
+name: mou_page
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 71ab4f2c-ee45-4940-82c9-93874e8d73b9
+    context_mapping: {  }
+    pages: |-
+      /mou
+      /academics/mou
+      /academics/mou/*
+reactions:
+  blocks:
+    id: blocks
+    uuid: 1bbd63fd-9cb9-42b1-a602-2a6beefebe95
+    blocks:
+      91ba816d-3085-49e4-8343-4728516c93ed:
+        uuid: 91ba816d-3085-49e4-8343-4728516c93ed
+        id: 'block_content:6611379e-4fed-4f8c-9907-e8d5b542aacf'
+        label: 'MOU page heading'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-2'
+        custom_id: block_content_6611379e_4fed_4f8c_9907_e8d5b542aacf
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      d37e45c7-343a-4fb6-8018-9087ca5d4abb:
+        uuid: d37e45c7-343a-4fb6-8018-9087ca5d4abb
+        id: 'block_content:d625ff5f-c8e3-4ae5-8d70-5727e4253df0'
+        label: 'mou and related document heading mou page'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-1'
+        custom_id: block_content_d625ff5f_c8e3_4ae5_8d70_5727e4253df0
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      ecba4bdb-679f-4c4e-8129-8c10ba1eb9a4:
+        uuid: ecba4bdb-679f-4c4e-8129-8c10ba1eb9a4
+        id: 'block_content:1af9dd0d-df53-4527-bcb0-0556427a154b'
+        label: 'files heading mou page'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '1'
+        custom_id: block_content_1af9dd0d_df53_4527_bcb0_0556427a154b
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      84b28336-35f0-482f-8a52-e0a333675911:
+        uuid: 84b28336-35f0-482f-8a52-e0a333675911
+        id: 'views_block:mou_and_related_docs-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '0'
+        custom_id: views_block_mou_and_related_docs_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      b98eb9df-87da-4d02-9f58-edb7f08826c7:
+        uuid: b98eb9df-87da-4d02-9f58-edb7f08826c7
+        id: 'views_block:files_on_mou_page-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '2'
+        custom_id: views_block_files_on_mou_page_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      caf7311b-9485-4716-b222-a44b52dcec6c:
+        uuid: caf7311b-9485-4716-b222-a44b52dcec6c
+        id: system_branding_block
+        label: 'Site branding'
+        provider: system
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: system_branding_block
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        use_site_logo: 1
+        use_site_name: 0
+        use_site_slogan: 0
+        third_party_settings: {  }
+      0ff64db4-343e-4352-9631-84b1d26055c7:
+        uuid: 0ff64db4-343e-4352-9631-84b1d26055c7
+        id: 'block_content:afcf5b19-38f2-4874-8f35-646c127d058d'
+        label: 'department name for electrical engineering'
+        provider: block_content
+        label_display: '0'
+        region: department_title
+        weight: '0'
+        custom_id: block_content_afcf5b19_38f2_4874_8f35_646c127d058d
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      df67ba9f-b8d1-4976-89ce-69b82bc27233:
+        uuid: df67ba9f-b8d1-4976-89ce-69b82bc27233
+        id: 'system_menu_block:main'
+        label: 'Main navigation'
+        provider: system
+        label_display: '0'
+        region: primary_menu
+        weight: '0'
+        custom_id: system_menu_block_main
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        level: '1'
+        depth: null
+        expand_all_items: 0
+        third_party_settings: {  }
+        ignore_active_trail: true
+      b05a46bb-be33-48d2-914f-c9bbb615c9e0:
+        uuid: b05a46bb-be33-48d2-914f-c9bbb615c9e0
+        id: 'block_content:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+        label: 'footer bottom'
+        provider: block_content
+        label_display: '0'
+        region: footer_bottom
+        weight: '0'
+        custom_id: block_content_c6ccb271_643c_48f2_a972_0d2a55b4c593
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      d7c36abb-0bc4-4c6e-8c63-70d27fc94dd9:
+        uuid: d7c36abb-0bc4-4c6e-8c63-70d27fc94dd9
+        id: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+        label: 'footer column 2'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_2
+        weight: '0'
+        custom_id: block_content_cd31defb_6283_41ae_9faa_dd53f0a32e03
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      9139405a-1979-45d5-a561-5543650c0a48:
+        uuid: 9139405a-1979-45d5-a561-5543650c0a48
+        id: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
+        label: 'footer column 1'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_1
+        weight: '0'
+        custom_id: block_content_511b3238_a334_451b_a17c_295facb441e0
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      f3b3f588-37ff-4eee-b382-8cdb52d2db1d:
+        uuid: f3b3f588-37ff-4eee-b382-8cdb52d2db1d
+        id: 'block_content:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+        label: 'footer column 3'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_3
+        weight: '0'
+        custom_id: block_content_05e7da25_4ccb_48f2_88f1_e5d9dad6099f
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: mou_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

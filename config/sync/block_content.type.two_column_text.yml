@@ -1,0 +1,8 @@
+uuid: adb50fe2-297f-4292-b178-4a37b34eb6c8
+langcode: en
+status: true
+dependencies: {  }
+id: two_column_text
+label: 'two column text with heading'
+revision: false
+description: null

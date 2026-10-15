@@ -1,0 +1,23 @@
+uuid: 636868e4-0fe7-45c6-9624-0d6e5048ff82
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:two_text_blocks:009a61d2-47c6-4605-9f9f-40186c8e8620'
+  module:
+    - block_content
+  theme:
+    - gndec
+id: gndec_avenuesandsalientpoints
+theme: gndec
+region: content
+weight: -3
+provider: null
+plugin: 'block_content:009a61d2-47c6-4605-9f9f-40186c8e8620'
+settings:
+  id: 'block_content:009a61d2-47c6-4605-9f9f-40186c8e8620'
+  label: 'avenues and salient points'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

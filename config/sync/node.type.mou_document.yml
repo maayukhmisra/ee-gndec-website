@@ -1,0 +1,11 @@
+uuid: f0cdb8a8-8b26-4a5a-a0e6-0089c5e6e41c
+langcode: en
+status: true
+dependencies: {  }
+name: 'MOU & Related Document'
+type: mou_document
+description: 'Content type for MOU & Related Document heading items.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

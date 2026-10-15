@@ -1,18 +1,11 @@
-uuid: 35fe270e-7912-4e3a-ad24-a43fa1936997
+uuid: 88ce0be3-53b6-4348-89bc-e8d1a31b8db9
 langcode: en
 status: true
-dependencies:
-  module:
-    - menu_ui
-third_party_settings:
-  menu_ui:
-    available_menus:
-      - main
-    parent: 'main:'
+dependencies: {  }
 name: 'Faculty Member'
 type: faculty_member
-description: 'Profile page for faculty and staff members'
+description: 'Faculty profile cards including designation, email, photo, and bio.'
 help: null
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false

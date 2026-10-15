@@ -1,0 +1,8 @@
+uuid: 9d40950d-bade-495a-ae2e-e2e23e9cca48
+langcode: en
+status: true
+dependencies: {  }
+id: two_text_blocks
+label: 'two text blocks'
+revision: false
+description: null

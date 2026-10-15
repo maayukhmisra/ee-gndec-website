@@ -1,0 +1,24 @@
+uuid: 22114231-82b9-45d6-aff0-1a65e8b252d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hod_card
+    - field.storage.block_content.field_card_body
+    - filter.format.full_html
+  module:
+    - text
+id: block_content.hod_card.field_card_body
+field_name: field_card_body
+entity_type: block_content
+bundle: hod_card
+label: 'card body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

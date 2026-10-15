@@ -1,0 +1,24 @@
+uuid: 0d392c6d-8e18-4210-ae2a-2b7c303a4f1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_category
+    - node.type.academic_document
+    - taxonomy.vocabulary.document_category
+id: node.academic_document.field_document_category
+field_name: field_document_category
+entity_type: node
+bundle: academic_document
+label: 'Document Category'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      document_category: document_category
+field_type: entity_reference

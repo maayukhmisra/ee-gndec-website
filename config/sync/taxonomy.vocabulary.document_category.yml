@@ -1,0 +1,9 @@
+uuid: 771d2c2b-d7a7-4fd7-a31e-801873a9d834
+langcode: en
+status: true
+dependencies: {  }
+name: 'Document Category'
+vid: document_category
+description: 'Categories for Document Category'
+weight: 0
+new_revision: false

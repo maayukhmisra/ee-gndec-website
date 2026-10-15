@@ -1,0 +1,11 @@
+uuid: 29d20c71-e42f-4018-baaf-a7086fa4cb1a
+langcode: en
+status: true
+dependencies: {  }
+name: 'M.Tech Power Engg Document'
+type: mtech_power_engg_doc
+description: 'Content type for M.Tech Power Engg Document heading items.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

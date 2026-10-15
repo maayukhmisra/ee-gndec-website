@@ -216,11 +216,29 @@ header.bg-navy li:has(> ul) > a::after {
 }
 
 .menu--main li:hover > a::after,
+.menu--main li.is-open > a::after,
+.menu--main li.open > a::after,
 .region-primary-menu li:hover > a::after,
+.region-primary-menu li.is-open > a::after,
+.region-primary-menu li.open > a::after,
 .primary-menu-wrapper li:hover > a::after,
-header.bg-navy li:hover > a::after {
+.primary-menu-wrapper li.is-open > a::after,
+.primary-menu-wrapper li.open > a::after,
+header.bg-navy li:hover > a::after,
+header.bg-navy li.is-open > a::after,
+header.bg-navy li.open > a::after {
   opacity: 1;
-  transform: translateY(1px);
+}
+
+.menu--main li.is-open > a::after,
+.menu--main li.open > a::after,
+.region-primary-menu li.is-open > a::after,
+.region-primary-menu li.open > a::after,
+.primary-menu-wrapper li.is-open > a::after,
+.primary-menu-wrapper li.open > a::after,
+header.bg-navy li.is-open > a::after,
+header.bg-navy li.open > a::after {
+  transform: rotate(180deg);
 }
 
 /* Submenu Dropdown Panels */
@@ -266,14 +284,26 @@ header.bg-navy .dropdown-menu::before {
 
 .menu--main li:hover > ul,
 .menu--main li:focus-within > ul,
+.menu--main li.is-open > ul,
+.menu--main li.open > ul,
 .region-primary-menu li:hover > ul,
 .region-primary-menu li:focus-within > ul,
+.region-primary-menu li.is-open > ul,
+.region-primary-menu li.open > ul,
 .primary-menu-wrapper li:hover > ul,
 .primary-menu-wrapper li:focus-within > ul,
+.primary-menu-wrapper li.is-open > ul,
+.primary-menu-wrapper li.open > ul,
 header.bg-navy li:hover > ul,
 header.bg-navy li:focus-within > ul,
+header.bg-navy li.is-open > ul,
+header.bg-navy li.open > ul,
 header.bg-navy .dropdown:hover > .dropdown-menu,
-header.bg-navy .menu-item--expanded:hover > ul {
+header.bg-navy .dropdown.is-open > .dropdown-menu,
+header.bg-navy .dropdown.open > .dropdown-menu,
+header.bg-navy .menu-item--expanded:hover > ul,
+header.bg-navy .menu-item--expanded.is-open > ul,
+header.bg-navy .menu-item--expanded.open > ul {
   display: flex !important;
   opacity: 1 !important;
   visibility: visible !important;
@@ -323,14 +353,25 @@ header.bg-navy ul.menu li ul a:focus,
 header.bg-navy .dropdown-menu a:hover,
 header.bg-navy .dropdown-menu a:focus,
 header.bg-navy .dropdown-item:hover,
-header.bg-navy .dropdown-item:focus,
-.menu--main li ul a.is-active,
-.region-primary-menu li ul a.is-active,
-.primary-menu-wrapper li ul a.is-active {
+header.bg-navy .dropdown-item:focus {
   background-color: var(--gndec-accent-blue, #0d6efd) !important;
   color: #ffffff !important;
   padding-left: 20px;
   box-shadow: 0 2px 8px rgba(13, 110, 253, 0.35);
+}
+
+.menu--main li ul a.is-active,
+.region-primary-menu li ul a.is-active,
+.primary-menu-wrapper li ul a.is-active,
+header.bg-navy ul.menu li ul a.is-active,
+header.bg-navy .dropdown-menu a.is-active,
+header.bg-navy .dropdown-item.active,
+.menu--main li ul li.menu-item--active-trail > a,
+.region-primary-menu li ul li.menu-item--active-trail > a,
+.primary-menu-wrapper li ul li.menu-item--active-trail > a {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  font-weight: 600;
 }
 
 /* Mobile Responsive */
@@ -370,46 +411,148 @@ header.bg-navy .dropdown-item:focus,
     text-align: center;
   }
 
+  header.bg-navy .primary-menu-wrapper,
   header.bg-navy .region-primary-menu,
   header.bg-navy .block-menu,
   header.bg-navy .menu--main {
     width: 100%;
+    display: flex;
     justify-content: center;
   }
 
+  /* Horizontal layout for top-level menu list */
   header.bg-navy ul,
   .menu--main ul.menu,
   .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: 6px 12px !important;
-    width: 100%;
+    align-items: center !important;
+    gap: 6px 8px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Horizontal layout for top-level menu items */
+  .menu--main li,
+  .region-primary-menu li,
+  .primary-menu-wrapper li,
+  header.bg-navy li {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: auto !important;
+    position: relative !important;
   }
 
   .menu--main a,
   .region-primary-menu a,
-  .navbar-nav .nav-link {
-    padding: 0.4rem 0.75rem;
-    font-size: 0.875rem;
-    background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 6px;
+  .navbar-nav .nav-link,
+  header.bg-navy li > a {
+    padding: 0.45rem 0.85rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    width: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    color: #ffffff !important;
   }
 
+  .menu--main a:hover,
+  .region-primary-menu a:hover,
+  .primary-menu-wrapper a:hover,
+  .navbar-nav .nav-link:hover,
+  header.bg-navy li > a:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  /* Submenu Dropdown Panel for mobile horizontal items */
   .menu--main li ul,
   .region-primary-menu li ul,
   .primary-menu-wrapper li ul,
   header.bg-navy ul.menu li ul,
   header.bg-navy .dropdown-menu {
-    position: static !important;
-    transform: none !important;
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(4px) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    background-color: var(--gndec-navy-dark, #021229) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 6px !important;
+    min-width: 190px !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1050 !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    box-sizing: border-box !important;
+    transition: opacity 0.2s ease, visibility 0.2s ease !important;
+  }
+
+  .menu--main li.is-open > ul,
+  .menu--main li.open > ul,
+  .region-primary-menu li.is-open > ul,
+  .region-primary-menu li.open > ul,
+  .primary-menu-wrapper li.is-open > ul,
+  .primary-menu-wrapper li.open > ul,
+  header.bg-navy li.is-open > ul,
+  header.bg-navy li.open > ul,
+  header.bg-navy .dropdown.is-open > .dropdown-menu,
+  header.bg-navy .dropdown.open > .dropdown-menu,
+  header.bg-navy .menu-item--expanded.is-open > ul,
+  header.bg-navy .menu-item--expanded.open > ul,
+  .menu--main li:hover > ul,
+  .region-primary-menu li:hover > ul,
+  .primary-menu-wrapper li:hover > ul,
+  header.bg-navy li:hover > ul {
+    display: flex !important;
     opacity: 1 !important;
     visibility: visible !important;
-    box-shadow: none !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    background-color: rgba(0, 0, 0, 0.25) !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  .menu--main li ul li,
+  .region-primary-menu li ul li,
+  .primary-menu-wrapper li ul li,
+  header.bg-navy ul.menu li ul li,
+  header.bg-navy .dropdown-menu li {
     width: 100% !important;
-    margin-top: 4px !important;
-    padding: 4px !important;
+    display: block !important;
+  }
+
+  .menu--main li ul a,
+  .region-primary-menu li ul a,
+  .primary-menu-wrapper li ul a,
+  header.bg-navy ul.menu li ul a,
+  header.bg-navy .dropdown-menu a {
+    padding: 8px 14px !important;
+    background-color: transparent !important;
+    font-size: 0.85rem !important;
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+  }
+
+  .menu--main li ul a:hover,
+  .region-primary-menu li ul a:hover,
+  .primary-menu-wrapper li ul a:hover,
+  header.bg-navy ul.menu li ul a:hover,
+  header.bg-navy .dropdown-menu a:hover {
+    background-color: var(--gndec-accent-blue, #0d6efd) !important;
+    color: #ffffff !important;
+    padding-left: 18px !important;
   }
 }
 

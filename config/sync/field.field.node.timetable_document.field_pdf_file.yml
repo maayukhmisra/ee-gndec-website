@@ -1,0 +1,27 @@
+uuid: 1c754810-49ae-4bd4-a98a-33d24b0dac4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pdf_file
+    - node.type.timetable_document
+  module:
+    - file
+id: node.timetable_document.field_pdf_file
+field_name: field_pdf_file
+entity_type: node
+bundle: timetable_document
+label: 'Document / File'
+description: 'Upload timetable document file (PDF, HTML, DOC, DOCX, JPG, PNG)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documents/timetables
+  file_extensions: 'pdf doc docx html htm jpg jpeg png'
+  max_filesize: ''
+  description_field: false
+field_type: file

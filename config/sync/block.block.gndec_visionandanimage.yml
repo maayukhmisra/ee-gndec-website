@@ -1,0 +1,23 @@
+uuid: 5d1cf5f8-a253-4633-bf7c-e4538945de1a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:vision_and_image:a7e8a43e-8b11-4515-8ee2-2697e194fc04'
+  module:
+    - block_content
+  theme:
+    - gndec
+id: gndec_visionandanimage
+theme: gndec
+region: content
+weight: -4
+provider: null
+plugin: 'block_content:a7e8a43e-8b11-4515-8ee2-2697e194fc04'
+settings:
+  id: 'block_content:a7e8a43e-8b11-4515-8ee2-2697e194fc04'
+  label: 'vision and an image'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

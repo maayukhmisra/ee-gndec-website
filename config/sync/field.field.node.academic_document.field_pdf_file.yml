@@ -1,0 +1,27 @@
+uuid: ffa2ab32-70d4-40e0-87e0-a5e26622c372
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pdf_file
+    - node.type.academic_document
+  module:
+    - file
+id: node.academic_document.field_pdf_file
+field_name: field_pdf_file
+entity_type: node
+bundle: academic_document
+label: 'PDF File'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf doc docx xls xlsx'
+  max_filesize: ''
+  description_field: false
+field_type: file

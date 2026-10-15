@@ -1,0 +1,38 @@
+uuid: b5eaf363-a42d-4e2f-b95c-ada6893a6dae
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.two_column_text
+    - field.field.block_content.two_column_text.field_cloumn_1
+    - field.field.block_content.two_column_text.field_column_2
+    - field.field.block_content.two_column_text.field_header
+  module:
+    - text
+id: block_content.two_column_text.default
+targetEntityType: block_content
+bundle: two_column_text
+mode: default
+content:
+  field_cloumn_1:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_column_2:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_header:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

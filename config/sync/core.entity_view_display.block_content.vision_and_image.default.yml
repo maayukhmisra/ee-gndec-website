@@ -1,0 +1,66 @@
+uuid: d58173f1-57af-44d2-8ecc-c7a40b075001
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.vision_and_image
+    - field.field.block_content.vision_and_image.field_body
+    - field.field.block_content.vision_and_image.field_image
+    - field.field.block_content.vision_and_image.field_link
+    - field.field.block_content.vision_and_image.field_orientation
+    - field.field.block_content.vision_and_image.field_title
+  module:
+    - image
+    - link
+    - options
+    - text
+id: block_content.vision_and_image.default
+targetEntityType: block_content
+bundle: vision_and_image
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_orientation:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

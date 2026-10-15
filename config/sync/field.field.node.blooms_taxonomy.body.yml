@@ -1,0 +1,24 @@
+uuid: ec8f5e9b-14ba-49fe-aadc-98f2a5ddee0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.blooms_taxonomy
+  module:
+    - text
+id: node.blooms_taxonomy.body
+field_name: body
+entity_type: node
+bundle: blooms_taxonomy
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

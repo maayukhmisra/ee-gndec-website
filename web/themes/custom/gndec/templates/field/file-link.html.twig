@@ -1,0 +1,7 @@
+{#
+/**
+ * @file
+ * Theme override for a file link.
+ */
+#}
+<span{{ attributes.addClass('file', 'file--mime-' ~ file.getMimeType()|clean_class) }}>{{ link }}</span>

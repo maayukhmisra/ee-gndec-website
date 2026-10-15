@@ -1,0 +1,22 @@
+uuid: 2c5e3981-96f1-4f1f-9426-1a0e41444431
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - gndec
+_core:
+  default_config_hash: TBrCLhkEQeoE685-qquoPrBbWXz8daJ6rwSMAtwB_pA
+id: gndec_help
+theme: gndec
+region: header
+weight: -2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: 7377b26f-b8c9-492e-8ffb-347a2054785a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:text_block:511b3238-a334-451b-a17c-295facb441e0'
+  module:
+    - block_content
+  theme:
+    - gndec
+id: gndec_footercolumn1
+theme: gndec
+region: footer_col_1
+weight: 0
+provider: null
+plugin: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
+settings:
+  id: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
+  label: 'footer column 1'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

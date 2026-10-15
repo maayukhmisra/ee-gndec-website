@@ -1,0 +1,58 @@
+uuid: ee624bd9-aa07-41f5-aa2d-c49cad4da5ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.time_table.field_academic_year
+    - field.field.node.time_table.field_session
+    - field.field.node.time_table.field_timetable_documents
+    - field.field.node.time_table.field_timetable_status
+    - node.type.time_table
+  module:
+    - user
+id: node.time_table.default
+targetEntityType: node
+bundle: time_table
+mode: default
+content:
+  field_academic_year:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_session:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_timetable_documents:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_timetable_status:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

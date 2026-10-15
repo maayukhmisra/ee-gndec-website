@@ -1,0 +1,23 @@
+uuid: fc2d31cf-7d35-4bb8-bd3c-c4e8a01ed4e4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:hero_banner:137dc9b0-2338-4fb6-b674-04ef7e079c20'
+  module:
+    - block_content
+  theme:
+    - gndec
+id: gndec_collegeimage
+theme: gndec
+region: hero
+weight: 0
+provider: null
+plugin: 'block_content:137dc9b0-2338-4fb6-b674-04ef7e079c20'
+settings:
+  id: 'block_content:137dc9b0-2338-4fb6-b674-04ef7e079c20'
+  label: 'college image'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,467 @@
+/* Guidelines Page Layout & Styling */
+
+/* Enable Flex Column Layout & Ordering on Regions to position GUIDELINES Header at the top */
+.guidelines-page-wrapper .main-content-blocks-wrapper,
+.guidelines-page-wrapper .region-content,
+.guidelines-page-wrapper .region,
+body.path-guidelines .region-content,
+body.path-academics-guidelines .region-content,
+body.path-guidelines .main-content-blocks-wrapper,
+body.path-academics-guidelines .main-content-blocks-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Force Page Title Block (GUIDELINES Header) to the very top */
+.guidelines-page-wrapper #block-gndec-page-title,
+.guidelines-page-wrapper .block-page-title-block,
+.guidelines-page-wrapper .heading-container,
+.guidelines-page-wrapper .region-content > div:has(h1),
+.guidelines-page-wrapper .region-content > section:has(h1),
+.guidelines-page-wrapper .main-content-blocks-wrapper > div:has(h1),
+.guidelines-page-wrapper .main-content-blocks-wrapper > section:has(h1),
+body.path-guidelines #block-gndec-page-title,
+body.path-academics-guidelines #block-gndec-page-title,
+body.path-guidelines .block-page-title-block,
+body.path-academics-guidelines .block-page-title-block,
+body.path-guidelines .region-content > div:has(h1),
+body.path-academics-guidelines .region-content > div:has(h1),
+body.path-guidelines .region-content > section:has(h1),
+body.path-academics-guidelines .region-content > section:has(h1) {
+  order: -100 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Red Accent Underline Bar */
+.guidelines-page-wrapper .underline,
+.guidelines-page-wrapper h1.page-title::after,
+.guidelines-page-wrapper .page-title::after,
+.guidelines-page-wrapper #block-gndec-page-title h1::after,
+.guidelines-page-wrapper h1::after,
+body.path-guidelines h1::after,
+body.path-academics-guidelines h1::after {
+  content: "" !important;
+  display: block !important;
+  width: 50px !important;
+  height: 3.5px !important;
+  background-color: #b84018 !important;
+  margin: 6px auto 0 auto !important;
+  border-radius: 2px !important;
+}
+
+/* Subtitle Description below title */
+.guidelines-subtitle,
+.guidelines-page-wrapper .heading-container p,
+.guidelines-page-wrapper #block-gndec-page-title p,
+.guidelines-page-wrapper .block-page-title-block p,
+.guidelines-page-wrapper div:has(h1) > p,
+body.path-guidelines #block-gndec-page-title p,
+body.path-academics-guidelines #block-gndec-page-title p {
+  color: #64748b !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  max-width: 650px !important;
+  margin: 0.85rem auto 2rem auto !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+}
+
+/* Main Section Wrapper */
+main.main-content-bg,
+.guidelines-page-wrapper {
+  background-color: var(--gndec-bg-light, #f4f8fc) !important;
+  padding: 1rem 0 3.5rem 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.guidelines-page-wrapper .container {
+  max-width: 960px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* Hide Raw Field Labels */
+.field__label,
+.guidelines-page-wrapper .field__label {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Heading Text (Red Bold Uppercase Centered) */
+.guidelines-page-wrapper .heading-text,
+.guidelines-page-wrapper h1.page-title,
+.guidelines-page-wrapper .page-title,
+.guidelines-page-wrapper #block-gndec-page-title h1,
+.guidelines-page-wrapper h1,
+body.path-guidelines h1,
+body.path-academics-guidelines h1 {
+  color: #b84018 !important;
+  font-size: 2.25rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  text-align: center !important;
+  margin: 0 auto 0.4rem auto !important;
+  line-height: 1.2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* Section Titles (Red Bullet Dot) */
+.guidelines-page-wrapper h2,
+.guidelines-page-wrapper .section-title,
+.guidelines-page-wrapper .guidelines-section-header,
+body.path-guidelines h2,
+body.path-academics-guidelines h2 {
+  color: #041e42 !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin: 1.75rem 0 0.85rem 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.guidelines-page-wrapper h2::before,
+.guidelines-page-wrapper .section-title::before,
+.guidelines-page-wrapper .guidelines-section-header::before,
+body.path-guidelines h2::before,
+body.path-academics-guidelines h2::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  min-width: 8px !important;
+  min-height: 8px !important;
+  background-color: #b84018 !important;
+  border-radius: 50% !important;
+  margin-right: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Hide Duplicate / Consecutive / Empty Duplicate Headings */
+.guidelines-page-wrapper h2 + h2,
+.guidelines-page-wrapper .block-title + h2,
+.guidelines-page-wrapper h2 + .block-title,
+.guidelines-page-wrapper .block:has(h2.block-title) .content h2,
+.guidelines-page-wrapper .block:has(.block-title) .field--name-body h2,
+.guidelines-page-wrapper .block > h2 + .content > h2,
+.guidelines-page-wrapper .block > .block-title + .content > h2,
+.guidelines-page-wrapper .block:has(h2):not(:has(.doc-card)):not(:has(.views-row)):not(:has(a[href*=".pdf"])):has(+ .block h2) h2,
+.guidelines-page-wrapper div:has(> h2):not(:has(.doc-card)):not(:has(.views-row)):not(:has(a[href*=".pdf"])):has(+ div h2) h2 {
+  display: none !important;
+}
+
+/* Document List Stack Container for Views */
+.guidelines-page-wrapper .views-element-container,
+.guidelines-page-wrapper .view,
+.guidelines-page-wrapper .view-content,
+.guidelines-page-wrapper .views-view-grid,
+.guidelines-page-wrapper .block,
+.guidelines-page-wrapper .block-views-block,
+.guidelines-page-wrapper .field--name-body,
+.guidelines-page-wrapper .field--name-field-document,
+.guidelines-page-wrapper .field__item {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+  align-self: stretch !important;
+  box-sizing: border-box !important;
+  margin-bottom: 12px !important;
+}
+
+/* Outer Row & Field Container Reset (Prevents Outer Box Wrapping) */
+body.path-guidelines .views-row,
+body.path-academics-guidelines .views-row,
+.guidelines-page-wrapper .views-row,
+.guidelines-page-wrapper .views-field,
+.guidelines-page-wrapper .views-field-body,
+.guidelines-page-wrapper .field-content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 0 12px 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+  align-self: stretch !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+}
+
+body.path-guidelines .views-row::before,
+body.path-academics-guidelines .views-row::before,
+.guidelines-page-wrapper .views-row::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Single Document Card Item (Full Width 100%) */
+body .guidelines-page-wrapper .doc-card,
+body .guidelines-page-wrapper div.doc-card,
+body .guidelines-page-wrapper .guidelines-card,
+body.path-guidelines .doc-card,
+body.path-academics-guidelines .doc-card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 1.25rem !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 1.25rem 1.6rem !important;
+  min-height: 64px !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+  align-self: stretch !important;
+  box-sizing: border-box !important;
+  margin-bottom: 1rem !important;
+  cursor: pointer !important;
+}
+
+body .guidelines-page-wrapper .doc-card:hover,
+body .guidelines-page-wrapper div.doc-card:hover,
+body .guidelines-page-wrapper .guidelines-card:hover,
+body .guidelines-page-wrapper .views-row:not(:has(.doc-card)):hover {
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Left Section: Icon Badge + Title */
+body .guidelines-page-wrapper .doc-card .doc-left,
+body .guidelines-page-wrapper div.doc-card .doc-left,
+body .guidelines-page-wrapper .doc-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  gap: 1.2rem !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+/* Icon Badge */
+body .guidelines-page-wrapper .doc-card .icon-wrapper,
+body .guidelines-page-wrapper div.doc-card .icon-wrapper,
+body .guidelines-page-wrapper .icon-wrapper {
+  min-width: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  background-color: #ffe2e5 !important;
+  color: #e11d48 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+body .guidelines-page-wrapper .icon-wrapper svg {
+  stroke: currentColor !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Document Text & Title */
+body .guidelines-page-wrapper .doc-card .doc-text-wrapper,
+body .guidelines-page-wrapper div.doc-card .doc-text-wrapper,
+body .guidelines-page-wrapper .doc-text-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+  min-width: 0 !important;
+  text-align: left !important;
+  justify-content: center !important;
+}
+
+body .guidelines-page-wrapper .doc-card .doc-title,
+body .guidelines-page-wrapper div.doc-card .doc-title,
+body .guidelines-page-wrapper .doc-title,
+body .guidelines-page-wrapper h4.doc-title {
+  color: #0f172a !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+
+/* Right Action Section */
+body .guidelines-page-wrapper .doc-card .doc-right,
+body .guidelines-page-wrapper div.doc-card .doc-right,
+body .guidelines-page-wrapper .doc-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-shrink: 0 !important;
+  margin-left: 1rem !important;
+}
+
+body .guidelines-page-wrapper .doc-card .doc-link,
+body .guidelines-page-wrapper div.doc-card .doc-link,
+body .guidelines-page-wrapper .doc-link {
+  color: #041e42 !important;
+  font-size: 0.885rem !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  transition: color 0.15s ease, transform 0.15s ease !important;
+  white-space: nowrap !important;
+}
+
+body .guidelines-page-wrapper .doc-card .doc-link:hover,
+body .guidelines-page-wrapper div.doc-card .doc-link:hover,
+body .guidelines-page-wrapper .doc-link:hover {
+  color: #0d6efd !important;
+}
+
+/* Clean View PDF Link with guaranteed right arrow */
+body .guidelines-page-wrapper .doc-card a,
+body .guidelines-page-wrapper .views-row a:not(.views-field-title a),
+body .guidelines-page-wrapper .views-field-field-document a,
+body .guidelines-page-wrapper .field--name-field-document a,
+body .guidelines-page-wrapper a.view-pdf-link,
+body .guidelines-page-wrapper a[href*=".pdf"] {
+  color: #041e42 !important;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  align-self: center !important;
+  gap: 4px !important;
+  margin-left: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.2 !important;
+  transition: color 0.2s ease !important;
+  background: none !important;
+  padding: 0 !important;
+}
+
+/* Ensure right arrow is handled cleanly by JS button markup (Disabled ::after pseudo-element to prevent double arrow) */
+body .guidelines-page-wrapper a[href*=".pdf"]::after,
+body .guidelines-page-wrapper .view-pdf-link::after,
+body .guidelines-page-wrapper .doc-card a::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* View PDF link container MUST ONLY be visible if a valid PDF link is present inside it */
+body .guidelines-page-wrapper .views-field-field-document:not(:has(a[href*=".pdf"])):not(:has(a[href*="files"])):not(:has(a[href]:not([href="#"]))),
+body .guidelines-page-wrapper .views-field-file:not(:has(a[href*=".pdf"])):not(:has(a[href*="files"])):not(:has(a[href]:not([href="#"]))),
+body .guidelines-page-wrapper .field--name-field-document:not(:has(a[href*=".pdf"])):not(:has(a[href*="files"])):not(:has(a[href]:not([href="#"]))),
+body .guidelines-page-wrapper .doc-card .link-wrapper:not(:has(a[href*=".pdf"])):not(:has(a[href*="files"])):not(:has(a[href]:not([href="#"]))),
+body .guidelines-page-wrapper .views-row:not(:has(a[href*=".pdf"])):not(:has(a[href*="files"])):not(:has(a[href]:not([href="#"]))) .views-field-field-document,
+body .guidelines-page-wrapper .views-row:not(:has(a[href*=".pdf"])):not(:has(a[href*="files"])):not(:has(a[href]:not([href="#"]))) .field--name-field-document,
+body .guidelines-page-wrapper .views-row:not(:has(a[href*=".pdf"])):not(:has(a[href*="files"])):not(:has(a[href]:not([href="#"]))) a,
+body .guidelines-page-wrapper a:not([href]),
+body .guidelines-page-wrapper a[href="#"],
+body .guidelines-page-wrapper a[href=""] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body .guidelines-page-wrapper .doc-card a:hover,
+body .guidelines-page-wrapper .views-row a:hover {
+  color: #0d6efd !important;
+}
+
+/* Completely remove default Drupal file icons on/next to the View PDF link */
+body .guidelines-page-wrapper span.file,
+body .guidelines-page-wrapper .file--mime-application-pdf,
+body .guidelines-page-wrapper .file-link {
+  background: none !important;
+  padding-left: 0 !important;
+  margin-left: auto !important;
+}
+
+body .guidelines-page-wrapper span.file::before,
+body .guidelines-page-wrapper span.file::after,
+body .guidelines-page-wrapper .file--mime-application-pdf::before,
+body .guidelines-page-wrapper .file--mime-application-pdf::after,
+body .guidelines-page-wrapper .file-link::before,
+body .guidelines-page-wrapper .file-link::after,
+body .guidelines-page-wrapper .views-field-field-document img,
+body .guidelines-page-wrapper .views-field-file img,
+body .guidelines-page-wrapper .field--name-field-document img,
+body .guidelines-page-wrapper span.file img,
+body .guidelines-page-wrapper span.file .file-icon,
+body .guidelines-page-wrapper .file-icon {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+}
+
+/* Hide Standalone Raw File Outputs outside cards */
+body .guidelines-page-wrapper .field--type-file:not(.doc-card *):not(.views-row *),
+body .guidelines-page-wrapper .field--name-field-document:not(.doc-card *):not(.views-row *),
+body .guidelines-page-wrapper span.file:not(.doc-card *):not(.views-row *) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 575.98px) {
+  body .guidelines-page-wrapper .doc-card,
+  body .guidelines-page-wrapper div.doc-card,
+  body .guidelines-page-wrapper .views-row {
+    padding: 12px 14px !important;
+    gap: 10px !important;
+    min-height: 54px !important;
+  }
+
+  body .guidelines-page-wrapper .heading-text,
+  body .guidelines-page-wrapper h1.page-title,
+  body .guidelines-page-wrapper #block-gndec-page-title h1 {
+    font-size: 1.75rem !important;
+  }
+}

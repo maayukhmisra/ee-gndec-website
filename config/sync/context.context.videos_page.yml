@@ -1,0 +1,186 @@
+uuid: 3824d093-6bc8-40cc-8395-572203ec7c31
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - views.view.videos
+  content:
+    - 'block_content:text_block:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+    - 'block_content:text_block:511b3238-a334-451b-a17c-295facb441e0'
+    - 'block_content:text_block:afcf5b19-38f2-4874-8f35-646c127d058d'
+    - 'block_content:text_block:bd343696-8a3d-47de-936d-02edcae8887e'
+    - 'block_content:text_block:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+    - 'block_content:text_block:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+  module:
+    - block_content
+    - system
+    - views
+label: 'Videos page'
+name: videos_page
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 0740a4a9-154b-4f68-99a9-877944d1c380
+    context_mapping: {  }
+    pages: |-
+      /videos
+      /academics/videos
+      /academics/videos/*
+reactions:
+  blocks:
+    id: blocks
+    uuid: 47e1adc1-5011-4f7e-bcc1-6db17859a151
+    blocks:
+      bd343696:
+        uuid: bd343696
+        id: 'block_content:bd343696-8a3d-47de-936d-02edcae8887e'
+        label: 'Videos Header Block'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-100'
+        custom_id: block_bd343696
+        theme: gndec
+        context_id: videos_page
+        context_mapping: {  }
+        view_mode: full
+      videos_view_b1:
+        uuid: videos_view_b1
+        id: 'views_block:videos-block_1'
+        label: 'Videos View Block'
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '0'
+        custom_id: block_videos_view_b1
+        theme: gndec
+        context_id: videos_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+      a26963c6-b166-4cf4-85d5-985b4d4c49f2:
+        uuid: a26963c6-b166-4cf4-85d5-985b4d4c49f2
+        id: 'system_menu_block:main'
+        label: 'Main navigation'
+        provider: system
+        label_display: '0'
+        region: primary_menu
+        weight: '0'
+        custom_id: system_menu_block_main
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: videos_page
+        context_mapping: {  }
+        level: '1'
+        depth: null
+        expand_all_items: 0
+        third_party_settings: {  }
+        ignore_active_trail: true
+      73a0cc14-cbc4-4a1c-87b2-2fb43e113803:
+        uuid: 73a0cc14-cbc4-4a1c-87b2-2fb43e113803
+        id: system_branding_block
+        label: 'Site branding'
+        provider: system
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: system_branding_block
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: videos_page
+        context_mapping: {  }
+        use_site_logo: 1
+        use_site_name: 0
+        use_site_slogan: 0
+        third_party_settings: {  }
+      91e31dc1-4de2-4699-8a4c-e8c4e0f4cf64:
+        uuid: 91e31dc1-4de2-4699-8a4c-e8c4e0f4cf64
+        id: 'block_content:afcf5b19-38f2-4874-8f35-646c127d058d'
+        label: 'department name for electrical engineering'
+        provider: block_content
+        label_display: '0'
+        region: department_title
+        weight: '0'
+        custom_id: block_content_afcf5b19_38f2_4874_8f35_646c127d058d
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: videos_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      d4992de3-295b-4b4a-96fb-2ef10b26a2a3:
+        uuid: d4992de3-295b-4b4a-96fb-2ef10b26a2a3
+        id: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
+        label: 'footer column 1'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_1
+        weight: '0'
+        custom_id: block_content_511b3238_a334_451b_a17c_295facb441e0
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: videos_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      9167c445-650e-42b7-b86f-8a1ebe6331f3:
+        uuid: 9167c445-650e-42b7-b86f-8a1ebe6331f3
+        id: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+        label: 'footer column 2'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_2
+        weight: '0'
+        custom_id: block_content_cd31defb_6283_41ae_9faa_dd53f0a32e03
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: videos_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      225ce123-6c06-4986-a444-b27adc6416e0:
+        uuid: 225ce123-6c06-4986-a444-b27adc6416e0
+        id: 'block_content:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+        label: 'footer column 3'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_3
+        weight: '0'
+        custom_id: block_content_05e7da25_4ccb_48f2_88f1_e5d9dad6099f
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: videos_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      59a2364e-be46-4930-8deb-43b6ba75213a:
+        uuid: 59a2364e-be46-4930-8deb-43b6ba75213a
+        id: 'block_content:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+        label: 'footer bottom'
+        provider: block_content
+        label_display: '0'
+        region: footer_bottom
+        weight: '0'
+        custom_id: block_content_c6ccb271_643c_48f2_a972_0d2a55b4c593
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: videos_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

@@ -1,0 +1,11 @@
+uuid: 85ffc0e1-bf60-4e83-9f5b-e01f606e9aec
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blooms Taxonomy Document'
+type: blooms_taxonomy
+description: 'Blooms taxonomy question stems document'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

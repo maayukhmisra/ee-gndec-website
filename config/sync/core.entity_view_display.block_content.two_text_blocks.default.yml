@@ -1,0 +1,30 @@
+uuid: 8d4e3f3e-762d-473e-928e-150f63d4e7a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.two_text_blocks
+    - field.field.block_content.two_text_blocks.field_first_text_box
+    - field.field.block_content.two_text_blocks.field_second_text_box
+  module:
+    - text
+id: block_content.two_text_blocks.default
+targetEntityType: block_content
+bundle: two_text_blocks
+mode: default
+content:
+  field_first_text_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_second_text_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

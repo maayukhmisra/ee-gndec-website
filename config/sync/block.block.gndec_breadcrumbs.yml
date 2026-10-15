@@ -1,0 +1,22 @@
+uuid: d0d889e3-5673-40e4-9bed-1f9f378bea3a
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - gndec
+_core:
+  default_config_hash: L3i2fo_Gpll_k0Dhb4Crkj8c3H23FpnbX2GdOtjzw3c
+id: gndec_breadcrumbs
+theme: gndec
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

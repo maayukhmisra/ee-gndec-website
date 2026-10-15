@@ -1,0 +1,11 @@
+uuid: d91b4d38-19af-482b-84a1-c7937fcadfa3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Postgraduate Guideline'
+type: postgrad_guideline
+description: 'Content type for Postgraduate Guideline heading items.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

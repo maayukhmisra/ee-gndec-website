@@ -104,11 +104,39 @@ body.path-people .view-content,
   display: none !important;
 }
 
+/* Views Row & Field Body Wrappers - Clean Reset */
+.view-faculty .view-content > .views-row,
+.view-id-faculty .view-content > .views-row,
+.people-page-wrapper .view-content > .views-row,
+body.path-people .view-content > .views-row {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.view-faculty .views-field-body,
+.view-id-faculty .views-field-body,
+.people-page-wrapper .views-field-body,
+.view-faculty .field-content,
+.view-id-faculty .field-content,
+.people-page-wrapper .field-content {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
 /* Faculty Card Container */
 .person-card,
-.people-page-wrapper .views-row,
-.view-faculty .views-row,
-.view-id-faculty .views-row,
 .faculty-card {
   background: #ffffff !important;
   border-radius: var(--gndec-card-radius, 16px) !important;
@@ -131,8 +159,6 @@ body.path-people .view-content,
 }
 
 .person-card:hover,
-.people-page-wrapper .views-row:hover,
-.view-faculty .views-row:hover,
 .faculty-card:hover {
   transform: translateY(-4px) !important;
   box-shadow: var(--gndec-card-shadow-hover, 0 14px 36px rgba(4, 30, 66, 0.12)) !important;
@@ -140,8 +166,10 @@ body.path-people .view-content,
 }
 
 /* Left Media Column */
-.views-row .field--name-field-img,
+.people-page-wrapper .views-row .field--name-field-img,
 .view-faculty .field--name-field-img,
+.view-id-faculty .field--name-field-img,
+.faculty-card .field--name-field-img,
 .person-card .person-media {
   flex: 0 0 220px !important;
   max-width: 220px !important;
@@ -157,8 +185,10 @@ body.path-people .view-content,
   position: relative !important;
 }
 
-.views-row .field--name-field-img .field__item,
-.views-row .field--name-field-img img,
+.people-page-wrapper .views-row .field--name-field-img .field__item,
+.view-faculty .field--name-field-img img,
+.view-id-faculty .field--name-field-img img,
+.faculty-card .field--name-field-img img,
 .person-card .person-media img {
   width: 100% !important;
   height: 100% !important;
@@ -171,15 +201,21 @@ body.path-people .view-content,
   transition: transform 0.4s ease !important;
 }
 
-.views-row:hover .field--name-field-img img,
+.people-page-wrapper .views-row:hover .field--name-field-img img,
+.view-faculty .views-row:hover .field--name-field-img img,
+.faculty-card:hover img,
 .person-card:hover img {
   transform: scale(1.04) !important;
 }
 
 /* Right Info Column */
-.views-row .field--name-field-info,
+.people-page-wrapper .views-row .field--name-field-info,
+.view-faculty .field--name-field-info,
+.view-id-faculty .field--name-field-info,
+.faculty-card .field--name-field-info,
 .person-card .person-content {
-  flex: 1 !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
   display: flex !important;
@@ -278,7 +314,9 @@ body.path-people .view-content,
 @media (max-width: 991.98px) {
   .people-grid,
   .people-page-wrapper .view-content,
-  .view-faculty .view-content {
+  body.path-people .view-content,
+  .view-faculty .view-content,
+  .view-id-faculty .view-content {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
   }
@@ -287,28 +325,34 @@ body.path-people .view-content,
 @media (max-width: 767.98px) {
   .people-grid,
   .people-page-wrapper .view-content,
-  .view-faculty .view-content {
+  body.path-people .view-content,
+  .view-faculty .view-content,
+  .view-id-faculty .view-content {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    gap: 1.25rem !important;
   }
 
-  .person-card,
-  .views-row,
-  .faculty-card {
+  .faculty-card,
+  .person-card {
     flex-direction: row !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
-  .views-row .field--name-field-img,
+  .people-page-wrapper .views-row .field--name-field-img,
+  .view-faculty .field--name-field-img,
+  .view-id-faculty .field--name-field-img,
+  .faculty-card .field--name-field-img,
   .person-card .person-media {
-    flex: 0 0 150px !important;
-    max-width: 150px !important;
-    width: 150px !important;
-    min-width: 150px !important;
+    flex: 0 0 130px !important;
+    max-width: 130px !important;
+    width: 130px !important;
+    min-width: 130px !important;
   }
 
   .faculty-card__content,
   .person-info {
-    padding: 1rem 1.25rem !important;
+    padding: 1rem 1.15rem !important;
   }
 
   .faculty-card__name,
@@ -318,18 +362,49 @@ body.path-people .view-content,
   }
 }
 
-@media (max-width: 480px) {
-  .person-card,
-  .views-row,
-  .faculty-card {
-    flex-direction: column !important;
+@media (max-width: 576px) {
+  .people-grid,
+  .people-page-wrapper .view-content,
+  body.path-people .view-content,
+  .view-faculty .view-content,
+  .view-id-faculty .view-content {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
   }
 
-  .views-row .field--name-field-img,
+  .faculty-card,
+  .person-card {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .people-page-wrapper .views-row .field--name-field-img,
+  .view-faculty .field--name-field-img,
+  .view-id-faculty .field--name-field-img,
+  .faculty-card .field--name-field-img,
   .person-card .person-media {
     flex: 0 0 auto !important;
     max-width: 100% !important;
     width: 100% !important;
-    height: 220px !important;
+    min-width: 100% !important;
+    height: 250px !important;
+  }
+
+  .people-page-wrapper .views-row .field--name-field-img img,
+  .view-faculty .field--name-field-img img,
+  .view-id-faculty .field--name-field-img img,
+  .faculty-card .field--name-field-img img,
+  .person-card .person-media img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .faculty-card__content,
+  .person-info {
+    padding: 1.25rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 }

@@ -1,0 +1,23 @@
+uuid: d3d0cfd5-6dbb-4846-b9e9-22b606e1ff32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_weight
+    - node.type.academic_document
+id: node.academic_document.field_display_weight
+field_name: field_display_weight
+entity_type: node
+bundle: academic_document
+label: 'Display Weight'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

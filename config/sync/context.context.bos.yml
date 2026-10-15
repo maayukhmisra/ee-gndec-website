@@ -1,0 +1,192 @@
+uuid: 7f72ebc8-2c87-4b20-a0a6-9f7877639070
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - views.view.bos_documents
+  content:
+    - 'block_content:text_block:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+    - 'block_content:text_block:511b3238-a334-451b-a17c-295facb441e0'
+    - 'block_content:text_block:afcf5b19-38f2-4874-8f35-646c127d058d'
+    - 'block_content:text_block:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+    - 'block_content:text_block:c7e37450-35be-4a1b-a7cf-7f65579c349f'
+    - 'block_content:text_block:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+  module:
+    - block_content
+    - system
+    - views
+label: 'bos page'
+name: bos
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 057aaebc-12c3-4f06-a669-6617d621f43f
+    context_mapping: {  }
+    pages: |-
+      /bos
+      /academics/bos
+      /academics/bos/*
+reactions:
+  blocks:
+    id: blocks
+    uuid: 9ca83b78-2ffc-4f19-994b-0b9f6c9cb41e
+    blocks:
+      f6f27a01-8b3d-4c1a-a2d1-a141c0c10e93:
+        uuid: f6f27a01-8b3d-4c1a-a2d1-a141c0c10e93
+        id: 'block_content:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+        label: 'footer bottom'
+        provider: block_content
+        label_display: '0'
+        region: footer_bottom
+        weight: '0'
+        custom_id: block_content_c6ccb271_643c_48f2_a972_0d2a55b4c593
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: bos
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      1e9a1285-9808-4962-8b35-c36b91e1adab:
+        uuid: 1e9a1285-9808-4962-8b35-c36b91e1adab
+        id: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
+        label: 'footer column 1'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_1
+        weight: '0'
+        custom_id: block_content_511b3238_a334_451b_a17c_295facb441e0
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: bos
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      720b4e84-c076-487b-88d0-788f95e5bad2:
+        uuid: 720b4e84-c076-487b-88d0-788f95e5bad2
+        id: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+        label: 'footer column 2'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_2
+        weight: '0'
+        custom_id: block_content_cd31defb_6283_41ae_9faa_dd53f0a32e03
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: bos
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      71925f18-592e-4703-834a-3bfa0a415d5e:
+        uuid: 71925f18-592e-4703-834a-3bfa0a415d5e
+        id: 'block_content:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+        label: 'footer column 3'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_3
+        weight: '0'
+        custom_id: block_content_05e7da25_4ccb_48f2_88f1_e5d9dad6099f
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: bos
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      ece02477-dcf5-422b-bb60-443ed03ec5dc:
+        uuid: ece02477-dcf5-422b-bb60-443ed03ec5dc
+        id: system_branding_block
+        label: 'Site branding'
+        provider: system
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: system_branding_block
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: bos
+        context_mapping: {  }
+        use_site_logo: 1
+        use_site_name: 0
+        use_site_slogan: 0
+        third_party_settings: {  }
+      64e7139f-1841-43b1-89d0-4a8487602bfa:
+        uuid: 64e7139f-1841-43b1-89d0-4a8487602bfa
+        id: 'block_content:afcf5b19-38f2-4874-8f35-646c127d058d'
+        label: 'department name for electrical engineering'
+        provider: block_content
+        label_display: visible
+        region: department_title
+        weight: '0'
+        custom_id: block_content_afcf5b19_38f2_4874_8f35_646c127d058d
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: bos
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      4cf863f2-fd0e-43aa-bbd0-15f13e4305f1:
+        uuid: 4cf863f2-fd0e-43aa-bbd0-15f13e4305f1
+        id: 'system_menu_block:main'
+        label: 'Main navigation'
+        provider: system
+        label_display: '0'
+        region: primary_menu
+        weight: '0'
+        custom_id: system_menu_block_main
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: bos
+        context_mapping: {  }
+        level: '1'
+        depth: null
+        expand_all_items: 0
+        third_party_settings: {  }
+        ignore_active_trail: true
+      006072b7-4c7f-4efc-8add-437ee55b7108:
+        uuid: 006072b7-4c7f-4efc-8add-437ee55b7108
+        id: 'views_block:bos_documents-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '0'
+        custom_id: views_block_bos_documents_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: bos
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      862b49eb-340b-4c6e-9a7c-088048b6b512:
+        uuid: 862b49eb-340b-4c6e-9a7c-088048b6b512
+        id: 'block_content:c7e37450-35be-4a1b-a7cf-7f65579c349f'
+        label: 'bos heading'
+        provider: block_content
+        label_display: '0'
+        region: hero
+        weight: '0'
+        custom_id: block_content_c7e37450_35be_4a1b_a7cf_7f65579c349f
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: bos
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

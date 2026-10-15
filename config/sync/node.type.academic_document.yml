@@ -1,0 +1,11 @@
+uuid: d4d29fd7-fd53-4d0c-b57c-00d2f7cc33bf
+langcode: en
+status: true
+dependencies: {  }
+name: 'Academic Document'
+type: academic_document
+description: 'Academic syllabus, study schemes, sanctioned seats, and prerequisites documents.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,23 @@
+uuid: 387ac24b-1ee0-4208-8993-b737f31fce0b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:text_block:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+  module:
+    - block_content
+  theme:
+    - gndec
+id: gndec_footercolumn2_2
+theme: gndec
+region: footer_col_2
+weight: 0
+provider: null
+plugin: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+settings:
+  id: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+  label: 'footer column 2'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

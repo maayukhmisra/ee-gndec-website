@@ -1,0 +1,24 @@
+uuid: a1bcd527-1677-4415-b547-715c80370ad4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.mtech_power_engg_doc
+  module:
+    - text
+id: node.mtech_power_engg_doc.body
+field_name: body
+entity_type: node
+bundle: mtech_power_engg_doc
+label: 'Description / Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

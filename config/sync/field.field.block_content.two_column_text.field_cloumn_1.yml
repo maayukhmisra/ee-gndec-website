@@ -1,0 +1,24 @@
+uuid: d168a01b-65a4-4724-8740-8ee6c6a19b34
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.two_column_text
+    - field.storage.block_content.field_cloumn_1
+    - filter.format.full_html
+  module:
+    - text
+id: block_content.two_column_text.field_cloumn_1
+field_name: field_cloumn_1
+entity_type: block_content
+bundle: two_column_text
+label: 'cloumn 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

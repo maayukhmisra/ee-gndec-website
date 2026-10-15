@@ -1,0 +1,24 @@
+uuid: 55c4bf06-a385-4c2d-be6e-ad5caab7014e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.vision_and_image
+    - field.storage.block_content.field_body
+    - filter.format.basic_html
+  module:
+    - text
+id: block_content.vision_and_image.field_body
+field_name: field_body
+entity_type: block_content
+bundle: vision_and_image
+label: body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

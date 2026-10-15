@@ -1,15 +1,69 @@
-uuid: 273fa2d8-96ed-45f0-bba5-5eb4153dc409
+uuid: efe8e2e1-8d5d-4335-a365-85d97af50361
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_featured_image
+    - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
-    - image
+    - layout_builder
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          d46d8b68-bc02-4574-ad04-9f0769539279:
+            uuid: d46d8b68-bc02-4574-ad04-9f0769539279
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          326e3933-001d-4ee9-8ee4-4551d35b62b3:
+            uuid: 326e3933-001d-4ee9-8ee4-4551d35b62b3
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          3a907db8-e329-42ce-aac2-4e09a6d91017:
+            uuid: 3a907db8-e329-42ce-aac2-4e09a6d91017
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -20,21 +74,8 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
-    region: content
-  field_featured_image:
-    type: image
-    label: hidden
-    settings:
-      image_style: large
-      image_link: ''
-    third_party_settings: {  }
     weight: 0
     region: content
-  links:
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
-  langcode: true
+  layout_builder__layout: true
+  links: true

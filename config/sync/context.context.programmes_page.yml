@@ -1,0 +1,181 @@
+uuid: 9db75f8b-74d0-4a09-b3cf-2738edcc64fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - views.view.academic_documents
+    - views.view.programmes_listing
+  content:
+    - 'block_content:text_block:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+    - 'block_content:text_block:511b3238-a334-451b-a17c-295facb441e0'
+    - 'block_content:text_block:afcf5b19-38f2-4874-8f35-646c127d058d'
+    - 'block_content:text_block:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+    - 'block_content:text_block:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+  module:
+    - block_content
+    - system
+    - views
+label: 'Programmes Page'
+name: programmes_page
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: e4027f9e-06a1-403e-a7bd-93c6a97f2191
+    pages: |-
+      /programmes
+      /academics/programmes
+      /academics/programmes/*
+reactions:
+  blocks:
+    id: blocks
+    blocks:
+      branding:
+        uuid: 72ac0635-8234-46a4-9822-40814a00638b
+        id: system_branding_block
+        label: 'Site branding'
+        provider: system
+        label_display: '0'
+        region: header
+        weight: '0'
+        theme: gndec
+        use_site_logo: 1
+        use_site_name: 0
+        use_site_slogan: 0
+      dept_title:
+        uuid: 1c1cf010-a742-41c7-a79f-fa720671584c
+        id: 'block_content:afcf5b19-38f2-4874-8f35-646c127d058d'
+        label: 'department name for electrical engineering'
+        provider: block_content
+        label_display: visible
+        region: department_title
+        weight: '0'
+        theme: gndec
+        view_mode: full
+      main_menu:
+        uuid: 29632151-36a1-4252-9d8b-51eb8b2dc26d
+        id: 'system_menu_block:main'
+        label: 'Main navigation'
+        provider: system
+        label_display: visible
+        region: primary_menu
+        weight: '0'
+        theme: gndec
+        level: '1'
+        depth: null
+        expand_all_items: 0
+        ignore_active_trail: true
+      programmes_listing_block:
+        uuid: 986e595e-9352-407e-b4d7-db8996d8b2e4
+        id: 'views_block:programmes_listing-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '1'
+        theme: gndec
+        views_label: ''
+        items_per_page: null
+      sanctioned_seats_block:
+        uuid: 45d2d864-6438-4aa3-808f-7b566ef4f87f
+        id: 'views_block:academic_documents-sanctioned_seats'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '2'
+        theme: gndec
+        views_label: ''
+        items_per_page: null
+      btech_schemes_block:
+        uuid: 644beb61-6ed3-4dc1-80a5-dde7d3a3fdf0
+        id: 'views_block:academic_documents-btech_schemes'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '3'
+        theme: gndec
+        views_label: ''
+        items_per_page: null
+      mtech_schemes_block:
+        uuid: 6659bc42-35c4-4ecf-a301-197a59b9f4d3
+        id: 'views_block:academic_documents-mtech_schemes'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '4'
+        theme: gndec
+        views_label: ''
+        items_per_page: null
+      phd_schemes_block:
+        uuid: 50efee98-6b02-4e05-8e26-ae01173e8369
+        id: 'views_block:academic_documents-phd_schemes'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '5'
+        theme: gndec
+        views_label: ''
+        items_per_page: null
+      prerequisites_block:
+        uuid: 9ece8677-20fe-43df-b6f6-4b4b7d6a6ba2
+        id: 'views_block:academic_documents-prerequisites'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '6'
+        theme: gndec
+        views_label: ''
+        items_per_page: null
+      footer_col_1:
+        uuid: a3aff144-b6e3-436c-9320-adf1230a739b
+        id: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
+        label: 'footer column 1'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_1
+        weight: '0'
+        theme: gndec
+        view_mode: full
+      footer_col_2:
+        uuid: 26af6f06-2a73-47d9-a7ee-7846a8066d2e
+        id: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+        label: 'footer column 2'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_2
+        weight: '0'
+        theme: gndec
+        view_mode: full
+      footer_col_3:
+        uuid: c4e3f358-a800-4be8-b32a-566c427199ab
+        id: 'block_content:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+        label: 'footer column 3'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_3
+        weight: '0'
+        theme: gndec
+        view_mode: full
+      footer_bottom:
+        uuid: e0c1661f-68e2-47b2-ae88-1bb824d25223
+        id: 'block_content:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+        label: 'footer bottom'
+        provider: block_content
+        label_display: '0'
+        region: footer_bottom
+        weight: '0'
+        theme: gndec
+        view_mode: full
+    include_default_blocks: 0
+    saved: false
+weight: 0

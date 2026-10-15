@@ -1,0 +1,22 @@
+uuid: 9c6dc1e2-1607-41c7-b2d1-3e89e749b296
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hod_card
+    - field.field.block_content.hod_card.field_card_body
+  module:
+    - text
+id: block_content.hod_card.default
+targetEntityType: block_content
+bundle: hod_card
+mode: default
+content:
+  field_card_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

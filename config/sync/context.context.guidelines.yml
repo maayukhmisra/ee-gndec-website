@@ -1,0 +1,302 @@
+uuid: fd3661e6-1300-40ab-8833-732a3f392c27
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - views.view.attendance_criteria
+    - views.view.blooms_taxonomy
+    - views.view.postgraduate_students
+    - views.view.undergraduate_students
+  content:
+    - 'block_content:text_block:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+    - 'block_content:text_block:2184e7ac-e64b-4647-b3d8-09aabea0f195'
+    - 'block_content:text_block:38811c2a-c145-455e-bdf1-3fe3fb4b34b4'
+    - 'block_content:text_block:390f2170-22c1-4472-84c4-26ccf6eb7e2c'
+    - 'block_content:text_block:511b3238-a334-451b-a17c-295facb441e0'
+    - 'block_content:text_block:9be8bfbc-4bc6-4173-bb55-87280e9a592a'
+    - 'block_content:text_block:afcf5b19-38f2-4874-8f35-646c127d058d'
+    - 'block_content:text_block:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+    - 'block_content:text_block:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+    - 'block_content:text_block:d97fdba5-bbbd-4589-a047-669a6dbb21af'
+  module:
+    - block_content
+    - system
+    - views
+label: 'Guidelines page'
+name: guidelines
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 199642a9-3bdd-4416-9a8b-8d1fb82d8dd3
+    context_mapping: {  }
+    pages: |-
+      /guidelines
+      /academics/guidelines
+      /academics/guidelines/*
+reactions:
+  blocks:
+    id: blocks
+    uuid: c6de64ef-8241-48ae-b298-89b0d90213d4
+    blocks:
+      cb97aa50-bb90-4b28-98da-f3e980ad950b:
+        uuid: cb97aa50-bb90-4b28-98da-f3e980ad950b
+        id: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
+        label: 'footer column 1'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_1
+        weight: '0'
+        custom_id: block_content_511b3238_a334_451b_a17c_295facb441e0
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      8a5b70c9-4dd4-43dd-9fe2-5820353cbc27:
+        uuid: 8a5b70c9-4dd4-43dd-9fe2-5820353cbc27
+        id: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+        label: 'footer column 2'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_2
+        weight: '0'
+        custom_id: block_content_cd31defb_6283_41ae_9faa_dd53f0a32e03
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      30c96ee0-5ea3-4365-b17c-0578de93024c:
+        uuid: 30c96ee0-5ea3-4365-b17c-0578de93024c
+        id: 'block_content:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+        label: 'footer column 3'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_3
+        weight: '0'
+        custom_id: block_content_05e7da25_4ccb_48f2_88f1_e5d9dad6099f
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      7110aa9b-167e-46bf-9929-2d0433e469a1:
+        uuid: 7110aa9b-167e-46bf-9929-2d0433e469a1
+        id: system_branding_block
+        label: 'Site branding'
+        provider: system
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: system_branding_block
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        use_site_logo: 1
+        use_site_name: 0
+        use_site_slogan: 0
+        third_party_settings: {  }
+      7bbe881b-5b1a-4ccf-a847-59ca5191fd5f:
+        uuid: 7bbe881b-5b1a-4ccf-a847-59ca5191fd5f
+        id: 'block_content:afcf5b19-38f2-4874-8f35-646c127d058d'
+        label: 'department name for electrical engineering'
+        provider: block_content
+        label_display: '0'
+        region: department_title
+        weight: '0'
+        custom_id: block_content_afcf5b19_38f2_4874_8f35_646c127d058d
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      fc586c2f-b89e-413c-8f43-e30ec7af7874:
+        uuid: fc586c2f-b89e-413c-8f43-e30ec7af7874
+        id: 'system_menu_block:main'
+        label: 'Main navigation'
+        provider: system
+        label_display: '0'
+        region: primary_menu
+        weight: '-3'
+        custom_id: system_menu_block_main
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        level: '1'
+        depth: null
+        expand_all_items: 0
+        third_party_settings: {  }
+        ignore_active_trail: true
+      f8650478-f69c-4208-9c53-ef1a2fc12752:
+        uuid: f8650478-f69c-4208-9c53-ef1a2fc12752
+        id: 'block_content:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+        label: 'footer bottom'
+        provider: block_content
+        label_display: '0'
+        region: footer_bottom
+        weight: '-3'
+        custom_id: block_content_c6ccb271_643c_48f2_a972_0d2a55b4c593
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      493cdb3c-e45b-44aa-b308-655b677ecfb6:
+        uuid: 493cdb3c-e45b-44aa-b308-655b677ecfb6
+        id: 'block_content:2184e7ac-e64b-4647-b3d8-09aabea0f195'
+        label: 'guidelines heading'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-7'
+        custom_id: block_content_2184e7ac_e64b_4647_b3d8_09aabea0f195
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      7dda8a78-bb26-46a3-a126-7906a3886c55:
+        uuid: 7dda8a78-bb26-46a3-a126-7906a3886c55
+        id: 'block_content:9be8bfbc-4bc6-4173-bb55-87280e9a592a'
+        label: 'bloom taxonomy heading'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-6'
+        custom_id: block_content_9be8bfbc_4bc6_4173_bb55_87280e9a592a
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      b5f0bdfd-29df-407d-89da-2b9a08c51daa:
+        uuid: b5f0bdfd-29df-407d-89da-2b9a08c51daa
+        id: 'block_content:38811c2a-c145-455e-bdf1-3fe3fb4b34b4'
+        label: 'attendance criteria heading'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-4'
+        custom_id: block_content_38811c2a_c145_455e_bdf1_3fe3fb4b34b4
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      fb5ae7ec-c139-4b7b-950a-2e8fedd1cf96:
+        uuid: fb5ae7ec-c139-4b7b-950a-2e8fedd1cf96
+        id: 'block_content:d97fdba5-bbbd-4589-a047-669a6dbb21af'
+        label: 'postgrad student guideline heading'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '0'
+        custom_id: block_content_d97fdba5_bbbd_4589_a047_669a6dbb21af
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      a0c9319f-ca85-4867-a218-a4e401de751b:
+        uuid: a0c9319f-ca85-4867-a218-a4e401de751b
+        id: 'views_block:postgraduate_students-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '1'
+        custom_id: views_block_postgraduate_students_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      0efd2a82-82bb-4ce3-8e7c-51d2bd4bcd88:
+        uuid: 0efd2a82-82bb-4ce3-8e7c-51d2bd4bcd88
+        id: 'block_content:390f2170-22c1-4472-84c4-26ccf6eb7e2c'
+        label: 'undergrad student guideline heading'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-2'
+        custom_id: block_content_390f2170_22c1_4472_84c4_26ccf6eb7e2c
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      c0bc4e57-4328-4f38-bfd1-b7d201376d12:
+        uuid: c0bc4e57-4328-4f38-bfd1-b7d201376d12
+        id: 'views_block:undergraduate_students-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '-1'
+        custom_id: views_block_undergraduate_students_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: guidelines
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      b5e1d8ec-8f4e-46c2-ad17-34cb1365ca31:
+        uuid: b5e1d8ec-8f4e-46c2-ad17-34cb1365ca31
+        id: 'views_block:blooms_taxonomy-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '-5'
+        theme: gndec
+        views_label: ''
+        items_per_page: null
+      5ae02fa1-53b0-49a0-91b4-0cb506f77849:
+        uuid: 5ae02fa1-53b0-49a0-91b4-0cb506f77849
+        id: 'views_block:attendance_criteria-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '-3'
+        theme: gndec
+        views_label: ''
+        items_per_page: null
+    include_default_blocks: 0
+    saved: false
+weight: 0

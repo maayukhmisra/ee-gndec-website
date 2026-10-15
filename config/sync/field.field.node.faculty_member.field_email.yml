@@ -1,4 +1,4 @@
-uuid: b1f20bca-45e5-4723-ac4b-14d6b77f7ecb
+uuid: b7bd70c2-53c6-4951-a7a9-143676a27466
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ bundle: faculty_member
 label: Email
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -1,0 +1,295 @@
+/* Programmes Page Layout & Styling for GNDEC Theme */
+
+/* Main Container & Page Wrapper */
+.programmes-page-wrapper {
+  background-color: var(--gndec-bg-light, #f8fafc) !important;
+  padding: 1rem 0 3rem 0 !important;
+  width: 100% !important;
+}
+
+.programmes-page-wrapper .container {
+  max-width: 980px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+/* Ensure full width stacking of blocks */
+.programmes-page-wrapper .main-content-blocks-wrapper,
+.programmes-page-wrapper .region-content,
+.programmes-page-wrapper .views-element-container,
+.programmes-page-wrapper .block-views,
+.academic-documents-section {
+  width: 100% !important;
+  clear: both !important;
+  display: block !important;
+}
+
+/* Breadcrumb Navigation */
+.programmes-breadcrumb {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1.25rem;
+}
+.programmes-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+}
+.programmes-breadcrumb a:hover {
+  color: #0c2340;
+}
+.programmes-breadcrumb .active {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+/* Page Heading */
+.programmes-heading-wrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.programmes-page-title {
+  color: #d9531e !important;
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+.programmes-heading-underline {
+  width: 50px;
+  height: 3.5px;
+  background-color: #d9531e;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Section Headings */
+.programmes-section-intro {
+  color: #1e293b;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.programmes-section-heading {
+  color: #0c2340;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.programmes-subgroup-heading {
+  color: #0c2340;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.programmes-subgroup-heading .bullet-dot {
+  color: #d9531e;
+  font-size: 1.25rem;
+}
+
+/* 3 Cards Grid Layout */
+.programme-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 991px) {
+  .programme-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .programme-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.programme-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.25rem 1.35rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.programme-card:hover {
+  box-shadow: 0 6px 16px rgba(12, 35, 64, 0.07);
+  transform: translateY(-2px);
+}
+
+.programme-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 0.85rem;
+}
+.programme-card-icon {
+  color: #d9531e;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.programme-card-title {
+  color: #0c2340;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.programme-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.programme-card-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.925rem;
+  color: #334155;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+.programme-card-item:last-child {
+  margin-bottom: 0;
+}
+.programme-card-bullet {
+  color: #d9531e;
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* Document Rows Container */
+.doc-rows-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Single Document Card Row */
+.doc-row-card {
+  background-color: #ffffff;
+  border: 1px solid #e5eaf2;
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+.doc-row-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(12, 35, 64, 0.06);
+}
+
+.doc-row-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-pdf-icon-badge {
+  background-color: #fff5f2;
+  border: 1px solid #ffe3dc;
+  border-radius: 6px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d9531e;
+  flex-shrink: 0;
+}
+
+.doc-row-details {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.doc-row-title {
+  font-size: 0.935rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.doc-upload-date {
+  font-size: 0.825rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.doc-row-right {
+  flex-shrink: 0;
+}
+
+.doc-view-pdf-link {
+  color: #0c2340;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+.doc-view-pdf-link:hover {
+  color: #d9531e;
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness for Document Rows */
+@media (max-width: 576px) {
+  .doc-row-card {
+    padding: 0.75rem 0.9rem;
+    gap: 0.6rem;
+  }
+  .doc-pdf-icon-badge {
+    width: 28px;
+    height: 28px;
+  }
+  .doc-row-title {
+    font-size: 0.85rem;
+  }
+  .doc-upload-date {
+    font-size: 0.775rem;
+  }
+  .doc-view-pdf-link {
+    font-size: 0.8rem;
+  }
+}

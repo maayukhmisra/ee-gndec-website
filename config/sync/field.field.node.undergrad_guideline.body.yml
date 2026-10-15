@@ -1,0 +1,24 @@
+uuid: a084a9cc-00a9-4cee-a452-87fc9c933eef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.undergrad_guideline
+  module:
+    - text
+id: node.undergrad_guideline.body
+field_name: body
+entity_type: node
+bundle: undergrad_guideline
+label: 'Description / Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

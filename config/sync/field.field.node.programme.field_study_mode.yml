@@ -1,0 +1,19 @@
+uuid: f2d1f4c3-d8e6-4ab6-b0c4-2d23abe857cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_study_mode
+    - node.type.programme
+id: node.programme.field_study_mode
+field_name: field_study_mode
+entity_type: node
+bundle: programme
+label: 'Study Mode'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

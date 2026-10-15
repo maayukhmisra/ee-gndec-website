@@ -1,0 +1,209 @@
+uuid: 6ffbf30b-d116-4276-818c-6a73035fa7f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - views.view.faculty
+  content:
+    - 'block_content:hero_banner:4cfdf3dd-e402-4719-b0c1-5f0cf6ea674d'
+    - 'block_content:text_block:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+    - 'block_content:text_block:511b3238-a334-451b-a17c-295facb441e0'
+    - 'block_content:text_block:afcf5b19-38f2-4874-8f35-646c127d058d'
+    - 'block_content:text_block:be2a4096-a8fb-4605-b1ab-b5d1bf3abd0d'
+    - 'block_content:text_block:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+    - 'block_content:text_block:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+  module:
+    - block_content
+    - system
+    - views
+label: 'People page'
+name: people_page
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: c881a07e-37ff-40b3-bdbd-cbd0034f5ba0
+    context_mapping: {  }
+    pages: |-
+      /people
+      /academics/people
+      /academics/people/*
+reactions:
+  blocks:
+    id: blocks
+    uuid: 7db92f9b-b9f7-42ff-932c-5be4b64c8043
+    blocks:
+      9aea89b1-976f-4158-8919-8d1ee1e8fae0:
+        uuid: 9aea89b1-976f-4158-8919-8d1ee1e8fae0
+        id: system_branding_block
+        label: 'Site branding'
+        provider: system
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: system_branding_block
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: people_page
+        context_mapping: {  }
+        use_site_logo: 1
+        use_site_name: 0
+        use_site_slogan: 0
+        third_party_settings: {  }
+      010c4fa3-38b5-40fc-be4e-a78ccf046d33:
+        uuid: 010c4fa3-38b5-40fc-be4e-a78ccf046d33
+        id: 'block_content:4cfdf3dd-e402-4719-b0c1-5f0cf6ea674d'
+        label: 'clg image for faculty card'
+        provider: block_content
+        label_display: '0'
+        region: hero
+        weight: '0'
+        custom_id: block_content_4cfdf3dd_e402_4719_b0c1_5f0cf6ea674d
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: people_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      c9cd3818-ce56-4321-b437-47fc6d921f20:
+        uuid: c9cd3818-ce56-4321-b437-47fc6d921f20
+        id: 'block_content:afcf5b19-38f2-4874-8f35-646c127d058d'
+        label: 'department name for electrical engineering'
+        provider: block_content
+        label_display: '0'
+        region: department_title
+        weight: '0'
+        custom_id: block_content_afcf5b19_38f2_4874_8f35_646c127d058d
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: people_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      86b740a4-276d-4e8d-9a06-8998ffe31d69:
+        uuid: 86b740a4-276d-4e8d-9a06-8998ffe31d69
+        id: 'block_content:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+        label: 'footer bottom'
+        provider: block_content
+        label_display: '0'
+        region: footer_bottom
+        weight: '0'
+        custom_id: block_content_c6ccb271_643c_48f2_a972_0d2a55b4c593
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: people_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      533b4310-9e62-4139-b02d-9b4f9b17764d:
+        uuid: 533b4310-9e62-4139-b02d-9b4f9b17764d
+        id: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
+        label: 'footer column 1'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_1
+        weight: '0'
+        custom_id: block_content_511b3238_a334_451b_a17c_295facb441e0
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: people_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      f45b93e0-d850-44c4-945e-471f8bb159e9:
+        uuid: f45b93e0-d850-44c4-945e-471f8bb159e9
+        id: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+        label: 'footer column 2'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_2
+        weight: '0'
+        custom_id: block_content_cd31defb_6283_41ae_9faa_dd53f0a32e03
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: people_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      c630bc13-43cd-4b1d-9ce6-7d872eb91a5d:
+        uuid: c630bc13-43cd-4b1d-9ce6-7d872eb91a5d
+        id: 'block_content:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+        label: 'footer column 3'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_3
+        weight: '0'
+        custom_id: block_content_05e7da25_4ccb_48f2_88f1_e5d9dad6099f
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: people_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      1c4c8f7f-c37d-4526-8254-b748e78413c7:
+        uuid: 1c4c8f7f-c37d-4526-8254-b748e78413c7
+        id: 'views_block:faculty-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '-3'
+        custom_id: views_block_faculty_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: people_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      7aba428a-3d77-452e-9696-4880764ac304:
+        uuid: 7aba428a-3d77-452e-9696-4880764ac304
+        id: 'system_menu_block:main'
+        label: 'Main navigation'
+        provider: system
+        label_display: '0'
+        region: primary_menu
+        weight: '0'
+        custom_id: system_menu_block_main
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: people_page
+        context_mapping: {  }
+        level: '1'
+        depth: null
+        expand_all_items: 0
+        third_party_settings: {  }
+        ignore_active_trail: true
+      244c84d3-ec60-4419-8313-4729df285819:
+        uuid: 244c84d3-ec60-4419-8313-4729df285819
+        id: 'block_content:be2a4096-a8fb-4605-b1ab-b5d1bf3abd0d'
+        label: 'people page heading'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '-4'
+        custom_id: block_content_be2a4096_a8fb_4605_b1ab_b5d1bf3abd0d
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: people_page
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

@@ -1,0 +1,516 @@
+/* Scoped Time Tables CSS */
+
+body {
+  background-color: #f8fafc !important;
+}
+
+.timetable-page-wrapper {
+  background-color: #f8fafc !important;
+  min-height: 85vh;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.timetable-main-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Breadcrumb */
+.timetable-breadcrumb-nav {
+  margin-bottom: 24px;
+}
+
+.timetable-breadcrumb {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  gap: 0 !important;
+}
+
+.timetable-breadcrumb .breadcrumb-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 13.5px !important;
+  color: #64748b !important;
+}
+
+.timetable-breadcrumb .breadcrumb-item a {
+  color: #64748b !important;
+  text-decoration: none !important;
+}
+
+.timetable-breadcrumb .breadcrumb-item a:hover {
+  color: #dc2626 !important;
+}
+
+.timetable-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: ">" !important;
+  padding: 0 8px !important;
+  color: #94a3b8 !important;
+  float: none !important;
+}
+
+.timetable-breadcrumb .breadcrumb-item.active {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+/* Centered Header Section */
+.timetable-header-section {
+  text-align: center !important;
+  margin: 0 auto 36px auto !important;
+  max-width: 700px !important;
+}
+
+.timetable-title {
+  text-align: center !important;
+  color: #dc2626 !important;
+  font-weight: 800 !important;
+  font-size: 2.2rem !important;
+  letter-spacing: 1.5px !important;
+  margin: 0 0 8px 0 !important;
+  text-transform: uppercase !important;
+}
+
+.title-red-bar {
+  width: 44px !important;
+  height: 3.5px !important;
+  background-color: #dc2626 !important;
+  margin: 10px auto 16px auto !important;
+  border-radius: 2px !important;
+}
+
+.timetable-subtitle {
+  text-align: center !important;
+  font-size: 0.95rem !important;
+  color: #475569 !important;
+  line-height: 1.55 !important;
+  margin: 0 auto !important;
+}
+
+/* Two Column Grid */
+.timetable-layout-grid {
+  display: grid !important;
+  grid-template-columns: 240px 1fr !important;
+  gap: 32px !important;
+  align-items: start !important;
+}
+
+/* Sidebar */
+.timetable-sidebar-area {
+  width: 100% !important;
+}
+
+.timetable-sidebar-inner {
+  position: sticky;
+  top: 90px;
+}
+
+.timetable-sidebar-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  overflow: hidden;
+}
+
+.year-archive-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 14px 16px 10px 16px !important;
+  background: #ffffff !important;
+}
+
+.year-archive-heading {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  letter-spacing: 0.5px !important;
+}
+
+.year-archive-range {
+  font-size: 11px !important;
+  color: #94a3b8 !important;
+}
+
+.year-archive-body {
+  padding: 0 10px 12px 10px !important;
+}
+
+.year-archive-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+}
+
+.year-archive-item {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 9px 12px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  color: #334155 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+}
+
+.year-archive-item:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.year-archive-item.active {
+  background-color: #eff6ff !important;
+  color: #1e40af !important;
+  font-weight: 700 !important;
+}
+
+.year-badge-latest {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 3px 8px !important;
+}
+
+.year-badge-term {
+  color: #64748b !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  background: transparent !important;
+}
+
+.year-archive-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 8px !important;
+  margin-top: 14px !important;
+  padding: 0 4px !important;
+}
+
+.btn-archive-action {
+  flex: 1 !important;
+  font-size: 12px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1 !important;
+  background: #ffffff !important;
+  padding: 6px 10px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-align: center !important;
+}
+
+.btn-archive-action:hover {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Notice Box */
+.timetable-notice-box {
+  background-color: #fefce8 !important;
+  border: 1px solid #fef08a !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+  margin-top: 12px !important;
+}
+
+.notice-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 8px !important;
+  color: #854d0e !important;
+}
+
+.notice-icon {
+  color: #d97706 !important;
+  font-size: 15px !important;
+}
+
+.notice-title {
+  color: #854d0e !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+.notice-text {
+  color: #713f12 !important;
+  font-size: 12.5px !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+/* Main Area */
+.year-section-block {
+  margin-bottom: 28px !important;
+}
+
+.year-tag-badge {
+  margin-bottom: 12px !important;
+}
+
+.year-tag-badge span {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 4px 10px !important;
+  letter-spacing: 0.5px !important;
+  display: inline-block !important;
+}
+
+.timetable-accordion-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.timetable-accordion-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+  overflow: hidden !important;
+}
+
+.accordion-header-box {
+  background-color: #ffffff !important;
+}
+
+.accordion-toggle-btn {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 16px 20px !important;
+  background: #ffffff !important;
+  border: none !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  outline: none !important;
+}
+
+.accordion-toggle-btn:focus-visible {
+  outline: 2px solid #dc2626 !important;
+}
+
+.accordion-title-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.green-dot-indicator {
+  color: #16a34a !important;
+  font-size: 11px !important;
+}
+
+.accordion-title-text {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
+}
+
+.badge-current-status {
+  background-color: #dcfce7 !important;
+  color: #15803d !important;
+  border: 1px solid #bbf7d0 !important;
+  border-radius: 6px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  padding: 2px 8px !important;
+}
+
+.chevron-box {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.accordion-chevron {
+  color: #64748b !important;
+  font-size: 14px !important;
+  transition: transform 0.25s ease-in-out !important;
+}
+
+.accordion-chevron.rotated {
+  transform: rotate(180deg) !important;
+}
+
+/* Accordion Body & PDF Rows */
+.accordion-collapse-body {
+  display: none;
+}
+
+.accordion-collapse-body.show {
+  display: block !important;
+}
+
+.accordion-inner-content {
+  background-color: #fafafa !important;
+  border-top: 1px solid #f1f5f9 !important;
+  padding: 16px 20px !important;
+}
+
+.session-description-text {
+  font-size: 13px !important;
+  color: #64748b !important;
+  margin-bottom: 12px !important;
+}
+
+.pdf-document-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.pdf-document-row {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  padding: 12px 18px !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+}
+
+.pdf-document-row:hover {
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+.pdf-doc-left {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.pdf-icon-badge {
+  background-color: #fff1f2 !important;
+  border: 1px solid #ffe4e6 !important;
+  border-radius: 8px !important;
+  width: 38px !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.pdf-icon-badge.badge-html {
+  background-color: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+}
+.pdf-icon-badge.badge-html .pdf-svg-icon {
+  stroke: #16a34a !important;
+}
+
+.pdf-icon-badge.badge-doc {
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+}
+.pdf-icon-badge.badge-doc .pdf-svg-icon {
+  stroke: #2563eb !important;
+}
+
+.pdf-icon-badge.badge-image {
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+}
+.pdf-icon-badge.badge-image .pdf-svg-icon {
+  stroke: #d97706 !important;
+}
+
+.pdf-icon-badge.badge-link {
+  background-color: #faf5ff !important;
+  border-color: #e9d5ff !important;
+}
+.pdf-icon-badge.badge-link .pdf-svg-icon {
+  stroke: #9333ea !important;
+}
+
+.pdf-svg-icon {
+  stroke: #e11d48 !important;
+}
+
+.doc-title-name {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+}
+
+.pdf-download-link {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: color 0.2s ease !important;
+}
+
+.pdf-download-link:hover {
+  color: #dc2626 !important;
+}
+
+.arrow-icon {
+  margin-left: 3px !important;
+  display: inline-block !important;
+  transition: transform 0.2s ease !important;
+}
+
+.pdf-download-link:hover .arrow-icon {
+  transform: translateX(3px) !important;
+}
+
+/* Responsive Grid */
+@media (max-width: 991px) {
+  .timetable-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .timetable-sidebar-inner {
+    position: static !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .timetable-title {
+    font-size: 1.75rem !important;
+  }
+
+  .pdf-document-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  .pdf-download-link {
+    align-self: flex-end !important;
+  }
+}

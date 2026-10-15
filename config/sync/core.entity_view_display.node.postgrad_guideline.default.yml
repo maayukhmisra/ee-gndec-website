@@ -1,0 +1,38 @@
+uuid: 3ddc094b-3633-4efa-abc1-e532352ac519
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.postgrad_guideline.body
+    - field.field.node.postgrad_guideline.field_document
+    - node.type.postgrad_guideline
+  module:
+    - file
+    - text
+    - user
+id: node.postgrad_guideline.default
+targetEntityType: node
+bundle: postgrad_guideline
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,25 @@
+uuid: 892b2281-ff9c-4b88-bbce-26dcd76e8af7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gndec
+_core:
+  default_config_hash: y04mgDwdrIgjsetTS3HxVJVAqLye0Xysx7qK_DO-5-4
+id: gndec_site_branding
+theme: gndec
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

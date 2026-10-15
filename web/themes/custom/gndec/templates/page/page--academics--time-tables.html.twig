@@ -1,0 +1,240 @@
+{#
+/**
+ * @file
+ * Theme implementation for the Time Tables page (/academics/time-tables).
+ */
+#}
+{{ attach_library('gndec/global-styling') }}
+{{ attach_library('gndec/header-styles') }}
+{{ attach_library('gndec/timetable-page-styles') }}
+
+{# 1. Top Global Navigation Bar #}
+{% include directory ~ '/templates/header.html.twig' %}
+
+{# 2. Main Page Container #}
+<main class="timetable-page-wrapper py-4 py-md-5">
+  <div class="timetable-main-container">
+
+    {# Breadcrumb #}
+    <nav aria-label="breadcrumb" class="timetable-breadcrumb-nav">
+      <ul class="timetable-breadcrumb">
+        <li class="breadcrumb-item"><a href="/academics">Academics</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Time Tables</li>
+      </ul>
+    </nav>
+
+    {# Centered Page Heading #}
+    <div class="timetable-header-section">
+      <h1 class="timetable-title">TIME TABLES</h1>
+      <div class="title-red-bar"></div>
+      <p class="timetable-subtitle">
+        Official semester schedules, classroom allocations, faculty allocations, and academic timetable archives.
+      </p>
+    </div>
+
+    {# Two Column Grid Layout #}
+    <div class="timetable-layout-grid">
+      
+      {# Left Sidebar Column #}
+      <aside class="timetable-sidebar-area">
+        <div class="timetable-sidebar-inner">
+
+          {# Year Archive Card #}
+          <div class="timetable-sidebar-card year-archive-card mb-4">
+            <div class="year-archive-header">
+              <span class="year-archive-heading">YEAR ARCHIVE</span>
+              <span class="year-archive-range">2017 - 2026</span>
+            </div>
+            
+            <div class="year-archive-body">
+              <div class="year-archive-list">
+                {% for item in year_archive_list %}
+                  <a href="/academics/time-tables?year={{ item.year }}" 
+                     class="year-archive-item {% if item.is_active %}active{% endif %}"
+                     data-year="{{ item.year }}">
+                    <span class="year-label">Year {{ item.year }}</span>
+                    {% if item.badge == 'Latest' %}
+                      <span class="badge year-badge-latest">{{ item.badge }}</span>
+                    {% else %}
+                      <span class="badge year-badge-term">{{ item.badge }}</span>
+                    {% endif %}
+                  </a>
+                {% endfor %}
+              </div>
+
+              {# Action Buttons #}
+              <div class="year-archive-actions">
+                <button type="button" class="btn-archive-action btn-expand-all" id="btn-expand-all">Expand All</button>
+                <button type="button" class="btn-archive-action btn-collapse-all" id="btn-collapse-all">Collapse All</button>
+              </div>
+            </div>
+          </div>
+
+          {# Notice to Students Block #}
+          <div class="timetable-notice-area">
+            {% if page.content.timetable_notice_block %}
+              {{ page.content.timetable_notice_block }}
+            {% else %}
+              <div class="timetable-notice-box">
+                <div class="notice-header">
+                  <i class="bi bi-exclamation-circle-fill notice-icon"></i>
+                  <span class="notice-title">Notice to Students</span>
+                </div>
+                <p class="notice-text">
+                  Timetables are subject to periodic room and session updates. Students are advised to periodically verify any room adjustments with their respective mentors.
+                </p>
+              </div>
+            {% endif %}
+          </div>
+
+        </div>
+      </aside>
+
+      {# Main Timetable Content Column #}
+      <section class="timetable-main-area">
+        {% if timetable_data is empty %}
+          <div class="timetable-alert-empty">No timetable records found.</div>
+        {% else %}
+          {% for year, sessions in timetable_data %}
+            {% if current_year_filter is empty or current_year_filter == year %}
+              <div class="year-section-block" data-year-section="{{ year }}">
+                
+                <div class="year-tag-badge">
+                  <span>YEAR {{ year }}</span>
+                </div>
+
+                <div class="timetable-accordion-list">
+                  {% for session in sessions %}
+                    {% set accordion_id = 'tt-accordion-' ~ session.nid %}
+                    {% set collapse_id = 'tt-collapse-' ~ session.nid %}
+                    {% set is_open = (current_year_filter is not empty and loop.first) or (current_year_filter is empty and year == '2026' and loop.first) %}
+                    
+                    <div class="timetable-accordion-card" id="{{ accordion_id }}">
+                      
+                      <div class="accordion-header-box">
+                        <button class="accordion-toggle-btn"
+                                type="button"
+                                data-target="#{{ collapse_id }}"
+                                aria-expanded="{% if is_open %}true{% else %}false{% endif %}"
+                                aria-controls="{{ collapse_id }}">
+                          
+                          <div class="accordion-title-container">
+                            {% if session.status == 'Current' %}
+                              <span class="green-dot-indicator">●</span>
+                            {% endif %}
+                            <h3 class="accordion-title-text">{{ session.title }}</h3>
+                            {% if session.status == 'Current' %}
+                              <span class="badge-current-status">Current</span>
+                            {% endif %}
+                          </div>
+
+                          <span class="chevron-box">
+                            <i class="bi bi-chevron-down accordion-chevron {% if is_open %}rotated{% endif %}"></i>
+                          </span>
+
+                        </button>
+                      </div>
+
+                      <div id="{{ collapse_id }}" 
+                           class="accordion-collapse-body {% if is_open %}show{% endif %}" 
+                           aria-labelledby="{{ accordion_id }}">
+                        
+                        <div class="accordion-inner-content">
+                          {% if session.description %}
+                            <div class="session-description-text">{{ session.description|raw }}</div>
+                          {% endif %}
+
+                          {% if session.documents is not empty %}
+                            <div class="pdf-document-list">
+                              {% for doc in session.documents %}
+                                <div class="pdf-document-row">
+                                  <div class="pdf-doc-left">
+                                    <div class="pdf-icon-badge badge-{{ doc.format|default('pdf') }}">
+                                      {% if doc.format == 'html' %}
+                                        <svg class="pdf-svg-icon icon-html" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                          <circle cx="12" cy="12" r="10"></circle>
+                                          <line x1="2" y1="12" x2="22" y2="12"></line>
+                                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                        </svg>
+                                      {% elseif doc.format == 'doc' %}
+                                        <svg class="pdf-svg-icon icon-doc" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                          <polyline points="14 2 14 8 20 8"></polyline>
+                                          <line x1="16" y1="13" x2="8" y2="13"></line>
+                                          <line x1="16" y1="17" x2="8" y2="17"></line>
+                                          <line x1="10" y1="9" x2="8" y2="9"></line>
+                                        </svg>
+                                      {% elseif doc.format == 'image' %}
+                                        <svg class="pdf-svg-icon icon-image" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                          <polyline points="21 15 16 10 5 21"></polyline>
+                                        </svg>
+                                      {% elseif doc.format == 'link' %}
+                                        <svg class="pdf-svg-icon icon-link" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                        </svg>
+                                      {% else %}
+                                        <svg class="pdf-svg-icon icon-pdf" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                                          <polyline points="14 2 14 8 20 8"></polyline>
+                                          <text x="6" y="17" font-size="6" font-weight="bold" fill="#e11d48" stroke="none">PDF</text>
+                                        </svg>
+                                      {% endif %}
+                                    </div>
+                                    <span class="doc-title-name">{{ doc.title }}</span>
+                                  </div>
+                                  
+                                  {% if doc.url or doc.pdf_url %}
+                                    <a href="{{ doc.url ?: doc.pdf_url }}" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="pdf-download-link">
+                                      View <span class="arrow-icon">&rarr;</span>
+                                    </a>
+                                  {% endif %}
+                                </div>
+                              {% endfor %}
+                            </div>
+                          {% endif %}
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  {% endfor %}
+                </div>
+
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+      </section>
+
+    </div>
+  </div>
+</main>
+
+{# 4. Global Dark Footer #}
+<footer class="site-footer bg-navy text-white pt-5 pb-3">
+  <div class="container px-4 px-lg-5">
+    {% if page.footer_col_1 or page.footer_col_2 or page.footer_col_3 %}
+      <div class="footer-blocks-grid pb-4 mb-2">
+        <div class="footer-block">{{ page.footer_col_1 }}</div>
+        <div class="footer-block">{{ page.footer_col_2 }}</div>
+        <div class="footer-block">{{ page.footer_col_3 }}</div>
+      </div>
+    {% endif %}
+
+    <div class="footer-bottom-bar text-center pt-3">
+      {% if page.footer_bottom %}
+        {{ page.footer_bottom }}
+      {% else %}
+        <p class="mb-0 copyright-text">&copy; 2026 Department of Electrical Engineering, GNE Ludhiana. All rights reserved.</p>
+      {% endif %}
+    </div>
+  </div>
+</footer>

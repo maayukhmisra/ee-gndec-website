@@ -1,0 +1,11 @@
+uuid: bf1c9a76-0774-4034-be97-77b700b26488
+langcode: en
+status: true
+dependencies: {  }
+name: 'Timetable Document'
+type: timetable_document
+description: 'Individual timetable PDF document.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

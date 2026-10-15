@@ -1,0 +1,27 @@
+uuid: 379f11a8-6e11-4fde-8b49-c696852b5242
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.mou_file
+  module:
+    - file
+id: node.mou_file.field_document
+field_name: field_document
+entity_type: node
+bundle: mou_file
+label: Document
+description: 'Upload document file (PDF, DOC, DOCX)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documents/mou_file
+  file_extensions: 'pdf doc docx'
+  max_filesize: ''
+  description_field: false
+field_type: file

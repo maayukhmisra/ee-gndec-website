@@ -1,0 +1,11 @@
+uuid: 0c8d81bb-31e2-4d45-9113-e8efe7daf7e1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Undergraduate Guideline'
+type: undergrad_guideline
+description: 'Content type for Undergraduate Guideline heading items.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

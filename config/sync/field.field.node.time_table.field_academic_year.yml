@@ -1,0 +1,19 @@
+uuid: 29839fbd-b222-4aae-8beb-38d5613676b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_academic_year
+    - node.type.time_table
+id: node.time_table.field_academic_year
+field_name: field_academic_year
+entity_type: node
+bundle: time_table
+label: 'Academic Year'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

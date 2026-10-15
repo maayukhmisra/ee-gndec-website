@@ -1,0 +1,38 @@
+uuid: c2de395e-ac32-4f38-82f6-f2493b4cf06b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.attendance_criteria.body
+    - field.field.node.attendance_criteria.field_document
+    - node.type.attendance_criteria
+  module:
+    - file
+    - text
+    - user
+id: node.attendance_criteria.default
+targetEntityType: node
+bundle: attendance_criteria
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

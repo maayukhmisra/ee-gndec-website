@@ -1,0 +1,11 @@
+uuid: 8f4d27c1-48e5-4d2b-899a-dbf355fe9e9c
+langcode: en
+status: true
+dependencies: {  }
+name: Programme
+type: programme
+description: 'Academic programmes offered by the department.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

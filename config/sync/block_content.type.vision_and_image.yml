@@ -1,0 +1,8 @@
+uuid: 29b87973-aaba-4289-a3ba-e81ea6f5bf9d
+langcode: en
+status: true
+dependencies: {  }
+id: vision_and_image
+label: 'content and image'
+revision: false
+description: null

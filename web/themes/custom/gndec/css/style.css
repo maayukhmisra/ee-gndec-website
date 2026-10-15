@@ -1048,3 +1048,154 @@ table {
     font-size: 0.875rem;
   }
 }
+
+/* ==========================================================================
+   Universal Document Card (.doc-card) Styling Across All Pages
+   ========================================================================== */
+
+.doc-card,
+.document-card,
+.pdf-card,
+div.doc-card,
+.view-content:not(.view-faculty .view-content):not(.view-id-faculty .view-content) > .views-row:not(.faculty-card):not(.person-card) {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 1.25rem 1.6rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.25rem !important;
+  margin-bottom: 1rem !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.doc-card:hover,
+.document-card:hover,
+.pdf-card:hover,
+.view-content:not(.view-faculty .view-content):not(.view-id-faculty .view-content) > .views-row:not(.faculty-card):not(.person-card):hover {
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Left Section: Icon Badge + Title & Description */
+.doc-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.2rem !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+/* Icon Badge */
+.icon-wrapper,
+.doc-left .icon-wrapper {
+  min-width: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  background-color: #ffe2e5 !important;
+  color: #e11d48 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.icon-wrapper svg {
+  stroke: currentColor !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Document Title & Description Wrapper */
+.doc-text-wrapper,
+.doc-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+  min-width: 0 !important;
+}
+
+.doc-title,
+.doc-text-wrapper .doc-title,
+h4.doc-title {
+  color: #0f172a !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+}
+
+.doc-desc,
+.doc-text-wrapper .doc-desc,
+p.doc-desc {
+  color: #64748b !important;
+  font-size: 0.885rem !important;
+  margin: 0 !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
+}
+
+/* Right Section: View PDF Button */
+.doc-right {
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.doc-link,
+.doc-right a.doc-link,
+a.doc-link {
+  color: #041e42 !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  white-space: nowrap !important;
+  transition: color 0.2s ease !important;
+}
+
+.doc-link:hover,
+.doc-right a.doc-link:hover,
+a.doc-link:hover {
+  color: #c84c1c !important;
+  text-decoration: none !important;
+}
+
+/* Suppress any duplicate pseudo-element arrows on View PDF links */
+a.doc-link::after,
+.doc-card a::after,
+.doc-right a::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* Hide Default Drupal File Span Icons */
+span.file {
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+span.file img,
+span.file svg {
+  display: none !important;
+}
+
+@media (max-width: 575.98px) {
+  .doc-card,
+  .view-content:not(.view-faculty .view-content):not(.view-id-faculty .view-content) > .views-row:not(.faculty-card):not(.person-card) {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1.1rem !important;
+  }
+  .doc-right {
+    margin-left: 0 !important;
+    align-self: flex-end !important;
+  }
+}

@@ -1,0 +1,11 @@
+uuid: f9748224-f99d-42e3-9591-8375ff063e82
+langcode: en
+status: true
+dependencies: {  }
+name: 'Time Table'
+type: time_table
+description: 'Time table sessions and document groupings.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

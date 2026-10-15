@@ -1,0 +1,68 @@
+uuid: 78ab818d-3f4e-4a78-9c12-fbd6b5da5a57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.academic_document.field_display_weight
+    - field.field.node.academic_document.field_document_category
+    - field.field.node.academic_document.field_document_type
+    - field.field.node.academic_document.field_pdf_file
+    - field.field.node.academic_document.field_upload_date
+    - node.type.academic_document
+  module:
+    - file
+    - user
+id: node.academic_document.default
+targetEntityType: node
+bundle: academic_document
+mode: default
+content:
+  field_display_weight:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_document_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document_type:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_pdf_file:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_upload_date:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -8,31 +8,11 @@ global-styling:
       css/style.css: { weight: 100 }
       css/colors.css: { weight: 99 }
 
-
 header-styles:
   version: 1.x
   css:
     theme:
       css/header.css: {}
-
-bootstrap:
-  js:
-    /libraries/popper.js/dist/umd/popper.min.js: { weight: -19 }
-    /libraries/bootstrap/dist/js/bootstrap.min.js: { weight: -20 }
-  css:
-    component:
-      /libraries/bootstrap/dist/css/bootstrap.min.css: {}
-  dependencies:
-    - core/popperjs
-color.preview:
-  version: VERSION
-  css:
-    theme:
-      color/preview.css: {}
-  js:
-    color/preview.js: {}
-  dependencies:
-    - color/drupal.color
 
 front-page-styles:
   version: 1.x
@@ -59,3 +39,55 @@ bos-page-styles:
       css/bos.css: { weight: 102 }
   js:
     js/bos.js: {}
+
+guidelines-page-styles:
+  version: 1.x
+  css:
+    theme:
+      css/guidelines.css: { weight: 102 }
+  js:
+    js/guidelines.js: {}
+
+videos-page-styles:
+  version: 1.x
+  css:
+    theme:
+      css/videos.css: { weight: 102 }
+  js:
+    js/videos.js: {}
+
+vision-page-styles:
+  version: 1.x
+  css:
+    theme:
+      css/vision.css: { weight: 102 }
+  js:
+    js/vision.js: {}
+
+mou-page-styles:
+  version: 1.x
+  css:
+    theme:
+      css/mou.css: { weight: 102 }
+  js:
+    js/mou.js: {}
+
+timetable-page-styles:
+  version: 1.x
+  css:
+    theme:
+      css/timetable.css: { weight: 102 }
+  js:
+    js/timetable.js: {}
+  dependencies:
+    - core/drupal
+
+programmes-page-styles:
+  version: 1.x
+  css:
+    theme:
+      css/programmes.css: { weight: 102 }
+  js:
+    js/programmes.js: {}
+  dependencies:
+    - core/drupal

@@ -1,0 +1,38 @@
+uuid: b6e3c292-8259-4bf7-82f1-eca55925f596
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mou_file.body
+    - field.field.node.mou_file.field_document
+    - node.type.mou_file
+  module:
+    - file
+    - text
+    - user
+id: node.mou_file.default
+targetEntityType: node
+bundle: mou_file
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

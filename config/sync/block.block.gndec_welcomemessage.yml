@@ -1,0 +1,23 @@
+uuid: 3d446788-1131-4c4a-9d43-28ff74af3ac4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:text_block:667b5df3-66e2-4f3f-9a4d-53517249f32d'
+  module:
+    - block_content
+  theme:
+    - gndec
+id: gndec_welcomemessage
+theme: gndec
+region: content
+weight: -6
+provider: null
+plugin: 'block_content:667b5df3-66e2-4f3f-9a4d-53517249f32d'
+settings:
+  id: 'block_content:667b5df3-66e2-4f3f-9a4d-53517249f32d'
+  label: 'welcome message'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

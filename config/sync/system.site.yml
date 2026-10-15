@@ -1,14 +1,14 @@
 _core:
-  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: en
-uuid: c0fbb8fe-3853-4f43-85f3-a82a514bfd88
-name: 'EE Department GNDEC'
-mail: maayukhmisra@gmail.com
+uuid: 241ec33a-1551-45f5-87f8-0f241f2325ad
+name: ee-gndec-website
+mail: parmindersingh9072@outlook.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /home
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

@@ -1,0 +1,27 @@
+uuid: 8e3473a4-6cad-4923-98a2-ad1e584c15d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.undergrad_guideline
+  module:
+    - file
+id: node.undergrad_guideline.field_document
+field_name: field_document
+entity_type: node
+bundle: undergrad_guideline
+label: Document
+description: 'Upload document file (PDF, DOC, DOCX)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documents/undergrad_guideline
+  file_extensions: 'pdf doc docx xls xlsx'
+  max_filesize: ''
+  description_field: false
+field_type: file

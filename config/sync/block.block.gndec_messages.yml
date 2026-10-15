@@ -1,0 +1,22 @@
+uuid: 5d5a18c8-11c4-40e7-a6b8-9f3bedc70eb9
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - gndec
+_core:
+  default_config_hash: 2L4QNVI0Pe4k6y8HzvtmInK5Tk7c-PLKu3NB9un0Mjk
+id: gndec_messages
+theme: gndec
+region: header
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

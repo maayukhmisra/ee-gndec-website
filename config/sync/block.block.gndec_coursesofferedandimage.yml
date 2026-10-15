@@ -1,0 +1,23 @@
+uuid: 8322e0bd-77eb-4a92-861b-b589f0625a1f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:vision_and_image:044b90a6-0822-4116-9574-91375f08dd78'
+  module:
+    - block_content
+  theme:
+    - gndec
+id: gndec_coursesofferedandimage
+theme: gndec
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:044b90a6-0822-4116-9574-91375f08dd78'
+settings:
+  id: 'block_content:044b90a6-0822-4116-9574-91375f08dd78'
+  label: 'courses offered and image'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

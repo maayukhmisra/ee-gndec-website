@@ -1,0 +1,398 @@
+/* Videos Page Layout & Styling */
+
+/* Enable Flex Column Layout & Ordering on Regions */
+.videos-page-wrapper .main-content-blocks-wrapper,
+.videos-page-wrapper .region-content,
+.videos-page-wrapper .region,
+body.path-videos .region-content,
+body.path-academics-videos .region-content,
+body.path-videos .main-content-blocks-wrapper,
+body.path-academics-videos .main-content-blocks-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Force Page Title / Header Block to the top and center */
+.videos-page-wrapper #block-block-bd343696,
+.videos-page-wrapper .block-content-text_block,
+.videos-page-wrapper #block-gndec-page-title,
+.videos-page-wrapper .block-page-title-block,
+.videos-page-wrapper .heading-container,
+.videos-page-wrapper .title-container,
+.videos-page-wrapper .region-content > div:has(h1),
+.videos-page-wrapper .region-content > div:has(h2),
+body.path-videos #block-block-bd343696,
+body.path-videos .heading-container,
+body.path-academics-videos .heading-container {
+  order: -100 !important;
+  margin-bottom: 2rem !important;
+  width: 100% !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body .videos-page-wrapper .block-content-text_block,
+body .videos-page-wrapper .block-content-text_block .content,
+body .videos-page-wrapper .block-content-text_block .field,
+body .videos-page-wrapper .block-content-text_block .field__item,
+body .videos-page-wrapper .heading-container,
+body .videos-page-wrapper .title-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+/* Main Section Wrapper */
+main.main-content-bg,
+.videos-page-wrapper {
+  background-color: var(--gndec-bg-light, #f4f8fc) !important;
+  padding: 1.5rem 0 3.5rem 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.videos-page-wrapper .container {
+  max-width: 960px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* Hide Raw Field Labels */
+.field__label,
+.videos-page-wrapper .field__label {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Heading Text (Red Bold Uppercase Centered) */
+.videos-page-wrapper .heading-text,
+.videos-page-wrapper h1.page-title,
+.videos-page-wrapper h2.page-title,
+.videos-page-wrapper .page-title,
+.videos-page-wrapper #block-gndec-page-title h1,
+.videos-page-wrapper #block-gndec-page-title h2,
+.videos-page-wrapper .block-title,
+.videos-page-wrapper h1,
+.videos-page-wrapper .title-container h2,
+.videos-page-wrapper .block-content-text_block h2,
+.videos-page-wrapper .view-videos h2,
+body.path-videos h1,
+body.path-videos h2,
+body.path-videos .heading-text,
+body.path-videos .view-videos h2,
+body.path-academics-videos h1,
+body.path-academics-videos h2,
+body.path-academics-videos .heading-text,
+body.path-academics-videos .view-videos h2 {
+  color: #b84018 !important;
+  font-size: 2.25rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  text-align: center !important;
+  margin: 0 auto 0.4rem auto !important;
+  line-height: 1.2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* Red Accent Underline Bar (Single underline only) */
+.videos-page-wrapper .underline {
+  content: "" !important;
+  display: block !important;
+  width: 50px !important;
+  height: 3.5px !important;
+  background-color: #b84018 !important;
+  margin: 6px auto 0 auto !important;
+  border-radius: 2px !important;
+}
+
+/* Suppress duplicate ::after pseudo-element underlines */
+.videos-page-wrapper h1::after,
+.videos-page-wrapper h2::after,
+.videos-page-wrapper .page-title::after,
+.videos-page-wrapper #block-gndec-page-title h1::after,
+.videos-page-wrapper #block-gndec-page-title h2::after,
+.videos-page-wrapper .block-title::after,
+.videos-page-wrapper .title-container h2::after,
+.videos-page-wrapper .block-content-text_block h2::after,
+.videos-page-wrapper .view-videos h2::after,
+body.path-videos h1::after,
+body.path-videos h2::after,
+body.path-videos .heading-text::after,
+body.path-videos .view-videos h2::after,
+body.path-academics-videos h1::after,
+body.path-academics-videos h2::after,
+body.path-academics-videos .heading-text::after,
+body.path-academics-videos .view-videos h2::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Views Container Stack */
+.videos-page-wrapper .views-element-container,
+.videos-page-wrapper .view-videos,
+.videos-page-wrapper .view-content {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  gap: 14px !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Single Video Document Card Item */
+body .videos-page-wrapper .video-card,
+body .videos-page-wrapper .doc-card,
+body .videos-page-wrapper div.doc-card,
+body .videos-page-wrapper .views-row,
+body.path-videos .views-row,
+body.path-academics-videos .views-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 18px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e5eaf2 !important;
+  border-radius: 10px !important;
+  padding: 16px 24px !important;
+  min-height: 64px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin-bottom: 14px !important;
+  cursor: pointer !important;
+}
+
+body .videos-page-wrapper .video-card > div,
+body .videos-page-wrapper .views-row:not(.doc-card):not(:has(.doc-left)) > div {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  flex: 1 1 100% !important;
+  gap: 16px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Document cards (Expert Talks) row layout */
+body .videos-page-wrapper .views-row.doc-card,
+body .videos-page-wrapper .views-row:has(.doc-left) {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+body .videos-page-wrapper .views-row.doc-card > .doc-left,
+body .videos-page-wrapper .views-row > .doc-left {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+  min-width: 0 !important;
+  width: auto !important;
+  flex: 1 1 auto !important;
+}
+
+body .videos-page-wrapper .views-row.doc-card > .doc-right,
+body .videos-page-wrapper .views-row > .doc-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  margin-left: auto !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+}
+
+body .videos-page-wrapper .video-card:hover,
+body .videos-page-wrapper .doc-card:hover,
+body .videos-page-wrapper div.doc-card:hover,
+body .videos-page-wrapper .views-row:hover {
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 12px rgba(4, 30, 66, 0.06) !important;
+}
+
+/* Warm Play Icon Badge on Left (Videos Only) */
+body .videos-page-wrapper .video-card:not(.doc-card)::before,
+body .videos-page-wrapper .views-row:not(.doc-card):not(:has(.doc-left)):not(:has(.icon-pdf))::before {
+  content: "" !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center !important;
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  background-color: #fff7ed !important;
+  border-radius: 8px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b84018'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 20px 20px !important;
+  flex-shrink: 0 !important;
+  margin-right: 14px !important;
+  order: 0 !important;
+}
+
+/* Suppress play icon on document cards (which already have their own SVG PDF badge) */
+body .videos-page-wrapper .doc-card::before,
+body .videos-page-wrapper .views-row.doc-card::before,
+body .videos-page-wrapper .views-row:has(.doc-left)::before,
+body .videos-page-wrapper .views-row:has(.icon-pdf)::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Video Title (Middle) */
+body .videos-page-wrapper .video-card *:not(.views-field-field-video-link *),
+body .videos-page-wrapper .views-row *:not(.views-field-field-video-link *) {
+  text-align: left !important;
+  align-self: center !important;
+}
+
+body .videos-page-wrapper .views-field-info,
+body .videos-page-wrapper .views-field-field-video-name,
+body .videos-page-wrapper .views-field-title,
+body .videos-page-wrapper .field--name-field-video-name,
+body .videos-page-wrapper .field--name-info,
+body .videos-page-wrapper .video-title {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-grow: 1 !important;
+  flex: 1 1 auto !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  align-self: center !important;
+  text-decoration: none !important;
+  order: 1 !important;
+}
+
+/* Hide duplicate label fields or secondary title outputs */
+body .videos-page-wrapper .views-field-info + .views-field-field-video-name {
+  display: none !important;
+}
+
+/* Right Pill Button Container for 'Watch Video →' (Pushed all the way to far right edge) */
+body .videos-page-wrapper .views-field-field-video-link,
+body .videos-page-wrapper .field--name-field-video-link,
+body .videos-page-wrapper .video-link-wrapper,
+body .videos-page-wrapper .views-field-field-video-link *,
+body .videos-page-wrapper .field--name-field-video-link * {
+  margin-left: auto !important;
+  text-align: right !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  align-self: center !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  order: 2 !important;
+}
+
+/* Clean Pill Button Style for Watch Video Link */
+body .videos-page-wrapper a,
+body .videos-page-wrapper .views-field-field-video-link a,
+body .videos-page-wrapper .field--name-field-video-link a,
+body .videos-page-wrapper a.watch-video-link {
+  color: #041e42 !important;
+  background-color: #f1f5f9 !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+  line-height: 1.2 !important;
+  margin-left: auto !important;
+}
+
+/* Disable duplicate CSS ::after arrow */
+body .videos-page-wrapper a::after,
+body .videos-page-wrapper a.watch-video-link::after {
+  display: none !important;
+  content: none !important;
+}
+
+body .videos-page-wrapper a:hover,
+body .videos-page-wrapper .video-card:hover a {
+  background-color: #e2e8f0 !important;
+  color: #0d6efd !important;
+}
+
+/* Position Drupal contextual edit pencil out of flex flow so Watch Video stays on the far right */
+body .videos-page-wrapper .contextual,
+body .videos-page-wrapper .contextual-region .contextual {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  order: 9999 !important;
+  margin: 0 !important;
+  z-index: 10 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 575.98px) {
+  body .videos-page-wrapper .video-card,
+  body .videos-page-wrapper .views-row {
+    padding: 12px 14px !important;
+    gap: 10px !important;
+    min-height: 56px !important;
+  }
+
+  body .videos-page-wrapper .heading-text,
+  body .videos-page-wrapper h1.page-title,
+  body .videos-page-wrapper h2 {
+    font-size: 1.75rem !important;
+  }
+
+  body .videos-page-wrapper a {
+    font-size: 0.8rem !important;
+    padding: 6px 10px !important;
+  }
+}

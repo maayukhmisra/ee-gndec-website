@@ -1,0 +1,157 @@
+uuid: 4cc0ff1c-0848-498e-b13f-b3fc73282cff
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.academic_document
+  module:
+    - node
+id: academic_documents
+label: 'Academic Documents'
+module: views
+description: 'Academic documents grouped by category for Programmes page.'
+tag: programmes
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: 'Academic Documents'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: field
+          label: ''
+          exclude: false
+          element_label_colon: false
+          settings:
+            link_to_node: false
+      pager:
+        type: none
+        options:
+          offset: 0
+          items_per_page: 0
+      sorts:
+        field_display_weight_value:
+          id: field_display_weight_value
+          table: node__field_display_weight
+          field: field_display_weight_value
+          plugin_id: standard
+          order: ASC
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          plugin_id: standard
+          order: ASC
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            academic_document: academic_document
+          group: 1
+      style:
+        type: default
+      row:
+        type: fields
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags: {  }
+  btech_schemes:
+    id: btech_schemes
+    display_title: 'B.Tech Schemes Block'
+    display_plugin: block
+    position: 2
+    display_options:
+      display_description: 'B.Tech Syllabus & Schemes Documents'
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags: {  }
+  mtech_schemes:
+    id: mtech_schemes
+    display_title: 'M.Tech Schemes Block'
+    display_plugin: block
+    position: 3
+    display_options:
+      display_description: 'M.Tech Syllabus & Schemes Documents'
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags: {  }
+  phd_schemes:
+    id: phd_schemes
+    display_title: 'Ph.D Schemes Block'
+    display_plugin: block
+    position: 4
+    display_options:
+      display_description: 'Ph.D. Syllabus & Study Scheme Documents'
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags: {  }
+  prerequisites:
+    id: prerequisites
+    display_title: 'Prerequisites Block'
+    display_plugin: block
+    position: 5
+    display_options:
+      display_description: 'Prerequisites Documents'
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags: {  }
+  sanctioned_seats:
+    id: sanctioned_seats
+    display_title: 'Sanctioned Seats Block'
+    display_plugin: block
+    position: 1
+    display_options:
+      display_description: 'Sanctioned Seats Documents'
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+      tags: {  }

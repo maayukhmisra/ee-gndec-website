@@ -1,0 +1,23 @@
+uuid: d301d440-1a2f-42ef-92d0-93fc55ec2be0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_weight
+    - node.type.video
+id: node.video.field_display_weight
+field_name: field_display_weight
+entity_type: node
+bundle: video
+label: 'Display Weight'
+description: 'Order in which the video or expert talk is displayed'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: -100
+  max: 1000
+  prefix: ''
+  suffix: ''
+field_type: integer

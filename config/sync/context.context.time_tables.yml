@@ -1,0 +1,192 @@
+uuid: e5a189f2-2114-41cb-8d82-e3048991a021
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - views.view.time_tables
+  content:
+    - 'block_content:text_block:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+    - 'block_content:text_block:2b0193f9-a9a6-48f4-80f0-24c5a8e002b2'
+    - 'block_content:text_block:511b3238-a334-451b-a17c-295facb441e0'
+    - 'block_content:text_block:afcf5b19-38f2-4874-8f35-646c127d058d'
+    - 'block_content:text_block:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+    - 'block_content:text_block:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+  module:
+    - block_content
+    - system
+    - views
+label: 'Time Tables'
+name: time_tables
+group: null
+description: 'Page context for Time Tables page (/academics/time-tables)'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 850a1122-3511-4f2b-9801-11a221fca901
+    context_mapping: {  }
+    pages: |-
+      /time-tables
+      /academics/time-tables
+      /academics/time-tables/*
+reactions:
+  blocks:
+    id: blocks
+    uuid: a1905622-6b92-4d22-92bc-7788165aa090
+    blocks:
+      caf7311b-9485-4716-b222-a44b52dcec6c:
+        uuid: caf7311b-9485-4716-b222-a44b52dcec6c
+        id: system_branding_block
+        label: 'Site branding'
+        provider: system
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: system_branding_block
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: time_tables
+        context_mapping: {  }
+        use_site_logo: 1
+        use_site_name: 0
+        use_site_slogan: 0
+        third_party_settings: {  }
+      0ff64db4-343e-4352-9631-84b1d26055c7:
+        uuid: 0ff64db4-343e-4352-9631-84b1d26055c7
+        id: 'block_content:afcf5b19-38f2-4874-8f35-646c127d058d'
+        label: 'department name for electrical engineering'
+        provider: block_content
+        label_display: '0'
+        region: department_title
+        weight: '0'
+        custom_id: block_content_afcf5b19_38f2_4874_8f35_646c127d058d
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: time_tables
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      df67ba9f-b8d1-4976-89ce-69b82bc27233:
+        uuid: df67ba9f-b8d1-4976-89ce-69b82bc27233
+        id: 'system_menu_block:main'
+        label: 'Main navigation'
+        provider: system
+        label_display: '0'
+        region: primary_menu
+        weight: '0'
+        custom_id: system_menu_block_main
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: time_tables
+        context_mapping: {  }
+        level: '1'
+        depth: null
+        expand_all_items: 0
+        third_party_settings: {  }
+        ignore_active_trail: true
+      views_block_time_tables_block_1:
+        uuid: e7711200-5511-4091-a1b2-c0a009819921
+        id: 'views_block:time_tables-block_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '0'
+        custom_id: views_block_time_tables_block_1
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: time_tables
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: null
+        third_party_settings: {  }
+      timetable_notice_block:
+        uuid: f9901b00-3321-4122-9011-bb0099ab2233
+        id: 'block_content:2b0193f9-a9a6-48f4-80f0-24c5a8e002b2'
+        label: 'Timetable Notice'
+        provider: block_content
+        label_display: '0'
+        region: content
+        weight: '1'
+        custom_id: timetable_notice_block
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: time_tables
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      9139405a-1979-45d5-a561-5543650c0a48:
+        uuid: 9139405a-1979-45d5-a561-5543650c0a48
+        id: 'block_content:511b3238-a334-451b-a17c-295facb441e0'
+        label: 'footer column 1'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_1
+        weight: '0'
+        custom_id: block_content_511b3238_a334_451b_a17c_295facb441e0
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: time_tables
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      d7c36abb-0bc4-4c6e-8c63-70d27fc94dd9:
+        uuid: d7c36abb-0bc4-4c6e-8c63-70d27fc94dd9
+        id: 'block_content:cd31defb-6283-41ae-9faa-dd53f0a32e03'
+        label: 'footer column 2'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_2
+        weight: '0'
+        custom_id: block_content_cd31defb_6283_41ae_9faa_dd53f0a32e03
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: time_tables
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      f3b3f588-37ff-4eee-b382-8cdb52d2db1d:
+        uuid: f3b3f588-37ff-4eee-b382-8cdb52d2db1d
+        id: 'block_content:05e7da25-4ccb-48f2-88f1-e5d9dad6099f'
+        label: 'footer column 3'
+        provider: block_content
+        label_display: '0'
+        region: footer_col_3
+        weight: '0'
+        custom_id: block_content_05e7da25_4ccb_48f2_88f1_e5d9dad6099f
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: time_tables
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+      b05a46bb-be33-48d2-914f-c9bbb615c9e0:
+        uuid: b05a46bb-be33-48d2-914f-c9bbb615c9e0
+        id: 'block_content:c6ccb271-643c-48f2-a972-0d2a55b4c593'
+        label: 'footer bottom'
+        provider: block_content
+        label_display: '0'
+        region: footer_bottom
+        weight: '0'
+        custom_id: block_content_c6ccb271_643c_48f2_a972_0d2a55b4c593
+        theme: gndec
+        css_class: ''
+        unique: 0
+        context_id: time_tables
+        context_mapping: {  }
+        view_mode: full
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

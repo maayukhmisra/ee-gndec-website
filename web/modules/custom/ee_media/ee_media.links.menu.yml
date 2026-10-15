@@ -1,0 +1,12 @@
+﻿ee_media.admin.list:
+  title: 'Media & Documents'
+  description: 'Manage all department media assets — PDFs, images, and documents.'
+  route_name: ee_media.admin.list
+  parent: system.admin
+  weight: 15
+
+ee_media.admin.add:
+  title: 'Add Media Asset'
+  route_name: ee_media.admin.add
+  parent: ee_media.admin.list
+  weight: 1

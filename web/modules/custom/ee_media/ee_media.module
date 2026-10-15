@@ -1,0 +1,42 @@
+﻿<?php
+
+/**
+ * @file
+ * EE Media module -- hook implementations.
+ *
+ * Centralizes PDF and image asset management for the EE GNDEC website.
+ * Works in conjunction with: ee_notices, ee_events, ee_research, ee_labs.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ee_media_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name === 'help.page.ee_media') {
+    return '<p>' . t('Provides a centralized Document & Media Management system for the EE GNDEC website. Exposes a JSON API at <code>/api/media</code>. Stores PDFs and images referenced by Notices, Events, Publications, and Labs.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_toolbar().
+ *
+ * Adds a quick link to manage media assets in the Drupal toolbar.
+ */
+function ee_media_toolbar() {
+  $items = [];
+  if (\Drupal::currentUser()->hasPermission('administer site configuration')) {
+    $items['ee_media'] = [
+      '#type'   => 'toolbar_item',
+      'tab'     => [
+        '#type'  => 'link',
+        '#title' => t('Media'),
+        '#url'   => \Drupal\Core\Url::fromRoute('ee_media.admin.list'),
+        '#attributes' => ['class' => ['toolbar-icon']],
+      ],
+      '#weight' => 105,
+    ];
+  }
+  return $items;
+}

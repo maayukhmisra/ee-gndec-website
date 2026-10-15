@@ -1,0 +1,6 @@
+﻿name: 'EE Media'
+type: module
+description: 'Document & Media Management module for EE GNDEC website. Centralizes PDF attachments and images used by Notices, Events, Publications, and Labs modules. Provides a REST API and admin UI for all department media assets.'
+package: 'EE GNDEC Custom'
+core_version_requirement: ^11
+version: '1.0.0'
